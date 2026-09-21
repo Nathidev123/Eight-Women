@@ -1,8 +1,9 @@
 import emailjs from '@emailjs/browser'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { IoLocationSharp } from "react-icons/io5";
+import { IoLocationSharp, IoCheckmarkCircle, IoCloseCircle, IoClose } from "react-icons/io5";
 import './GetInvolved.css' 
 const GetInvolved = () => {
 
@@ -35,7 +36,7 @@ const GetInvolved = () => {
     emailjs.send(serviceId, templateId, templateParams, publicKey)
     .then((response) => {
         console.log('Email sent successfully', response)
-        setAlert({ type: 'success', message: 'Your message has been sent. We will get back to you shortly'})
+        setAlert({ type: 'success', message: 'Your message has been sent. Thank you for reaching out. We will get back to you shortly'})
         setName('')
         setEmail('')
         setMessage('')
@@ -49,7 +50,14 @@ const GetInvolved = () => {
     .catch((error) => {
         console.error('Error sending email:', error)
         setLoading(false);
-        setAlert({ type: 'error', message: 'Failed to send email' })
+        setAlert({
+        type: 'error',
+        message: 'We were unable to send your message. Please try again or contact us directly.'
+        })
+
+        setTimeout(() => {
+        setAlert(null);
+    }, 5000);
         
     })
 
@@ -185,14 +193,44 @@ const GetInvolved = () => {
             required>
             
             </textarea>
+                {alert && (
+            <div className={`form-alert form-alert-${alert.type}`}>
+                <div className="form-alert-icon">
+                    {alert.type === 'success' 
+                        ? <IoCheckmarkCircle /> 
+                        : <IoCloseCircle />
+                    }
+                </div>
+
+                <div className="form-alert-content">
+                    <strong>
+                        {alert.type === 'success' ? 'Message Sent' : 'Something Went Wrong'}
+                    </strong>
+
+                    <p>{alert.message}</p>
+                </div>
+
+                <button 
+                    type="button" 
+                    className="form-alert-close"
+                    onClick={() => setAlert(null)}
+                    aria-label="Close notification"
+                >
+                    <IoClose />
+                </button>
+            </div>
+        )}
             <button type="submit" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}
         </button>
-            {alert && (
-                <div className={`alert alert-${alert.type}`}>
-                    {alert.message}
-                </div>
-            )}
+           <p className="privacy-notice">
+            By submitting this form, you acknowledge that the information you
+            provide may be processed by Eight Women to respond to your enquiry.
+            Please see our{" "}
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            {" "}for more information.
+        </p>
+
             
             
         </form>

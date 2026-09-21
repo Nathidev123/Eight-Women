@@ -19,7 +19,7 @@ import Archives from './pages/Archives';
 import GetInvolved from './pages/GetInvolved';
 import OurWork from './pages/OurWork';
 import GetInvolvedComponent from './Components/GetInvolvedComponent';
-
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
  
@@ -113,6 +113,11 @@ function App() {
     <Route
     path='/involved-component'
     element={<GetInvolvedComponent/>}
+    />
+
+    <Route
+    path='/privacy-policy'
+    element={<PrivacyPolicy/>}
     />
     
     </Routes>

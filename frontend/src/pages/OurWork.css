@@ -346,75 +346,159 @@
    RESPONSIVE
 ================================================== */
 
-@media(max-width:1100px){
+@media (max-width: 1100px){
+
+    .our-work-container{
+        padding:90px 7%;
+    }
 
     .our-work-section{
-
         grid-template-columns:1fr;
-
-        gap:50px;
-
+        gap:55px;
     }
 
     .our-work-text{
-
         text-align:center;
-
     }
 
     .our-work-text h1::after{
-
         left:50%;
         transform:translateX(-50%);
+    }
+
+    .our-work-text p{
+        max-width:850px;
+        margin:auto;
+    }
+
+    .eight-div{
+        width:100%;
+        max-width:520px;
+        margin:auto;
+    }
+
+    .pillars-section{
+        padding:90px 7%;
+    }
+
+    .pillars-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .pillar-div{
+        padding:35px 28px;
+    }
+
+    /* Reset the desktop 4-column borders */
+    .pillar-div:nth-child(4n){
+        border-right:1px solid rgba(123,30,43,.18);
+    }
+
+    .pillar-div:nth-child(2n){
+        border-right:none;
+    }
+
+    .pillar-div:nth-last-child(-n+4){
+        border-bottom:1px solid rgba(123,30,43,.18);
+    }
+
+    .pillar-div:nth-last-child(-n+2){
+        border-bottom:none;
+    }
+
+}
+
+
+/* ==================================================
+   TABLET / MOBILE
+================================================== */
+
+@media (max-width:700px){
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    .our-work-container,
+    .pillars-section{
+
+        padding:65px 6%;
+
+    }
+
+
+    /* =========================
+       OUR WORK
+    ========================= */
+
+    .our-work-section{
+
+        gap:40px;
 
     }
 
     .eight-div{
 
-        max-width:500px;
-
-        margin:auto;
+        max-width:420px;
 
     }
 
-    .pillars-grid{
+    .eight-div img{
 
-        grid-template-columns:repeat(2,1fr);
+        width:100%;
 
-    }
+        aspect-ratio:4 / 5;
 
-    .pillar-div{
-
-        border-right:1px solid rgba(123,30,43,.18);
+        border-radius:20px;
 
     }
 
-    .pillar-div:nth-child(2n){
+    .our-work-text{
 
-        border-right:none;
-
-    }
-
-    .pillar-div:nth-last-child(-n+2){
-
-        border-bottom:none;
-
-    }
-
-}
-
-@media(max-width:700px){
-
-    .our-work-container,
-    .pillars-section{
-
-        padding:70px 6%;
+        text-align:left;
 
     }
 
     .our-work-text h1{
 
-        font-size:2.3rem;
+        font-size:2.15rem;
+
+        line-height:1.2;
+
+        margin-bottom:22px;
+
+        padding-bottom:14px;
+
+    }
+
+    .our-work-text h1::after{
+
+        left:0;
+
+        transform:none;
+
+        width:60px;
+
+        height:3px;
+
+    }
+
+    .our-work-text p{
+
+        font-size:.98rem;
+
+        line-height:1.85;
+
+    }
+
+
+    /* =========================
+       PILLARS HEADING
+    ========================= */
+
+    .pillars-heading{
+
+        margin-bottom:45px;
 
     }
 
@@ -422,17 +506,40 @@
 
         font-size:2rem;
 
+        line-height:1.2;
+
+        margin-bottom:16px;
+
+        padding-bottom:13px;
+
     }
+
+    .pillars-heading p{
+
+        font-size:.95rem;
+
+        line-height:1.8;
+
+    }
+
+
+    /* =========================
+       PILLARS GRID
+    ========================= */
 
     .pillars-grid{
 
         grid-template-columns:1fr;
 
+        width:100%;
+
     }
 
     .pillar-div{
 
-        border-right:none;
+        padding:30px 5px;
+
+        border-right:none !important;
 
         border-bottom:1px solid rgba(123,30,43,.18);
 
@@ -441,6 +548,125 @@
     .pillar-div:last-child{
 
         border-bottom:none;
+
+    }
+
+    .pillar-div h2{
+
+        font-size:1.35rem;
+
+        margin-bottom:16px;
+
+        padding-bottom:13px;
+
+    }
+
+    .pillar-div p{
+
+        font-size:.94rem;
+
+        line-height:1.8;
+
+    }
+
+
+    /* =========================
+       REMOVE DESKTOP HOVER SHIFT
+    ========================= */
+
+    .pillar-div:hover{
+
+        padding-left:5px;
+
+    }
+
+    .pillar-div::before{
+
+        display:none;
+
+    }
+
+}
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media (max-width:450px){
+
+    .our-work-container,
+    .pillars-section{
+
+        padding:55px 5%;
+
+    }
+
+    .our-work-section{
+
+        gap:32px;
+
+    }
+
+    .eight-div{
+
+        max-width:100%;
+
+    }
+
+    .eight-div img{
+
+        border-radius:16px;
+
+    }
+
+    .our-work-text h1{
+
+        font-size:1.9rem;
+
+    }
+
+    .our-work-text p{
+
+        font-size:.92rem;
+
+        line-height:1.8;
+
+    }
+
+    .pillars-heading{
+
+        margin-bottom:35px;
+
+    }
+
+    .pillars-heading h1{
+
+        font-size:1.8rem;
+
+    }
+
+    .pillars-heading p{
+
+        font-size:.92rem;
+
+    }
+
+    .pillar-div{
+
+        padding:27px 2px;
+
+    }
+
+    .pillar-div h2{
+
+        font-size:1.25rem;
+
+    }
+
+    .pillar-div p{
+
+        font-size:.9rem;
 
     }
 

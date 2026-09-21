@@ -23,7 +23,7 @@ const Footer = () => {
 
                 <div className="footer-brand">
 
-                    <h2>Community Meet</h2>
+                    <h2>Eight Women</h2>
 
                     <p>
                         Connecting communities through events, dialogue,

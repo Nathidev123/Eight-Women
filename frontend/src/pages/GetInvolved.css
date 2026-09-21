@@ -383,40 +383,150 @@ will-change: auto;
 }
 
 /* ==================================================
-   ALERTS
+   FORM ALERT
 ================================================== */
 
-.alert{
+.form-alert {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
 
-    margin-top:25px;
+    margin-top: 24px;
+    padding: 16px 18px;
 
-    padding:18px;
+    box-sizing: border-box;
 
-    border-radius:14px;
+    border-radius: 12px;
 
-    text-align:center;
+    position: relative;
 
-    font-weight:600;
-
+    animation: alertSlideIn .35s cubic-bezier(.22,1,.36,1) forwards;
 }
 
-.alert-success{
+/* SUCCESS */
 
-    background:#EAF7EC;
-
-    color:#1F6A33;
-
-    border:1px solid #BFE5C7;
-
+.form-alert-success {
+    background: #f4f8f5;
+    border: 1px solid #cbded2;
 }
 
-.alert-error{
+.form-alert-success .form-alert-icon {
+    color: #2f7654;
+}
 
-    background:#FDECEC;
+/* ERROR */
 
-    color:#8B1E2D;
+.form-alert-error {
+    background: #faf5f5;
+    border: 1px solid #e2cccc;
+}
 
-    border:1px solid #F5C2C7;
+.form-alert-error .form-alert-icon {
+    color: #9b3d3d;
+}
+
+/* ICON */
+
+.form-alert-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 26px;
+}
+
+/* CONTENT */
+
+.form-alert-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-alert-content strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .1px;
+}
+
+.form-alert-success .form-alert-content strong {
+    color: #245c42;
+}
+
+.form-alert-error .form-alert-content strong {
+    color: #7c3030;
+}
+
+.form-alert-content p {
+    margin: 0;
+
+    color: #5c5c5c;
+
+    font-size: .88rem;
+    line-height: 1.5;
+}
+
+/* CLOSE BUTTON */
+
+.emailForm .form-alert-close {
+    width: 28px;
+    height: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: transparent;
+    color: #888;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 18px;
+    font-weight: normal;
+
+    cursor: pointer;
+
+    transform: none;
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.emailForm .form-alert-close:hover {
+    background: rgba(0, 0, 0, .06);
+    color: #333;
+
+    transform: none;
+}
+
+/* ANIMATION */
+
+@keyframes alertSlideIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 }
 
