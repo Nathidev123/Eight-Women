@@ -38,7 +38,7 @@ const Navbar = () => {
 
                     <Link to="/#events">Events</Link>
 
-                    <Link to="/#members">Members</Link>
+                    <Link to="/our-work">Our Work</Link>
 
                     <Link to="/get-involved">Get Involved</Link>
 
@@ -84,7 +84,7 @@ const Navbar = () => {
 
                 <Link onClick={() => setMenuOpen(false)} to="/get-involved">Get Involved</Link>
 
-                <Link onClick={() => setMenuOpen(false)} to="/our-work">What We Do</Link>
+                <Link onClick={() => setMenuOpen(false)} to="/our-work">Our Work</Link>
 
                 {!user && (
                     <>

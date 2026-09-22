@@ -1,4 +1,3 @@
-
 /* ==================================================
    GET INVOLVED
 ================================================== */
@@ -19,11 +18,13 @@ body{
     background:var(--cream);
 }
 
+
 /* ==================================================
    ANIMATIONS
 ================================================== */
 
 @keyframes heroReveal{
+
     from{
         opacity:0;
         transform:translateY(20px);
@@ -33,28 +34,47 @@ body{
         opacity:1;
         transform:none;
     }
+
 }
 
-body{
-    background:var(--cream);
+@keyframes imageReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
+
+
 /* ==================================================
    HERO
 ================================================== */
 
 .get-involved-container{
+
     padding:110px 8%;
+
     background:linear-gradient(
         rgba(123,30,43,.90),
         rgba(90,19,32,.90)
     );
+
     color:white;
     text-align:center;
+
 }
 
 .header{
+
     max-width:900px;
     margin:auto;
+
 }
 
 .header h1{
@@ -64,7 +84,10 @@ body{
     letter-spacing:-1px;
 
     opacity:0;
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation:
+        heroReveal .9s cubic-bezier(.22,1,.36,1)
+        forwards;
 
 }
 
@@ -75,139 +98,591 @@ body{
     color:#f6f6f6;
 
     opacity:0;
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation:
+        heroReveal .9s cubic-bezier(.22,1,.36,1)
+        forwards;
+
     animation-delay:.2s;
 
 }
 
+
 /* ==================================================
-   WAYS TO HELP
+   WAYS TO GET INVOLVED
 ================================================== */
 
 .ways-involved-section{
-    padding:100px 8%;
+
+    padding:110px 8%;
+
     background:var(--cream);
+
 }
 
-.ways-involved{
-    max-width:950px;
-    margin:auto;
+
+/* ==================================================
+   SECTION INTRO
+================================================== */
+
+.ways-intro{
+
+    max-width:850px;
+
+    margin:0 auto 90px;
+
+    text-align:center;
+
 }
 
-.ways-involved h1{
+.ways-intro span{
+
+    display:inline-block;
+
+    margin-bottom:15px;
+
     color:var(--burgundy);
-    font-size:2rem;
-    margin-top:60px;
-    margin-bottom:18px;
-    position:relative;
-    padding-bottom:12px;
+
+    font-size:.78rem;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+}
+
+.ways-intro h1{
+
+    margin:0 0 22px;
+
+    color:var(--burgundy);
+
+    font-size:2.8rem;
+
+    letter-spacing:-.8px;
 
     opacity:0;
-    animation: heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
-will-change: auto; 
+
+    animation:
+        heroReveal .9s cubic-bezier(.22,1,.36,1)
+        forwards;
+
 }
 
-.ways-involved h1:first-child{
-    margin-top:0;
-}
+.ways-intro p{
 
-.ways-involved h1::after{
-    content:"";
-    width:70px;
-    height:4px;
-    background:var(--cream-accent);
-    position:absolute;
-    bottom:0;
-    left:0;
-    border-radius:999px;
-}
+    margin:0;
 
-.ways-involved p{
     color:var(--text-light);
+
     line-height:2;
+
     font-size:1.05rem;
 
     opacity:0;
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation:
+        heroReveal .9s cubic-bezier(.22,1,.36,1)
+        forwards;
+
     animation-delay:.2s;
+
 }
+
+
+/* ==================================================
+   INVOLVEMENT ROW
+================================================== */
+
+.involvement-item{
+
+    max-width:1100px;
+
+    margin:0 auto 100px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.involvement-image{
+
+    width:100%;
+
+    height:440px;
+
+    overflow:hidden;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    background:#ddd;
+
+    opacity:0;
+
+    animation:
+        imageReveal .9s cubic-bezier(.22,1,.36,1)
+        forwards;
+
+}
+
+.involvement-image img{
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:
+        transform .7s cubic-bezier(.22,1,.36,1);
+
+}
+
+.involvement-image:hover img{
+
+    transform:scale(1.04);
+
+}
+
+
+/* ==================================================
+   INDIVIDUAL IMAGE CROPS
+================================================== */
+
+/* Volunteer */
+
+.involvement-left:nth-of-type(2)
+.involvement-image img{
+
+    object-position:center;
+
+}
+
+
+/* Sponsor */
+
+.involvement-right
+.involvement-image img{
+
+    object-position:center;
+
+}
+
+
+/* Events */
+
+.involvement-left:nth-of-type(4)
+.involvement-image img{
+
+    object-position:center;
+
+}
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.involvement-content{
+
+    padding:20px 0;
+
+}
+
+.involvement-content span{
+
+    display:block;
+
+    margin-bottom:15px;
+
+    color:var(--cream-accent);
+
+    font-size:.9rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.involvement-content h2{
+
+    margin:0 0 22px;
+
+    color:var(--burgundy);
+
+    font-size:2.35rem;
+
+    line-height:1.2;
+
+    letter-spacing:-.6px;
+
+}
+
+.involvement-content h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:65px;
+
+    height:4px;
+
+    margin-top:18px;
+
+    background:var(--cream-accent);
+
+    border-radius:999px;
+
+}
+
+.involvement-content p{
+
+    margin:0 0 28px;
+
+    color:var(--text-light);
+
+    font-size:1.04rem;
+
+    line-height:2;
+
+}
+
+
+/* ==================================================
+   INVOLVEMENT LINKS
+================================================== */
+
+.involvement-content a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:13px 22px;
+
+    background:var(--burgundy);
+
+    color:white;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.involvement-content a:hover{
+
+    background:var(--burgundy-dark);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(90,19,32,.18);
+
+}
+
+
+/* ==================================================
+   STAGGERED LAYOUT
+================================================== */
+
+/*
+   Volunteer:
+   IMAGE | CONTENT
+
+   Sponsor:
+   CONTENT | IMAGE
+
+   Events:
+   IMAGE | CONTENT
+*/
+
+.involvement-left{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.involvement-right{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
 
 /* ==================================================
    DONATION SECTION
 ================================================== */
 
 .donate-container{
-    padding:100px 8%;
+
+    padding:110px 8%;
+
     background:linear-gradient(
         135deg,
         var(--burgundy),
         var(--burgundy-dark)
     );
+
 }
 
-.donate-div{
-    max-width:900px;
+
+/* ==================================================
+   DONATION FEATURE
+================================================== */
+
+.donation-feature{
+
+    max-width:1100px;
+
     margin:auto;
-    text-align:center;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+
+/* ==================================================
+   DONATION CONTENT
+================================================== */
+
+.donation-content{
+
     color:white;
+
 }
 
-.donate-div h1{
+.donation-content span{
+
+    display:block;
+
+    margin-bottom:15px;
+
+    color:var(--cream-accent);
+
+    font-size:.9rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.donation-content h2{
+
+    margin:0 0 22px;
+
     font-size:2.8rem;
-    margin-bottom:20px;
 
-    opacity:0;
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
+    line-height:1.2;
+
+    letter-spacing:-.8px;
+
 }
 
-.donate-div p{
-    line-height:2;
-    font-size:1.08rem;
+.donation-content h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:70px;
+
+    height:4px;
+
+    margin-top:18px;
+
+    background:var(--cream-accent);
+
+    border-radius:999px;
+
+}
+
+.donation-content p{
+
+    margin:0 0 30px;
+
     color:#ececec;
 
-    opacity:0;
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
-    animation-delay:.2s;
+    font-size:1.06rem;
+
+    line-height:2;
+
 }
+
+
+/* ==================================================
+   DONATION BUTTON
+================================================== */
+
+.donation-content a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 24px;
+
+    background:var(--cream);
+
+    color:var(--burgundy);
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-size:.9rem;
+
+    font-weight:800;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+.donation-content a:hover{
+
+    background:var(--cream-accent);
+
+    color:var(--burgundy-dark);
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==================================================
+   DONATION IMAGE
+================================================== */
+
+.donation-image{
+
+    height:470px;
+
+    overflow:hidden;
+
+    border-radius:var(--radius);
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.20);
+
+}
+
+.donation-image img{
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transition:
+        transform .7s cubic-bezier(.22,1,.36,1);
+
+}
+
+.donation-image:hover img{
+
+    transform:scale(1.04);
+
+}
+
 
 /* ==================================================
    CONTACT INFO
 ================================================== */
 
 .get-involved{
+
     padding:100px 8%;
+
     background:white;
+
 }
 
 .involved{
+
     max-width:850px;
+
     margin:auto;
+
     text-align:center;
+
 }
 
 .involved h1{
+
     color:var(--burgundy);
+
     font-size:2.6rem;
+
     margin-bottom:25px;
 
     opacity:0;
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation:
+        heroReveal .9s cubic-bezier(.22,1,.36,1)
+        forwards;
+
 }
 
 .involved p{
+
     color:var(--text-light);
+
     line-height:2;
+
     margin-bottom:15px;
 
     opacity:0;
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation:
+        heroReveal .9s cubic-bezier(.22,1,.36,1)
+        forwards;
+
     animation-delay:.2s;
+
 }
 
-.involved p:nth-last-child(-n+3){
-    font-weight:600;
-    color:var(--text);
-}
+
 /* ==================================================
    CONTACT DETAILS
 ================================================== */
@@ -273,42 +748,66 @@ will-change: auto;
     line-height:1.8;
 
 }
-.contact-item a {
-    text-decoration: none;
+
+.contact-item a{
+
+    text-decoration:none;
+
     margin:0;
 
     color:var(--text-light);
 
     line-height:1.8;
+
 }
+
+
 /* ==================================================
    EMAIL FORM
 ================================================== */
 
 .email-container{
+
     padding:100px 8%;
+
     background:var(--cream);
+
 }
 
 .email-form{
+
     max-width:750px;
+
     margin:auto;
+
     background:white;
+
     padding:50px;
+
     border-radius:var(--radius);
+
     box-shadow:var(--shadow);
+
 }
 
 .emailForm{
+
     display:flex;
+
     flex-direction:column;
+
 }
 
 .emailForm h1{
+
     text-align:center;
+
     color:var(--burgundy);
+
     margin-bottom:40px;
+
     font-size:2.4rem;
+
 }
 
 .emailForm input,
@@ -329,6 +828,9 @@ will-change: auto;
     transition:.3s;
 
     background:#fcfcfc;
+
+    box-sizing:border-box;
+
 }
 
 .emailForm input:focus,
@@ -338,7 +840,8 @@ will-change: auto;
 
     border-color:var(--cream-accent);
 
-    box-shadow:0 0 0 4px rgba(232,207,168,.35);
+    box-shadow:
+        0 0 0 4px rgba(232,207,168,.35);
 
 }
 
@@ -382,153 +885,235 @@ will-change: auto;
 
 }
 
+
 /* ==================================================
    FORM ALERT
 ================================================== */
 
-.form-alert {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.form-alert{
 
-    margin-top: 24px;
-    padding: 16px 18px;
+    width:100%;
 
-    box-sizing: border-box;
+    display:flex;
 
-    border-radius: 12px;
+    align-items:center;
 
-    position: relative;
+    gap:14px;
 
-    animation: alertSlideIn .35s cubic-bezier(.22,1,.36,1) forwards;
+    margin-top:24px;
+
+    padding:16px 18px;
+
+    box-sizing:border-box;
+
+    border-radius:12px;
+
+    position:relative;
+
+    animation:
+        alertSlideIn .35s cubic-bezier(.22,1,.36,1)
+        forwards;
+
 }
+
 
 /* SUCCESS */
 
-.form-alert-success {
-    background: #f4f8f5;
-    border: 1px solid #cbded2;
+.form-alert-success{
+
+    background:#f4f8f5;
+
+    border:1px solid #cbded2;
+
 }
 
-.form-alert-success .form-alert-icon {
-    color: #2f7654;
+.form-alert-success .form-alert-icon{
+
+    color:#2f7654;
+
 }
+
 
 /* ERROR */
 
-.form-alert-error {
-    background: #faf5f5;
-    border: 1px solid #e2cccc;
+.form-alert-error{
+
+    background:#faf5f5;
+
+    border:1px solid #e2cccc;
+
 }
 
-.form-alert-error .form-alert-icon {
-    color: #9b3d3d;
+.form-alert-error .form-alert-icon{
+
+    color:#9b3d3d;
+
 }
+
 
 /* ICON */
 
-.form-alert-icon {
-    width: 30px;
-    height: 30px;
+.form-alert-icon{
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width:30px;
+    height:30px;
 
-    flex-shrink: 0;
+    display:flex;
 
-    font-size: 26px;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+
+    font-size:26px;
+
 }
+
 
 /* CONTENT */
 
-.form-alert-content {
-    flex: 1;
-    min-width: 0;
+.form-alert-content{
+
+    flex:1;
+
+    min-width:0;
+
 }
 
-.form-alert-content strong {
-    display: block;
+.form-alert-content strong{
 
-    margin-bottom: 4px;
+    display:block;
 
-    font-size: .95rem;
-    font-weight: 700;
-    letter-spacing: .1px;
+    margin-bottom:4px;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    letter-spacing:.1px;
+
 }
 
-.form-alert-success .form-alert-content strong {
-    color: #245c42;
+.form-alert-success .form-alert-content strong{
+
+    color:#245c42;
+
 }
 
-.form-alert-error .form-alert-content strong {
-    color: #7c3030;
+.form-alert-error .form-alert-content strong{
+
+    color:#7c3030;
+
 }
 
-.form-alert-content p {
-    margin: 0;
+.form-alert-content p{
 
-    color: #5c5c5c;
+    margin:0;
 
-    font-size: .88rem;
-    line-height: 1.5;
+    color:#5c5c5c;
+
+    font-size:.88rem;
+
+    line-height:1.5;
+
 }
+
 
 /* CLOSE BUTTON */
 
-.emailForm .form-alert-close {
-    width: 28px;
-    height: 28px;
+.emailForm .form-alert-close{
 
-    margin: 0;
-    padding: 0;
+    width:28px;
+    height:28px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin:0;
+    padding:0;
 
-    flex-shrink: 0;
+    display:flex;
 
-    background: transparent;
-    color: #888;
+    align-items:center;
+    justify-content:center;
 
-    border: none;
-    border-radius: 50%;
+    flex-shrink:0;
 
-    font-size: 18px;
-    font-weight: normal;
+    background:transparent;
 
-    cursor: pointer;
+    color:#888;
 
-    transform: none;
+    border:none;
+
+    border-radius:50%;
+
+    font-size:18px;
+
+    font-weight:normal;
+
+    cursor:pointer;
+
+    transform:none;
+
     transition:
         background .2s ease,
         color .2s ease;
+
 }
 
-.emailForm .form-alert-close:hover {
-    background: rgba(0, 0, 0, .06);
-    color: #333;
+.emailForm .form-alert-close:hover{
 
-    transform: none;
+    background:rgba(0,0,0,.06);
+
+    color:#333;
+
+    transform:none;
+
 }
 
-/* ANIMATION */
 
-@keyframes alertSlideIn {
+/* ==================================================
+   ALERT ANIMATION
+================================================== */
 
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+@keyframes alertSlideIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 
 }
+
+
+/* ==================================================
+   PRIVACY NOTICE
+================================================== */
+
+.privacy-notice{
+
+    margin-top:20px;
+
+    color:#777;
+
+    font-size:.82rem;
+
+    line-height:1.7;
+
+    text-align:center;
+
+}
+
+.privacy-notice a{
+
+    color:var(--burgundy);
+
+    font-weight:600;
+
+}
+
 
 /* ==================================================
    RESPONSIVE
@@ -537,19 +1122,79 @@ will-change: auto;
 @media(max-width:900px){
 
     .header h1{
+
         font-size:2.8rem;
+
     }
 
-    .donate-div h1,
-    .involved h1{
-        font-size:2.2rem;
+    .ways-intro h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .involvement-item,
+    .donation-feature{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+    /*
+       Keep the visual rhythm on tablet/mobile.
+       Sponsor's image moves below its text.
+    */
+
+    .involvement-right .involvement-image{
+
+        order:2;
+
+    }
+
+    .involvement-right .involvement-content{
+
+        order:1;
+
+    }
+
+    .involvement-image{
+
+        height:400px;
+
+    }
+
+    .donation-image{
+
+        height:400px;
+
+    }
+
+    .involvement-content h2{
+
+        font-size:2rem;
+
+    }
+
+    .donation-content h2{
+
+        font-size:2.4rem;
+
     }
 
     .email-form{
+
         padding:35px;
+
     }
 
 }
+
+
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media(max-width:600px){
 
@@ -558,58 +1203,167 @@ will-change: auto;
     .donate-container,
     .get-involved,
     .email-container{
+
         padding:70px 6%;
+
     }
 
     .header h1{
+
         font-size:2.2rem;
+
     }
 
-    .ways-involved h1{
-        font-size:1.6rem;
+    .header p{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .ways-intro{
+
+        margin-bottom:60px;
+
+    }
+
+    .ways-intro h1{
+
+        font-size:2rem;
+
+    }
+
+    .ways-intro p{
+
+        font-size:.98rem;
+
+    }
+
+    .involvement-item{
+
+        margin-bottom:70px;
+
+    }
+
+    .involvement-image{
+
+        height:300px;
+
+        border-radius:20px;
+
+    }
+
+    .involvement-content{
+
+        padding:0;
+
+    }
+
+    .involvement-content h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .involvement-content p{
+
+        font-size:.98rem;
+
+        line-height:1.8;
+
+    }
+
+    .donation-feature{
+
+        gap:40px;
+
+    }
+
+    .donation-content h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .donation-content p{
+
+        font-size:.98rem;
+
+        line-height:1.8;
+
+    }
+
+    .donation-image{
+
+        height:300px;
+
+        border-radius:20px;
+
+    }
+
+    .involved h1{
+
+        font-size:2.2rem;
+
     }
 
     .email-form{
+
         padding:25px;
+
+        border-radius:20px;
+
     }
 
-}/*
-.header h1,
-.header p,
-.ways-involved h1,
-.ways-involved p{
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
+    .emailForm h1{
+
+        font-size:2rem;
+
+    }
+
 }
-.donate-div h1,
-.donate-div p,
-.involved h1,
-.involved p{
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-}
-*/
+
+
+/* ==================================================
+   NAVIGATION LAYERS
+================================================== */
+
 .ways-involved-section{
-    position: relative;
-    z-index: 1;
+
+    position:relative;
+
+    z-index:1;
+
 }
 
 .navbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99999;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:99999;
+
 }
 
 .sidebar{
-    position: fixed;
-    z-index: 100000;
+
+    position:fixed;
+
+    z-index:100000;
+
 }
 
 .overlay{
-    position: fixed;
-    z-index: 99999;
+
+    position:fixed;
+
+    z-index:99999;
+
 }
+
+

@@ -126,7 +126,11 @@ if(!/^\d{4}-\d{2}-\d{2}$/.test(event_date)){
 if(!/^0\d{9}$/.test(contact_phone)){
     return res.status(404).json({error: 'Invalid Phone Number format'})
 }
-
+if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact_email)) {
+    return res
+      .status(400)
+      .json({ error: "Please enter a valid email address" });
+  }
 try{
 
    const eventDetail = await eventDetails.create({

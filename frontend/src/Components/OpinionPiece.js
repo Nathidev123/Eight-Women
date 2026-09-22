@@ -1,3 +1,4 @@
+import './Opinion.css'
 const OpinionPiece = () => {
 
     const handleClick = () => {

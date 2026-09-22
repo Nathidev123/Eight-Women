@@ -69,6 +69,7 @@ const navigate = useNavigate()
                 type="date"
                 onChange={handleChange}
                 name="event_date"
+                min={new Date().toISOString().split("T")[0]}
                 value={formData.event_date}
                 className={emptyFields.includes('event_date') ? 'error' : ''}
             />

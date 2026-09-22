@@ -639,7 +639,7 @@ text-decoration:underline;
         0 12px 30px rgba(123,30,43,.15);
 }
 
-/* Default state */
+
 
 .edit-btn.edit{
     background:#7B1E2B;
@@ -678,4 +678,142 @@ text-decoration:underline;
 .edit-btn svg{
     margin-right:.6rem;
     font-size:.95rem;
+}
+/* ================================
+   EVENT CTA
+================================ */
+
+.event-cta {
+    width: 100%;
+    padding: 70px 8%;
+    background: #f8f4ee;
+}
+
+.event-cta-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    background: #ffffff;
+    border: 1px solid rgba(90, 19, 32, 0.12);
+    border-radius: 18px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.event-cta-content > div:first-child {
+    max-width: 650px;
+}
+
+.event-cta .section-tag {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.event-cta h2 {
+    margin: 0 0 10px;
+
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    font-weight: 600;
+
+    color: #5a1320;
+}
+
+.event-cta p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: #555;
+}
+
+/* CTA BUTTON */
+
+.event-attend-button {
+    flex-shrink: 0;
+
+    padding: 15px 28px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #7b1e2b;
+    color: #ffffff;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.event-attend-button:hover {
+    background: #5a1320;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(90, 19, 32, 0.2);
+}
+
+.event-attend-button:active {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .event-cta {
+        padding: 50px 5%;
+    }
+
+    .event-cta-content {
+        padding: 35px 28px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    .event-attend-button {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .event-cta {
+        padding: 40px 20px;
+    }
+
+    .event-cta-content {
+        padding: 30px 22px;
+        border-radius: 14px;
+    }
+
+    .event-cta h2 {
+        font-size: 1.7rem;
+    }
+
+    .event-cta p {
+        font-size: 0.95rem;
+    }
+
 }

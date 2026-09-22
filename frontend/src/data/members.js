@@ -21,8 +21,16 @@ const members = [
         ,and public engagement. Her commitment to equality, dignity, and socio-economic justice has made her a respected voice in the ongoing pursuit of a more just and inclusive South Africa.,`,
         videos: [
             {
+                tile: "Legal Lifeline Ep 9 | South Africa's New Eviction Laws Explained | What the PIE Bill Really Means",
+                url: "https://www.youtube.com/embed/02OkOGfRpcw?si=lSlQODEVI0i-anxF"
+            },
+            {
                 title: "The Constitution Promises Housing… So Why Are South Africans Still Fighting Evictions?",
                 url: "https://www.youtube.com/embed/NSQ1KRTPmhk?si=uG_dEEOiGcItCMPN"
+            },
+            {
+                title: "Access to healthcare in South Africa",
+                url: "https://www.youtube.com/embed/JufyVb1CuVU?si=PMdmnTk9yz8M8TtK"
             },
             {
                 title: "Nomzamo Zondo on South Africa's Xenophobia Crisis & Operation Dudula",
@@ -61,8 +69,8 @@ const members = [
                 url: "https://www.youtube.com/embed/9b_Jfsmu08E?si=bFL0cTVlAJoStIHx" 
             },
             {
-                title: "Marikana Massacre | Discussion | More than R300m paid out in claims",
-                url: "https://www.youtube.com/embed/w035VufTS8Y?si=1-2cFVVVNJXPQe4Y"
+                title: "Justice for Marikana, 13 years on… with Nomzamo Zondo",
+                url: "https://www.youtube.com/embed/Wn_Hb6IvnQQ?si=j25L_giCB32kBzWL"
             },
             {
                 title: "Johannesburg CBD Fire Inquiry | Nomzamo Zondo weighs in on the aftermath of the inferno",
@@ -72,7 +80,59 @@ const members = [
                 title: "Discussion | Marikana Massacre | 11 years since 34 miners were gunned down",
                 url: "https://www.youtube.com/embed/YBOG0_k9Vcc?si=fOsUmoCwEwdv6KuJ"
             },
+            {
+                title: "City shacks for Joburg fire victims - Nomzamo Zondo weighs in",
+                url: "https://www.youtube.com/embed/yw4N5lmEoGk?si=QL6qYvA5XAesrYqv"
+            },
+            {
+                title: "Usindiso Building Fire Anniversary | Nomzamo Zondo weighs in on the matter",
+                url: "https://www.youtube.com/embed/oLif8oT4CAE?si=VLUNBnz5VIPqOyZw"
+            },
+            {
+                title: "Talking Point Season 3, Episode 16: 12 years on the Marikana tragedy",
+                url: "https://www.youtube.com/embed/-WIPWT5JI18?si=6oezA_mwVU3mz1Jb"
+            },
+            {
+                title: "Addressing the Joburg CBD building issue after yet another fire",
+                url: "https://www.youtube.com/embed/4mhNyL0k4og?si=2xOCoNVCLNVWQqfX" 
+            },
+            {
+                title: "EC Education Department issues notice to deregister Bergview College",
+                url: "https://www.youtube.com/embed/vBJoh82dXNs?si=NNhX3yYipblcURX0" 
+            },
+            {
+                title: "Mixed reactions to Oscar Pistorius' release on parole",
+                url: "https://www.youtube.com/embed/iKeOyW9yyAE?si=23k_1uTEcPKgsfZT"
+            },
             //3 years +
+            {
+                title: "Joburg fire a wake-up call for city's leadership",
+                url: "https://www.youtube.com/embed/0VMcCPp3fqI?si=nKUdBC38EEKzf0jA" 
+            },
+            {
+                title: "PRESS CONFERENCE | IEJ and #PTG go to court to challenge unfair exclusion of millions from SRD grant",
+                url: "https://www.youtube.com/embed/bi0YNQtMD-c?si=NRPyoPOvSaldZXbQ"
+            },
+            {
+                title: "Marikana Massacre | Discussion | More than R300m paid out in claims",
+                url: "https://www.youtube.com/embed/w035VufTS8Y?si=1-2cFVVVNJXPQe4Y"
+            },
+            {
+                title: "SERI director reflects on decades of social justice in SA",
+                url: "https://www.youtube.com/embed/Qa27RDZunNo?si=nbulb9IsK_HB9-WK"
+            },
+            {
+                title: "Unfiltered | Will Marikana victims ever receive justice?",
+                url: "https://www.youtube.com/embed/iz-NMovWTFQ?si=CB-1DpQxbTud92rY"
+            }, 
+            {
+                title: "The State of the Judiciary in South Africa",
+                url: "https://www.youtube.com/embed/gw8HP6iOBWI?si=Dz930SXG8OI4bylN"
+            },
+            {
+                title: "Marikana 10 Years On: The Future of Marikana",
+                url: "https://www.youtube.com/embed/apcsnlgg_to?si=3aKKUJWZV8gP-c-U"
+            },
             {
                 title: "Operation Dudula dragged to court",
                 url: "https://www.youtube.com/embed/5yId6ozinDQ?si=OlylHoyXUpXqT0UL"
@@ -106,12 +166,66 @@ const members = [
                 title: "Ubomi Bethu, Nemizamo Yethu: With Nomzamo Zondo",
                 url: "https://www.youtube.com/embed/t0Q77kAReK8?si=h5Q2TbDp-jnUZLcS"
             },
-
-
+            {
+                title: "Was Zuma's arrest the only trigger for July 2021 arrest?",
+                url: "https://www.youtube.com/embed/HCATSV3cKtI?si=LyHRO5JWHxDrlzAa"
+            },
+            {
+                title: "Live | Remembering Marikana MarikanaMassacre with Nomzamo Zondo.",
+                url: "https://www.youtube.com/embed/E6i29qMojgM?si=doSVofu1xS_k7fSo"
+            },
+            {
+                title: "Public Seminar: Marikana - 10 years on",
+                url: "https://www.youtube.com/embed/chPAZs0i4Fk?si=UntEMzLjT7DF-w8a" 
+            },
+            {
+                title: "DISCUSSION | Efforts to curb the involvement of foreigners in the informal sector",
+                url: "https://www.youtube.com/embed/beoRBuquErM?si=LHlpL03U47oXg7wf"
+            },
+            {
+                title: "ConCourt rules against awarding damages for 'socio-economic rights",
+                url: "https://www.youtube.com/embed/BFfIuWrSkxk?si=W2F19d5oLIC7-VaB"
+            },
+            {
+                title: "Winnie Mandela Informal Settlement residents have waited more than 20 years for RDP houses",
+                url: "https://www.youtube.com/embed/MnKSFwsEZ10?si=Qbz-7X_68gU2B1jp"
+            },
+            {
+                title: "Makhubela’s exit will ensure Marshalltown fire inquiry is fair - Zondo",
+                url: "https://www.youtube.com/embed/ufug_-slyNI?si=aIwsxtHvu7io1lqD"
+            },
+            {
+                title: "Calls for government to help inner city residents in hijacked buildings",
+                url: "https://www.youtube.com/embed/5Pp8S97ZHVw?si=_vbzkK-YhXJzm0m0"
+            },
+            {
+                title: "Sanitary pads added to zero-rated items",
+                url: "https://www.youtube.com/embed/ZfWvY2VGlUg?si=YVpZNr0Ep5rARelo"
+            },
+            {
+                title: "Covid-19: What is a state of disaster?",
+                url: "https://www.youtube.com/embed/2nZGzbu_MLI?si=0fv7igRiogN0lR-D"
+            },
+            {
+                title: "Marikana Massacre | Most of the Farlam Commission recommendations not implemented: SERI",
+                url: "https://www.youtube.com/embed/x5_XvWhLIaw?si=-I70FVCQwp9r85Dy"
+            },
+            {
+                title: "Justice for #MarikanaMassacre victims, nine years on.",
+                url: "https://www.youtube.com/embed/g8M8-YBxZy4?si=5Md-gdNgwF8cANA0"
+            },
             //5 years +
+            {
+                title: "Has there been little progress made in prosecuting and holding individuals for Marikana massacre?",
+                url: "https://www.youtube.com/embed/7X5CsO-NoFQ?si=TUpVPWd1_bNlUaXS"
+            },
             {
                 title: "Wits Protest | Nomzamo Zondo, executive director at Socio Economic Rights on the Wits protest",
                 url: "https://www.youtube.com/embed/2pYQqkSijCU?si=4FOfQk9K8TGda0nz"
+            },
+            {
+                title: "NPA confident about its case against six individuals over Marikana Massacre",
+                url: "https://www.youtube.com/embed/sJGZ5-pyLpg?si=eHbxgHW-kvqNx4Ip"
             },
             {
                 title: "The Socio Economic Rights Institute has condemned SAPS for unlawful use of force",
@@ -131,22 +245,57 @@ const members = [
                 url: "https://www.youtube.com/embed/wBu7AX6OoAA?si=q5I0pAEYrQ1no_HK"
             },
             {
+                title: "Informal traders | Joburg MMC accused of incitement",
+                url: "https://www.youtube.com/embed/PJkJV7LvNzo?si=tI3rruxcaGEBtMQQ" 
+            },
+            {
+                title: "Poor black communities have been unfairly targeted by police - SERI",
+                url: "https://www.youtube.com/embed/2ELelbo-8lY?si=Pj64KSYJHhGZyu9z"
+            },
+            {
+                title: "8th commemoration of the Marikana Masaccre | SERI reacts",
+                url: "https://www.youtube.com/embed/7yBkf87UrgI?si=hnb31v4YAUnS7JVX"
+            },
+            {
                 title: "Representative of 36 families who were affected by Marikana massacre speaks to us",
                 url: "https://www.youtube.com/embed/7ijf2XmXGxY?si=Zi_6FURSEIxHznY5" 
+            },
+            {
+                title: "Marikana massacre | Families want Farlam Commission recommendations implemented",
+                url: "https://www.youtube.com/embed/3a45PzmKS-s?si=x-7A_U2-Cs2Rkxfu"
             },
             {
                 title: "Nomzamo Zondo - Lessons from Litigating 'Operation Clean Sweep",
                 url: "https://www.youtube.com/embed/SbtQbZ91Fac?si=1wfbbzm4Imx2bsU5"
             },
+            {
+                title: "Marikana massacre | Call for 16 August to be public holiday",
+                url: "https://www.youtube.com/embed/fhZhMDr0PGs?si=SYcS7iqxLg-7j8F1"
+            },
+            {
+                title: "The Bottom Line, 31 March 2021",
+                url: "https://www.youtube.com/embed/NDksCA0Q0A0?si=E2MIUgTK6d5mpOOC"
+            },
+            {
+                title: "Unfiltered, 07 October 2019",
+                url: "https://www.youtube.com/embed/pVNuU5b6ioc?si=s5uH9REw-eM6cgHR" 
+            },
+            {
+                title: "Dangerous buildings in the JHB CBD under the spotlight",
+                url: "https://www.youtube.com/embed/TlfjRKFzXAM?si=-WuKlo8rlzVNB_0h"
+            }
 
 
 
 
         ],
         //update contact info
-        email:"lesedi@gmail.com",
+        email:"nomzamozondo@gmail.com",
         phone:"085 555 5555"
     },
+
+
+
 
 
 
@@ -175,6 +324,14 @@ const members = [
         advancing equality, dignity, and justice across the African continent.`,
 
         videos: [
+            {
+                title: "Understading the AU Convention on Violence Against Women and Girls",
+                url: "https://www.youtube.com/embed/Znhop7KqTcM?si=Nq-HeBqccZQXXwgj"
+            },
+            {
+                title: "PAP PROTEST",
+                url: "https://www.youtube.com/embed/0ARemxbDxpg?si=KkHaQu1-ODyvTrgu"
+            },
             {
                 title: "ConCourt to hear arguments on consent in sexual offences",
                 url: "https://www.youtube.com/embed/U7ygjGhVyis?si=y8OtENGOSNoLyCJL"
@@ -205,6 +362,10 @@ const members = [
                 title: "State Accountability on Gender-Based Violence in Africa | #AfricanDiaries",
                 url: "https://www.youtube.com/embed/b_aYVjP6mLk?si=Q6jSgKiWK5qerOuF" 
             },
+            {
+                title: "Be Gentle With Yourself But Stay Unwavering | Mid Week Tease",
+                url: "https://www.youtube.com/embed/mauwxCKcPC0?si=osHEp8Q74QoYdun7"
+            },
             //1year+
             {
                 title: "Alarming rise in missing children cases in South Africa",
@@ -213,6 +374,10 @@ const members = [
             {
                 title: "National Council on GBV and Femicide bill is toothless",
                 url: "https://www.youtube.com/embed/ouCS6gOqw0k?si=JbhWfFPNJ7XBlBn9"
+            },
+            {
+                title: "Violence and harassment in the workplace",
+                url: "https://www.youtube.com/embed/3ak_Y2DQpn8?si=xL4A-b691diykVwl"
             },
             {
                 title: "Judicial conduct tribunal hearing resumes tomorrow",
@@ -231,12 +396,24 @@ const members = [
                 url: "https://www.youtube.com/embed/CCf1shJry4o?si=dZ2gR6mQ4nIJ-AqC"
             },
             {
+                title: "Mixed reactions to NPA's decision on minor's alleged rape case",
+                url: "https://www.youtube.com/embed/0-nQwboa_y4?si=ZNRRYri9YSTCQcr_"
+            },
+            {
+                title: "Court to hear Divorce Act matter",
+                url: "https://www.youtube.com/embed/zG625JrAKfA?si=8v3npeIFuVTVbzOU"
+            },
+            {
                 title: "Gender-based violence a real challenge in SA",
                 url: "https://www.youtube.com/embed/zwFv0aeIr9I?si=iiYXbpcnPkhDXq2V" 
             },
             {
                 title: "State accountable for failure to convict Omotoso",
                 url: "https://www.youtube.com/embed/FzBKp9RsYEE?si=WZI6kHmVFeQsd2uy"    
+            },
+            {
+                title: "Woman Drag Cyril Ramaphosa To Court; South African Wake Up To An Unpleasant News This Morning",
+                url: "https://www.youtube.com/embed/gy00bbmtQbU?si=8taA71ej7_-yXCei"
             },
             {
                 title: "Debate around interpretation of power in workplaces",
@@ -254,7 +431,23 @@ const members = [
                 title: "Outrage after Olorato Mongale's murder",
                 url: "https://www.youtube.com/embed/PLU3sqrGRoo?si=kRXv8r8-OosndL3A"
             },
+            {
+                title: "Gender-based violence concerns in South Africa",
+                url:"https://www.youtube.com/embed/NgAHjtpuWqk?si=hfccwda4sK8vDw2V"
+            },
+            {
+                title: "#10 DEMOCRACIAS EN DISPUTA/DEMOCRACIES IN DISPUTE: AFRICA",
+                url: "https://www.youtube.com/embed/X4nJ8LPV4KA?si=xNskS_WZzhV9mfQH"
+            },
+            {
+                title: "Movement Beyond Borders: What we can learn from South Africa’s Case at the ICJ - M4BL + Global Black",
+                url: "https://www.youtube.com/embed/EbBf4NvgrnQ?si=CXsYAAaPM-f7yH30"
+            },
             //3  years +
+            {
+                title: "Ramaphosa requests second GBVF summit amid criticism",
+                url: "https://www.youtube.com/embed/vTvfVPVox6c?si=dWsva2co4pVyCwmB"
+            },
             {
                 title: "16 Days of Activism for No Violence against Women and Children",
                 url:"https://www.youtube.com/embed/xf6Bz8QKqMk?si=6ComBqboyRWSFmqI"
@@ -269,10 +462,6 @@ const members = [
                 url: "https://www.youtube.com/embed/BMF75CaeEX4?si=zRI4NjJb7kxnD8MT" 
             },
             {
-                title: "South Africa's Youth Voice: Prof Mamokgethi Phakeng, Shaeera Kalla & Koketso Moeti (Panel)",
-                url: "https://www.youtube.com/embed/5iGO0xtteBA?si=9EQHNxqyrYDabVVU"
-            },
-            {
                 title: "(Audio Described) Change for LGBTQ+ people in South Africa, ft Sibongile Ndashe, human rights lawyer",
                 url: "https://www.youtube.com/embed/PQj1PaQDqDg?si=eP-R_Hnw_q_aX2LX" 
             },
@@ -284,12 +473,55 @@ const members = [
             {
                 title: "What is the National Strategic Plan on Gender-Based Violence and Femicide?",
                 url: "https://www.youtube.com/embed/l6xfAk4oGl8?si=uF5utIWq8BIsV0Mr"
+            },
+            {
+                title: "Feminist Legal Gains and Setbacks: From the Zuma Rape Trial to the Coko Judgement",
+                url: "https://www.youtube.com/embed/FFl3Xic9gyM?si=k-tIBMyxCJkq09ps"
+            },
+            {
+                title: "Women’s Platform Members Meeting",
+                url: "https://www.youtube.com/embed/tex75hLfuXU?si=_P1DkOu1-NLSdKwH"
+            },
+            {
+                title: "Using Regional and International Mechanisms to Advance SOGIE Litigation?",
+                url: "https://www.youtube.com/embed/VZAXSblkihc?si=Sj6CRm1mtUbyomfO"
+            },
+            {
+                title: "frica Human Rights Day 2021 / Journée des Droits de l’Homme en Afrique 2021",
+                url: "https://www.youtube.com/embed/RT99LvgC-AI?si=QXJiCtXdpOx4LkG4"
+            },
+            {
+                title: "Litigants Forum Members Meeting",
+                url: "https://www.youtube.com/embed/qENYh4m4XNs?si=4w_RSmcEOrQOkC09"
+            },
+            {
+                title: "All Eyes on Latin America: Anti-Gender Politics Through Transnational Lenses",
+                url: "https://www.youtube.com/embed/JQNHyEHPY_U?si=hT20P-TSc-49MnZl"
+            },
+            {
+                title: "Week 3 Chapter Five: Institutional & Operational Arrangements",
+                url: "https://www.youtube.com/embed/MUQMwYxpZo0?si=AxGMN_C5Nbdb5Nvs"
+            },
+            {
+                title: "The Book Stokvel Charlotte Maxeke Webinar",
+                url: "https://www.youtube.com/embed/od7XNbZ4EwQ?si=T_ShkV640qUqj4ty"
+            },
+            {
+                title: "ISLA Conversations with Dr. Ruth Nekura",
+                url: "https://www.youtube.com/embed/oYQF0WQ7siY?si=YtoVMptKonXmRL_A"
+            },
+            {
+                title: "Civil society reflections on the Rules of Procedure 2020 of the African Commission",
+                url: "https://www.youtube.com/embed/AiEwP4vNPdA?si=TYRnRVk4vLT4yeVu"
+            },
+            {
+                title: "Realizing and Revising Intersectionality Across Space and Place Local and Global Narratives",
+                url: "https://www.youtube.com/embed/Pwvg7qbmAuM?si=7qPn2mrXekZISZ6f"
             }
-            
 
 
         ],
-        email:"nomvula@gmail.com",
+        email:"sibongilendashe@gmail.com",
         phone:"082 222 3333"
     },
     {
@@ -341,6 +573,10 @@ videos: [
             {
                 title: "Civil group Amandla.Mobi fights alleged collusion between business and government: Koketso Moeti",
                 url: "https://www.youtube.com/embed/WCPaVQXYipo?si=vYMNI3uXqUycaeor"
+            },
+            {
+                title: "South Africa's Youth Voice: Prof Mamokgethi Phakeng, Shaeera Kalla & Koketso Moeti (Panel)",
+                url: "https://www.youtube.com/embed/5iGO0xtteBA?si=9EQHNxqyrYDabVVU"
             },
 
             {

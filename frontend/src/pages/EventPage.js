@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import placeholder from "../assets/placeholder.jpeg";
+import { Link } from "react-router-dom";
 import './EventPage.css'
 import {
     FaCalendarAlt,
@@ -113,7 +114,36 @@ const EventPage = () => {
     </div>
 
 </section>
+        {/*Attend Button */}
+            <section className="event-cta">
+
+    <div className="event-cta-content">
+
+        <div>
+            <span className="section-tag">
+                Want to join us?
+            </span>
+
+            <h2>
+                Be part of this event.
+            </h2>
+
+            <p>
+                Register your interest and connect with Eight Women.
+            </p>
+        </div>
+
+        <Link
+            className="event-attend-button"
             
+            to={'/get-involved'}
+        >
+            Register to Attend
+        </Link>
+
+    </div>
+
+</section>
             {/* QUICK INFO */}
 
             <section className="event-info-grid">

@@ -3,6 +3,10 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import volunteer from '../assets/volunteer.jpg'
+import attend from '../assets/attend2.png'
+import donation from '../assets/donation.jpg'
+import sponsor from '../assets/sponsor.jpg'
 import { IoLocationSharp, IoCheckmarkCircle, IoCloseCircle, IoClose } from "react-icons/io5";
 import './GetInvolved.css' 
 const GetInvolved = () => {
@@ -14,8 +18,19 @@ const GetInvolved = () => {
     const [alert, setAlert] = useState(null)
     const [loading, setLoading] = useState(false);
 
+
     const handleSubmit = (e) => {
         e.preventDefault()
+        const validatePhone = phoneNumber.replace(/\D/g, '');
+
+        if (!/^0\d{9}$/.test(validatePhone)) {
+        setAlert({
+            type: 'error',
+            message: 'Please enter a valid South African phone number.'
+        });
+
+        return;
+    }
         setLoading(true);
         
     //EmailJS service ID, template ID, public key
@@ -27,7 +42,7 @@ const GetInvolved = () => {
     const templateParams = {
         from_name: name, 
         from_email: email,
-        phone: phoneNumber,
+        phone: validatePhone,
         message: message,
         to_name: 'Eight Women'
     }
@@ -41,10 +56,10 @@ const GetInvolved = () => {
         setEmail('')
         setMessage('')
         setPhoneNumber('')
-        setLoading(false);
+        setLoading(false)
 
         setTimeout(() => {
-            setAlert(null);
+            setAlert(null)
         }, 5000);
     })
     .catch((error) => {
@@ -64,98 +79,144 @@ const GetInvolved = () => {
 }    
 
     return(<>
-            <section className='get-involved-container'>
-            <div className='header'>
-            <h1>Ways To Get Involved</h1>
-            <p>Thank you for your interest in getting involved with Eight Women. 
-                Every act of support, whether through your time, skills, resources, 
-                or advocacy, strengthens our mission and helps create meaningful change. 
-                We welcome your participation and look forward to making an impact together.
-                {/*  to have a nice background image behind this   */}
-            </p>
+            <section className="ways-involved-section">
 
-            </div>
+                <div className="ways-intro">
+                    <span>HOW YOU CAN HELP</span>
+                    <h1>Ways To Get Involved</h1>
+                    <p>
+                        There are many ways to support Eight Women and contribute
+                        to the work we do in our communities.
+                    </p>
+                </div>
+
+                <div className="involvement-item involvement-left">
+                    <div className="involvement-image">
+                        <img src={volunteer} alt="Volunteering with Eight Women" />
+                    </div>
+
+                    <div className="involvement-content">
+                        <span>01</span>
+                        <h2>Volunteer</h2>
+                        <p>
+                            Volunteers are at the heart of our work. Whether you can
+                            give a few hours, support us regularly, or contribute your
+                            skills to a specific project, your time and commitment make
+                            a meaningful difference.
+                        </p>
+                        
+                    </div>
+                </div>
+
+
+                <div className="involvement-item involvement-right">
+                    <div className="involvement-content">
+                        <span>02</span>
+                        <h2>Become A Partner Or Sponsor</h2>
+                        <p>
+                            Meaningful change is built through collaboration. By becoming
+                            a partner or sponsor, you help us expand our reach, strengthen
+                            our programmes, and create lasting opportunities for the
+                            communities we serve.
+                        </p>
+                    
+                    </div>
+
+                    <div className="involvement-image">
+                        <img src={sponsor} alt="Eight Women partnership and sponsorship" />
+                    </div>
+                </div>
+
+
+                <div className="involvement-item involvement-left">
+                    <div className="involvement-image">
+                        <img src={attend} alt="Attending an Eight Women event" />
+                    </div>
+
+                    <div className="involvement-content">
+                        <span>03</span>
+                        <h2>Attend Our Events</h2>
+                        <p>
+                            Our events provide opportunities to learn, connect, and be
+                            part of meaningful conversations that inspire positive change.
+                            Your presence helps strengthen our collective voice.
+                        </p>
+                        
+                    </div>
+                </div>
+
             </section>
 
-            <section className='ways-involved-section'>
-                <div className='ways-involved'>
-                <h1>Volunteer</h1>
-               
-                <p>
-                Volunteers are at the heart of our work. Whether you can give a few hours, support us regularly, or contribute your 
-                skills to a specific project, your time and commitment make a meaningful difference. Every contribution helps us 
-                strengthen our programmes and create lasting impact in the communities we serve.
-                </p>
 
+            <section className="donate-container">
 
-                <h1>Become A Partner Or Sponsor</h1>
+                <div className="donation-feature">
 
-                <p>
-                Meaningful change is built through collaboration. By becoming a partner or sponsor, you help us expand our reach, 
-                strengthen our programmes, and create lasting opportunities for the communities we serve. Whether through financial 
-                support, in-kind contributions, or strategic partnerships, your organisation can play a vital role in advancing our 
-                mission and making a lasting impact.
-                </p>
+                    <div className="donation-content">
+                        <span>04</span>
+                        <h2>Make A Donation</h2>
 
+                        <p>
+                            Every donation, no matter the size, helps us continue our
+                            work and expand our impact. Your generosity supports our
+                            programmes, community initiatives, advocacy efforts, and
+                            opportunities for healing and empowerment.
+                        </p>
 
-                <h1>Attend Our Events</h1>
-                <p>Our events provide opportunities to learn, connect, and be part of meaningful conversations that inspire positive 
-                    change. Whether you join a community dialogue, workshop, remembrance, or public gathering, your presence helps strengthen 
-                    our collective voice and supports our mission of building more compassionate, inclusive communities.</p>
+                        
+                    </div>
+
+                    <div className="donation-image">
+                        <img src={donation} alt="Supporting Eight Women's work" />
+                    </div>
+
                 </div>
+
+            </section>
+
             
-            </section>
-
-            <section className='donate-container'>
-                <div className='donate-div'>
-                <h1>Make A Donation</h1>
-                <p>Every donation, no matter the size, helps us continue our work and expand our impact. Your generosity supports our programmes,
-                     community initiatives, advocacy efforts, and opportunities for healing and empowerment. Together, we can create lasting change 
-                     and build stronger, more resilient communities for future generations.</p>
-                </div>
-            </section>
 
             <section className='get-involved'>
-            <div className='involved'>
-            <h1>Get Involved With Eight Women</h1>
-            <p>
-            Whether you'd like to volunteer, become a partner or sponsor, attend our events, or support our work through a donation, we'd be 
-            delighted to hear from you. Complete the form below, and we'll be in touch to discuss how you can become part of the Eight Women 
-            community. We look forward to welcoming you.
-            </p>
-            </div>
+                <div className='involved'>
+                <h1>Get Involved With Eight Women</h1>
+                <p>
+                Whether you'd like to volunteer, become a partner or sponsor, attend our events, or support our work through a donation, we'd be 
+                delighted to hear from you. Complete the form below, and we'll be in touch to discuss how you can become part of the Eight Women 
+                community. We look forward to welcoming you.
+                </p>
+                </div>
 
            <div className="contact-details">
 
-    <div className="contact-item">
-        <FaPhoneAlt className="contact-icon" />
-        <div>
-            <h3>Call Us</h3>
-            <a href='tel:0815556358'>0815556358</a>
-        </div>
-    </div>
+            <div className="contact-item">
+                <FaPhoneAlt className="contact-icon" />
+                <div>
+                    <h3>Call Us</h3>
+                    <a href='tel:0815556358'>0815556358</a>
+                </div>
+            </div>
 
-    <div className="contact-item">
-        <MdEmail className="contact-icon" />
-        <div>
-            <h3>Email Us</h3>
-            <p>eightwomen@icloud.com</p>
-        </div>
-    </div>
+            <div className="contact-item">
+                <MdEmail className="contact-icon" />
+                <div>
+                    <h3>Email Us</h3>
+                    <p>eightwomen@icloud.com</p>
+                </div>
+            </div>
 
-    <div className="contact-item">
-        <IoLocationSharp className="contact-icon" />
-        <div>
-            <h3>Visit Us</h3>
-            {/* when get real address will link to google maps    */}
-            <p>
-                Second Floor Orange Drive, National Office,
-                Block C, Braamfontein, Johannesburg 1756
-            </p>
-        </div>
-    </div>
+            <div className="contact-item">
+                <IoLocationSharp className="contact-icon" />
+                <div>
+                    <h3>Visit Us</h3>
+                    {/* when get real address will link to google maps    */}
+                    <p>
+                        Second Floor Orange Drive, National Office,
+                        Block C, Braamfontein, Johannesburg 1756
+                    </p>
+                </div>
+            </div>
 
-</div>
+        </div>
             </section>
 
             <section className='email-container'>
@@ -168,6 +229,7 @@ const GetInvolved = () => {
             placeholder="Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            maxLength="50"
             required
             />
             <input 
@@ -175,13 +237,16 @@ const GetInvolved = () => {
             placeholder="Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            maxLength="260"
             required
             />
             <input 
             type="tel"
+            inputMode='numeric'
             placeholder="Phone Number"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
+            maxLength="12"
             required
             />
             <textarea
@@ -190,6 +255,7 @@ const GetInvolved = () => {
             rows="10"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            maxLength="2500"
             required>
             
             </textarea>
