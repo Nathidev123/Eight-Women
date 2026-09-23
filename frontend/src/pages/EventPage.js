@@ -20,7 +20,6 @@ import {
 const EventPage = () => {
     //const API_URL = process.env.REACT_APP_API_URL;
     const { id } = useParams();
-    const navigate = useNavigate();
 
     const [event, setEvent] = useState(null);
 
@@ -136,7 +135,7 @@ const EventPage = () => {
         <Link
             className="event-attend-button"
             
-            to={'/get-involved'}
+            to={'/get-involved#emailForm'}
         >
             Register to Attend
         </Link>

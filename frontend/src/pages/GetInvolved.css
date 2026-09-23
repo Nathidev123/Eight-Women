@@ -223,7 +223,7 @@ body{
 
     overflow:hidden;
 
-    border-radius:var(--radius);
+    /*border-radius:var(--radius);*/
 
     box-shadow:var(--shadow);
 
@@ -596,7 +596,7 @@ body{
 
     overflow:hidden;
 
-    border-radius:var(--radius);
+    /*border-radius:var(--radius);*/
 
     box-shadow:
         0 25px 50px rgba(0,0,0,.20);
@@ -784,7 +784,7 @@ body{
 
     padding:50px;
 
-    border-radius:var(--radius);
+    /*border-radius:var(--radius);*/
 
     box-shadow:var(--shadow);
 
@@ -821,7 +821,7 @@ body{
 
     border:2px solid #ececec;
 
-    border-radius:16px;
+    /*border-radius:16px;*/
 
     font-size:1rem;
 
@@ -865,7 +865,7 @@ body{
 
     border:none;
 
-    border-radius:16px;
+    /*border-radius:16px;*/
 
     font-size:1rem;
 
@@ -1250,7 +1250,7 @@ body{
 
         height:300px;
 
-        border-radius:20px;
+        /*border-radius:20px;*/
 
     }
 
@@ -1298,7 +1298,7 @@ body{
 
         height:300px;
 
-        border-radius:20px;
+        /*border-radius:20px;*/
 
     }
 
@@ -1312,7 +1312,7 @@ body{
 
         padding:25px;
 
-        border-radius:20px;
+        /*border-radius:20px;*/
 
     }
 

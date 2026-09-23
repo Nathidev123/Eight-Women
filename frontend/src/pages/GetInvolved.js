@@ -11,6 +11,7 @@ import { IoLocationSharp, IoCheckmarkCircle, IoCloseCircle, IoClose } from "reac
 import './GetInvolved.css' 
 const GetInvolved = () => {
 
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
@@ -18,6 +19,7 @@ const GetInvolved = () => {
     const [alert, setAlert] = useState(null)
     const [loading, setLoading] = useState(false);
 
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -222,7 +224,9 @@ const GetInvolved = () => {
             <section className='email-container'>
 
             <div className='email-form'>
-            <form onSubmit={handleSubmit} className="emailForm">
+            <form onSubmit={handleSubmit}
+             className="emailForm"
+             id='emailForm'>
             <h1><strong>Contact Us</strong></h1>
             <input 
             type="text"

@@ -140,7 +140,64 @@ body{
     width:100%;
 
 }
+.nav-user1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 8px;
+}
 
+.user-email1 {
+    color: var(--cream, #F8F4EE);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+.logout-btn1 {
+    border: 1px solid var(--beige, #E8CFA8);
+    background: transparent;
+    color: var(--beige, #E8CFA8);
+    padding: 9px 17px;
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.logout-btn1:hover {
+    background: var(--beige, #E8CFA8);
+    color: var(--burgundy-dark, #5A1320);
+}
+
+/* Admin link */
+
+.desktop-nav > a:last-child {
+    position: relative;
+}
+
+.desktop-nav > a:last-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background: var(--beige, #E8CFA8);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
+}
+
+.desktop-nav > a:last-child:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
 
 /* ==================================================
@@ -252,7 +309,7 @@ border-right:1px solid rgba(232,207,168,.2);
 
     padding-left:24px;
 }
-
+/*
 .close-btn{
 
     align-self:flex-end;
@@ -305,7 +362,7 @@ border-right:1px solid rgba(232,207,168,.2);
 
     transform:translateY(-2px);
 }
-
+*/
 /* ==================================================
    Overlay
 ================================================== */
@@ -541,47 +598,77 @@ border-right:1px solid rgba(232,207,168,.2);
   Mission Button
 ==================================================*/
 
-.mission-btn1{
+.mission-btn1 {
+    position: relative;
 
-    display:inline-flex;
+    padding: 16px 32px;
 
-    justify-content:center;
+    border: 1px solid var(--burgundy-dark);
+    border-radius: 0;
 
-    align-items:center;
+    background: transparent;
+    color: var(--burgundy-dark);
 
-    padding:.75rem 1.5rem;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 
-    border:none;
+    cursor: pointer;
 
-    border-radius:999px;
+    overflow: hidden;
 
-    background:linear-gradient(
-        135deg,
-        var(--burgundy),
-        var(--burgundy-dark)
-    );
-
-    color:white;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:var(--transition);
-
+    transition:
+        color .4s var(--ease),
+        background .4s var(--ease),
+        transform .4s var(--ease);
 }
 
-.mission-btn1:hover{
 
-    background:linear-gradient(
-        135deg,
-        var(--burgundy),
-        var(--burgundy-dark)
-        
-    );
+.mission-btn1 {
+    position: relative;
 
-    transform:translateY(-2px);
+    padding: 16px 32px;
 
+    border: 1px solid var(--gold);
+    border-radius: 0;
+
+    background: var(--burgundy-dark);
+    color: var(--gold);
+
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        color .4s var(--ease),
+        background .4s var(--ease),
+        transform .4s var(--ease);
+}
+
+.mission-btn1::after {
+    content: "↓";
+
+    margin-left: 18px;
+
+    color: var(--gold);
+
+    transition: transform .4s var(--ease);
+}
+
+.mission-btn1:hover {
+    background: var(--gold);
+    color: var(--burgundy-dark);
+    transform: translateY(-3px);
+}
+
+.mission-btn1:hover::after {
+    transform: translateY(4px);
 }
 
 /*==================================================
@@ -2008,7 +2095,7 @@ RESPONSIVE
     max-width:640px;
 
 }
-
+/*
 .section-tag{
 
     display:inline-flex;
@@ -2035,7 +2122,7 @@ RESPONSIVE
     text-transform:uppercase;
 
 }
-
+*/
 .initiative-text h2{
 
     margin:28px 0;

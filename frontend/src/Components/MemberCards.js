@@ -1,7 +1,6 @@
 import members from "../data/members";
 import "./Members.css";
 import { useNavigate } from "react-router-dom";
-
 const MemberCards = () => {
     const navigate = useNavigate();
 

@@ -59,7 +59,7 @@ DASHBOARD HEADER
             rgba(92,18,29,.96)
         );
 
-    border-radius:28px;
+    /*border-radius:28px;*/
 
     color:#fff;
 
@@ -95,7 +95,7 @@ DASHBOARD HEADER
 
     border:2px solid rgba(255,255,255,.08);
 
-    border-radius:50%;
+    /*border-radius:50%;*/
 
     left:-70px;
     bottom:-60px;
@@ -177,7 +177,7 @@ DASHBOARD HEADER
 
     height:4px;
 
-    border-radius:999px;
+    /*border-radius:999px;*/
 
     background:var(--cream-accent);
 
@@ -504,7 +504,7 @@ DASHBOARD HEADER
 
     background:white;
 
-    border-radius:var(--radius);
+    /*border-radius:var(--radius);*/
 
     overflow:hidden;
 
@@ -633,7 +633,7 @@ DASHBOARD HEADER
 
     border:none;
 
-    border-radius:999px;
+    /*border-radius:999px;*/
 
     background:var(--burgundy);
 

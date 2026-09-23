@@ -18,6 +18,7 @@ import {
     FaEdit,
     FaSave
 } from "react-icons/fa";
+import './AdminEvent.css'
 const AdminEventPage = () => {
 const { id } = useParams()
 const navigate = useNavigate()

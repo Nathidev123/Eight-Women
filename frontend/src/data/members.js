@@ -1,4 +1,11 @@
-import profilePic from "../assets/profilePic.jpeg"
+import NomzamoZondo from '../assets/profiles/NomzamoZondo.jpeg'
+import SibongileNdashe from '../assets/profiles/SibongileNdashe.jpg'
+import PhumiMtetwa from '../assets/profiles/Phumi_Mtetwa.jpg'
+import KoketsoMoeti from '../assets/profiles/KoketsoMoeti.jpg'
+import NomfundoMogapi from '../assets/profiles/NomfundoMogapi.jpg'
+import SeadimoTlale from '../assets/profiles/SeadimoTlale.jpg'
+import NabeelahMia from '../assets/profiles/NabeelahMia.jpg'
+import KwezilomsoMbandazayo from '../assets/profiles/KwezilomsoMbandazayo.jpeg'
 
 const members = [
 /*  Nomzamo Zondo,Sibongile Ndashe, Phumi Mtetwa, Koketso Moeti,Nomfundo Mogapi,Seadimo Tlale, Naabelah Mia, Kwezilomso Mbandazayo*/
@@ -6,7 +13,7 @@ const members = [
         id:1,
         name:"Nomzamo Zondo",
         role:"Human Rights Attorney & Executive Director, Socio-Economic Rights Institute (SERI)",
-        image:profilePic,
+        image:NomzamoZondo,
         bio:` Nomzamo Zondo is a distinguished South African human rights lawyer and public interest advocate dedicated to advancing   
         constitutional rights and social justice. She serves as the Executive Director of the Socio-Economic Rights Institute of South Africa (SERI), where she 
         leads strategic litigation and advocacy aimed at protecting the rights of marginalized and vulnerable communities across the country.Throughout her career, 
@@ -20,21 +27,101 @@ const members = [
         Recognized as one of South Africa's leading public interest lawyers, Nomzamo Zondo continues to influence constitutional jurisprudence through strategic litigation, policy advocacy
         ,and public engagement. Her commitment to equality, dignity, and socio-economic justice has made her a respected voice in the ongoing pursuit of a more just and inclusive South Africa.,`,
         videos: [
+            //1mo
             {
                 tile: "Legal Lifeline Ep 9 | South Africa's New Eviction Laws Explained | What the PIE Bill Really Means",
                 url: "https://www.youtube.com/embed/02OkOGfRpcw?si=lSlQODEVI0i-anxF"
             },
+            {//2mo
+                title: "Nomzamo Zondo on South Africa's Xenophobia Crisis & Operation Dudula",
+                url: "https://www.youtube.com/embed/WskZp5hvSsA?si=_XFrBktPDbQsZF74" 
+            },
             {
+                title: "Panel discussion: How did South Africa get to June 30th?",
+                url: "https://www.youtube.com/embed/Ma_Ss4_qUSU?si=5NbJ5b-WLxd7S944"
+            },
+            //4+
+            {
+                title: "CoJ intensifies crackdown on illegal CBD structures",
+                url: "https://www.youtube.com/embed/aPCNJFc7fWM?si=NjBHyLsRp44sDvQn"
+            },
+            {//5mo
                 title: "The Constitution Promises Housing… So Why Are South Africans Still Fighting Evictions?",
                 url: "https://www.youtube.com/embed/NSQ1KRTPmhk?si=uG_dEEOiGcItCMPN"
             },
+            {//1+
+                title: "SERI denies working against South Africans",
+                url: "https://www.youtube.com/embed/9A9W3WPnJbM?si=MyNC_z6tc5JXGI0Z"
+            },
+            {
+                title: "Marikana 13 Years On: Families Mourn, Demand Justice",
+                url: "https://www.youtube.com/embed/-nf6hCcJ42s?si=VnnhDe8fVlB7fXbv"
+            },
+
+            {
+                title: "#POWERTalk | 13 years post Marikana massacre - Tracking the Farlam Commission’s Recommendations",
+                url: "https://www.youtube.com/embed/PbHaeY2pyaA?si=EMsz9vFAqWu3GAOz"
+            },
+            {
+                title: "Justice for Marikana, 13 years on… with Nomzamo Zondo",
+                url: "https://www.youtube.com/embed/Wn_Hb6IvnQQ?si=j25L_giCB32kBzWL"
+            },
+            {
+                title: "Reactions to the anti-foreign groups preventing foreign nationals from accessing health care centres",
+                url: "https://www.youtube.com/embed/Xah1ITdQIWY?si=_6JLVIYMlvKfd-Gb"
+            },
+            //2+
+            {
+                title: "City shacks for Joburg fire victims - Nomzamo Zondo weighs in",
+                url: "https://www.youtube.com/embed/yw4N5lmEoGk?si=QL6qYvA5XAesrYqv"
+            },
+            {
+                title: "Johannesburg CBD Fire Inquiry | Nomzamo Zondo weighs in on the aftermath of the inferno",
+                url: "https://www.youtube.com/embed/2RfwCLjZ6zI?si=ChQfPbxlMyLRh2jm" 
+            },
+            {
+                title: "Usindiso Building Fire Anniversary | Nomzamo Zondo weighs in on the matter",
+                url: "https://www.youtube.com/embed/oLif8oT4CAE?si=VLUNBnz5VIPqOyZw"
+            },
+             {
+                title: "Addressing the Joburg CBD building issue after yet another fire",
+                url: "https://www.youtube.com/embed/4mhNyL0k4og?si=2xOCoNVCLNVWQqfX" 
+            },
+            {
+                title: "Makhubela’s exit will ensure Marshalltown fire inquiry is fair - Zondo",
+                url: "https://www.youtube.com/embed/ufug_-slyNI?si=aIwsxtHvu7io1lqD"
+            },
+            {
+                title: "Talking Point Season 3, Episode 16: 12 years on the Marikana tragedy",
+                url: "https://www.youtube.com/embed/-WIPWT5JI18?si=6oezA_mwVU3mz1Jb"
+            },
+            {
+                title: "Calls for government to help inner city residents in hijacked buildings",
+                url: "https://www.youtube.com/embed/5Pp8S97ZHVw?si=_vbzkK-YhXJzm0m0"
+            },
+            {
+                title: "Mtolo on Abahlali baseMjondolo's killing claims",
+                url: "https://www.youtube.com/embed/a7o-5HYSC0U?si=XubnFfeytQQ3NYD-" 
+            },
+            {
+                title: "SERI demands Marshalltown fire victims' involvement at inquiry",
+                url: "https://www.youtube.com/embed/z8ce8kLaPWE?si=OSGMbOZdACeQaais"
+            },
+            {
+                title: "SERI disheartened by acquittal of six police officers in Marikana Massacre",
+                url: "https://www.youtube.com/embed/qEXKE5C9v9s?si=_UDowrCTH-9bcFgU"
+            },
+            {
+                title: "One year since the Usindiso building fire",
+                url: "https://www.youtube.com/embed/pWYnRQ833sI?si=9fFTNZjf88YJP9U2"
+            },
+
+
+
+
             {
                 title: "Access to healthcare in South Africa",
                 url: "https://www.youtube.com/embed/JufyVb1CuVU?si=PMdmnTk9yz8M8TtK"
-            },
-            {
-                title: "Nomzamo Zondo on South Africa's Xenophobia Crisis & Operation Dudula",
-                url: "https://www.youtube.com/embed/WskZp5hvSsA?si=_XFrBktPDbQsZF74" 
             },
             {
                 title: "Decades of struggle over land rights",
@@ -53,10 +140,6 @@ const members = [
                 url: "https://www.youtube.com/embed/nBzOwHurRag?si=__AmxRqWIwky_Ye-" 
             },
             {
-                title: "Mtolo on Abahlali baseMjondolo's killing claims",
-                url: "https://www.youtube.com/embed/a7o-5HYSC0U?si=XubnFfeytQQ3NYD-" 
-            },
-            {
                 title: "Nomzamo Zondo in the Strategic Global Meeting Climate Justice and Corporate Accountability",
                 url: "https://www.youtube.com/embed/Ku5ZGE0GQJM?si=B0L0ByJjaUA-cnup"
             },
@@ -69,32 +152,8 @@ const members = [
                 url: "https://www.youtube.com/embed/9b_Jfsmu08E?si=bFL0cTVlAJoStIHx" 
             },
             {
-                title: "Justice for Marikana, 13 years on… with Nomzamo Zondo",
-                url: "https://www.youtube.com/embed/Wn_Hb6IvnQQ?si=j25L_giCB32kBzWL"
-            },
-            {
-                title: "Johannesburg CBD Fire Inquiry | Nomzamo Zondo weighs in on the aftermath of the inferno",
-                url: "https://www.youtube.com/embed/2RfwCLjZ6zI?si=ChQfPbxlMyLRh2jm" 
-            },
-            {
                 title: "Discussion | Marikana Massacre | 11 years since 34 miners were gunned down",
                 url: "https://www.youtube.com/embed/YBOG0_k9Vcc?si=fOsUmoCwEwdv6KuJ"
-            },
-            {
-                title: "City shacks for Joburg fire victims - Nomzamo Zondo weighs in",
-                url: "https://www.youtube.com/embed/yw4N5lmEoGk?si=QL6qYvA5XAesrYqv"
-            },
-            {
-                title: "Usindiso Building Fire Anniversary | Nomzamo Zondo weighs in on the matter",
-                url: "https://www.youtube.com/embed/oLif8oT4CAE?si=VLUNBnz5VIPqOyZw"
-            },
-            {
-                title: "Talking Point Season 3, Episode 16: 12 years on the Marikana tragedy",
-                url: "https://www.youtube.com/embed/-WIPWT5JI18?si=6oezA_mwVU3mz1Jb"
-            },
-            {
-                title: "Addressing the Joburg CBD building issue after yet another fire",
-                url: "https://www.youtube.com/embed/4mhNyL0k4og?si=2xOCoNVCLNVWQqfX" 
             },
             {
                 title: "EC Education Department issues notice to deregister Bergview College",
@@ -108,6 +167,10 @@ const members = [
             {
                 title: "Joburg fire a wake-up call for city's leadership",
                 url: "https://www.youtube.com/embed/0VMcCPp3fqI?si=nKUdBC38EEKzf0jA" 
+            },
+            {
+                title: "Assessing the Impact of Social Rights Litigation in South Africa: With Particular Reference to Constitutional Court Jurisprudence",
+                url: "https://www.youtube.com/embed/dfS2xWgs7Oc?si=G40jZIvR8IKTAcHv"
             },
             {
                 title: "PRESS CONFERENCE | IEJ and #PTG go to court to challenge unfair exclusion of millions from SRD grant",
@@ -126,10 +189,6 @@ const members = [
                 url: "https://www.youtube.com/embed/iz-NMovWTFQ?si=CB-1DpQxbTud92rY"
             }, 
             {
-                title: "The State of the Judiciary in South Africa",
-                url: "https://www.youtube.com/embed/gw8HP6iOBWI?si=Dz930SXG8OI4bylN"
-            },
-            {
                 title: "Marikana 10 Years On: The Future of Marikana",
                 url: "https://www.youtube.com/embed/apcsnlgg_to?si=3aKKUJWZV8gP-c-U"
             },
@@ -144,10 +203,6 @@ const members = [
             {
                 title: "Nomzamo Zondo commemorates and reflects on the Marikana Massacre",
                 url: "https://www.youtube.com/embed/liI7LTzvvyE?si=hO9hRj8uxtMDmdh3"
-            },
-            {
-                title: "SERI accuses City of Johannesburg councilor Nkululeko Mbundu of inciting violence against its staff",
-                url: "https://www.youtube.com/embed/kPV8nCVjVIE?si=17RXDqVKsB6rRptk" 
             },
             {
                 title: "SERI expresses concern about lack of prosecutions in the Marikana massacre: Nomzamo Zondo",
@@ -179,32 +234,13 @@ const members = [
                 url: "https://www.youtube.com/embed/chPAZs0i4Fk?si=UntEMzLjT7DF-w8a" 
             },
             {
-                title: "DISCUSSION | Efforts to curb the involvement of foreigners in the informal sector",
-                url: "https://www.youtube.com/embed/beoRBuquErM?si=LHlpL03U47oXg7wf"
-            },
-            {
                 title: "ConCourt rules against awarding damages for 'socio-economic rights",
                 url: "https://www.youtube.com/embed/BFfIuWrSkxk?si=W2F19d5oLIC7-VaB"
             },
-            {
-                title: "Winnie Mandela Informal Settlement residents have waited more than 20 years for RDP houses",
-                url: "https://www.youtube.com/embed/MnKSFwsEZ10?si=Qbz-7X_68gU2B1jp"
-            },
-            {
-                title: "Makhubela’s exit will ensure Marshalltown fire inquiry is fair - Zondo",
-                url: "https://www.youtube.com/embed/ufug_-slyNI?si=aIwsxtHvu7io1lqD"
-            },
-            {
-                title: "Calls for government to help inner city residents in hijacked buildings",
-                url: "https://www.youtube.com/embed/5Pp8S97ZHVw?si=_vbzkK-YhXJzm0m0"
-            },
+
             {
                 title: "Sanitary pads added to zero-rated items",
                 url: "https://www.youtube.com/embed/ZfWvY2VGlUg?si=YVpZNr0Ep5rARelo"
-            },
-            {
-                title: "Covid-19: What is a state of disaster?",
-                url: "https://www.youtube.com/embed/2nZGzbu_MLI?si=0fv7igRiogN0lR-D"
             },
             {
                 title: "Marikana Massacre | Most of the Farlam Commission recommendations not implemented: SERI",
@@ -214,7 +250,39 @@ const members = [
                 title: "Justice for #MarikanaMassacre victims, nine years on.",
                 url: "https://www.youtube.com/embed/g8M8-YBxZy4?si=5Md-gdNgwF8cANA0"
             },
+            {
+                title: "Reckoning with the Riots’: A documentary on the July 2021 unrest",
+                url: "https://www.youtube.com/embed/awWCng1sCgE?si=XzBh29Te1mSWFtAK"
+            },
+            {//4+
+                title: "SERI accuses City of Johannesburg councilor Nkululeko Mbundu of inciting violence against its staff",
+                url: "https://www.youtube.com/embed/kPV8nCVjVIE?si=17RXDqVKsB6rRptk" 
+            },
+            {
+                title: "Winnie Mandela Informal Settlement residents have waited more than 20 years for RDP houses",
+                url: "https://www.youtube.com/embed/MnKSFwsEZ10?si=Qbz-7X_68gU2B1jp"
+            },
+            {
+                title: "DISCUSSION | Efforts to curb the involvement of foreigners in the informal sector",
+                url: "https://www.youtube.com/embed/beoRBuquErM?si=LHlpL03U47oXg7wf"
+            },
+            {
+                title: "The State of the Judiciary in South Africa",
+                url: "https://www.youtube.com/embed/gw8HP6iOBWI?si=Dz930SXG8OI4bylN"
+            },
+            {
+                title: "SANEF IAJ Panel: Covering Commissions",
+                url: "https://www.youtube.com/embed/SeTpDyR0rIQ?si=909wAItF7VUg2Oy0"
+            },
             //5 years +
+            {
+                title: "The Bottom Line, 31 March 2021",
+                url: "https://www.youtube.com/embed/NDksCA0Q0A0?si=E2MIUgTK6d5mpOOC"
+            },
+            {
+                title: "Marikana massacre | Call for 16 August to be public holiday",
+                url: "https://www.youtube.com/embed/fhZhMDr0PGs?si=SYcS7iqxLg-7j8F1"
+            },
             {
                 title: "Has there been little progress made in prosecuting and holding individuals for Marikana massacre?",
                 url: "https://www.youtube.com/embed/7X5CsO-NoFQ?si=TUpVPWd1_bNlUaXS"
@@ -256,6 +324,15 @@ const members = [
                 title: "8th commemoration of the Marikana Masaccre | SERI reacts",
                 url: "https://www.youtube.com/embed/7yBkf87UrgI?si=hnb31v4YAUnS7JVX"
             },
+            //6+
+            {
+                title: "Covid-19: What is a state of disaster?",
+                url: "https://www.youtube.com/embed/2nZGzbu_MLI?si=0fv7igRiogN0lR-D"
+            },
+            {
+                title: "Unfiltered, 07 October 2019",
+                url: "https://www.youtube.com/embed/pVNuU5b6ioc?si=s5uH9REw-eM6cgHR" 
+            },
             {
                 title: "Representative of 36 families who were affected by Marikana massacre speaks to us",
                 url: "https://www.youtube.com/embed/7ijf2XmXGxY?si=Zi_6FURSEIxHznY5" 
@@ -269,22 +346,13 @@ const members = [
                 url: "https://www.youtube.com/embed/SbtQbZ91Fac?si=1wfbbzm4Imx2bsU5"
             },
             {
-                title: "Marikana massacre | Call for 16 August to be public holiday",
-                url: "https://www.youtube.com/embed/fhZhMDr0PGs?si=SYcS7iqxLg-7j8F1"
-            },
-            {
-                title: "The Bottom Line, 31 March 2021",
-                url: "https://www.youtube.com/embed/NDksCA0Q0A0?si=E2MIUgTK6d5mpOOC"
-            },
-            {
-                title: "Unfiltered, 07 October 2019",
-                url: "https://www.youtube.com/embed/pVNuU5b6ioc?si=s5uH9REw-eM6cgHR" 
-            },
-            {
                 title: "Dangerous buildings in the JHB CBD under the spotlight",
                 url: "https://www.youtube.com/embed/TlfjRKFzXAM?si=-WuKlo8rlzVNB_0h"
+            },
+            {
+                title: "The Mines, the Police, the State: What Happened at Marikana",
+                url: "https://www.youtube.com/embed/wxDDXB7ijYs?si=JhUAC29BjZy6qG3B"
             }
-
 
 
 
@@ -304,7 +372,7 @@ const members = [
         id:2,
         name:"Sibongile Ndashe",
         role:"Human Rights Lawyer & Executive Director, Initiative for Strategic Litigation in Africa (ISLA)",
-        image:profilePic,
+        image:SibongileNdashe,
         bio: `
 
         Sibongile Ndashe is a distinguished South African human rights lawyer, feminist advocate, and strategic litigator committed to advancing women's rights, 
@@ -525,11 +593,11 @@ const members = [
         phone:"082 222 3333"
     },
     {
-        //not finding interviews 
+         
         id:3,
         name:"Phumi Mtetwa",
         role:"Human Rights Activist",
-        image:profilePic,
+        image:PhumiMtetwa,
         bio:`Phumi Mtetwa – Biography
 
         Phumi Mtetwa is a distinguished South African feminist, human rights activist, and social justice leader whose career spans more than four decades. A veteran of the anti-apartheid movement, she has dedicated her life to advancing gender equality, LGBTQI+ rights, economic justice, and grassroots activism across South Africa and the African continent. She serves as the Regional Co-Director of JASS (Just Associates) Southern Africa, where she works to strengthen feminist movements and support community-led advocacy for social change.
@@ -540,15 +608,43 @@ const members = [
 
         Recognized as one of South Africa's pioneering feminist and human rights advocates, Phumi Mtetwa has made a lasting contribution to the advancement of constitutional democracy, equality, and inclusive social transformation. Her unwavering commitment to justice continues to inspire activists and communities working toward a more equitable and compassionate society.
 `,
-        email:"thandi.maseko@gmail.com",
+        videos: [
+            {
+                title: "Seizing the Moment: The politics of now and the path ahead for movements", 
+                url: "https://www.youtube.com/embed/lc48Oqz6W8k?si=cuz9vc73pWVaG10a"           
+            },
+            {
+                title: "Crossing The Line: A Reflection on JASS at AWID Forum 2024",
+                url: "https://www.youtube.com/embed/ty04OXsBjto?si=c-kofz3jXBhAcmnW"
+            },
+            {
+                title: "No Going Back on Gender Justice: Organizing Against Anti-Gender Rights Backlash",
+                url: "https://www.youtube.com/embed/fFVCj5gyRXE?si=inSeDNtED4OHQAt_"
+            },
+            //4+
+            {
+                title: "Pride and Palestine",
+                url: "https://www.youtube.com/embed/oNdy7fES2xU?si=kTPERVfOE8O-VNTB"
+            }
+
+        ],
+        email:"phumimtetwa@gmail.com",
         phone:"083 111 4444"
     },
+
+
+
+
+
+
+
+
 
     {
      id:4,
         name:"Koketso Moeti",
         role:"Civic Activist and Social Justice Advocate",
-        image:profilePic,
+        image:KoketsoMoeti,
         bio:`Koketso Moeti – Biography
 
         Koketso Moeti is a distinguished South African civic activist, democracy advocate, and social justice leader committed to empowering citizens to influence public policy and hold institutions accountable. She is the Founding Executive Director of amandla.mobi, a people-powered movement that uses digital technology and grassroots organizing to advance social justice and strengthen participatory democracy across South Africa.
@@ -566,32 +662,96 @@ videos: [
                 title: "Serious hunger and food security crisis in SA | Is government doing enough?", 
                 url: "https://www.youtube.com/embed/H_c1in8R0gw?si=1dlrxsIfX5MDAF0H"           
             },
-            {
-                title: "Mobile operators instructed to reduce data prices: Koketso Moeti",
-                url: "https://www.youtube.com/embed/8ToAQ7EFOmQ?si=z0KbEDosvGOebcJ2"
+            {//2mo
+                title: "Majority of us are horrified when we hear reports of women being forced to give birth on pavements",
+                url: "https://www.youtube.com/embed/pDqqSBUYg6k?si=UC17YhHp0pMAOnnk"
+            },
+            {//7mo
+                title: "Kerry Washington: Democracy On The Screen - And On The Line Panel",
+                url: "https://www.youtube.com/embed/W-8Wo6SWAcI?si=AsX7Sh91_BjObjxF"
             },
             {
+                title: "Urban Crisis Seminar: Strategising for Improved Social Justice Communication",
+                url: "https://www.youtube.com/embed/Py4E2YK10pE?si=ovPDr_upaNWUJSuq"
+            },
+            {//1+
+                title: "[PART 1] - Roundtable Discussion: Immigration, Policing & South Africa's Future Politics",
+                url: "https://www.youtube.com/embed/ZyL980c7K-k?si=zocEZOE4wqgMfNqW"
+            },
+            {
+                title: "Building Inclusive Democracy",
+                url: "https://www.youtube.com/embed/veXsBRkmrWk?si=cD5tmkYNXfNlSkd1"
+            },
+            {
+                title: "30 Years of Democracy - Day 2 - Constitution Hill",
+                url: "https://www.youtube.com/embed/Yf9RDxGj76w?si=CoJdvMDG-Zni3E1i"
+            },
+            {
+                title: "[PART 2] - Roundtable Discussion: Immigration, Policing & South Africa's Future Politics",
+                url: "https://www.youtube.com/embed/bS-ePHKx8uM?si=voXwyNoO_rCrNrIN"
+            },
+            {
+                title: "Lunchtime Symposium: Bending the Arc of Democracy",
+                url: "https://www.youtube.com/embed/czqcrSR5RoM?si=l5-ceqmFsgQ0-cGC"
+            },
+            {//3+
                 title: "Civil group Amandla.Mobi fights alleged collusion between business and government: Koketso Moeti",
                 url: "https://www.youtube.com/embed/WCPaVQXYipo?si=vYMNI3uXqUycaeor"
             },
             {
-                title: "South Africa's Youth Voice: Prof Mamokgethi Phakeng, Shaeera Kalla & Koketso Moeti (Panel)",
-                url: "https://www.youtube.com/embed/5iGO0xtteBA?si=9EQHNxqyrYDabVVU"
+                title: "Marikana: 12 years of disruption, loss and denial since 2012 #JusticeForMarikana",
+                url: "https://www.youtube.com/embed/aHcuc93bOPQ?si=YQGF_WK1uDTHkXGi"
             },
-
+            {
+                title: "Black lesbians and transgender men in South African townships face discrimination and violence",
+                url: "https://www.youtube.com/embed/mtRTp7yAU18?si=Vumm1mqJlyWmfMAn"
+            },
             {
                 title: "Meet the South African Activist who started a nationwide movement with just a cell phone",
                 url:"https://www.youtube.com/embed/0IvayOCHfW0?si=8y1sq6ShTQuriqZZ"
             },
+            
             {
-                title: "amandla.mobi Founder Koketso Moeti interviewed on Maggs on Media",
-                url: "https://www.youtube.com/embed/MHee7G8Vufo?si=KfG4F6C8rh3Y9EQr" 
+                title: "[BOOK LAUNCH] Human Rights and The Transformation of Property by Stuart Wilson",
+                url: "https://www.youtube.com/embed/Aq6GIK9Zwr8?si=83fDKD8NeZ3jX_Yc"
+            },
+            //4+
+            {
+                title: "Conversation Lab - Awakening SA s Youth Voice",
+                url: "https://www.youtube.com/embed/zL4fnxs689Y?si=AQJPR4nRotAtiRc_"
             },
             {
-                title: "MAINTAINING A SAFE HUMAN CONNECTION | Afternoon Express | 13 August 2020",
-                url: "https://www.youtube.com/embed/aFjpLDV7QW8?si=4Xe4dKyX215n9F3B"
+                title: "South Africa gears up for Women's Day",
+                url: "https://www.youtube.com/embed/hAw34KIBo3A?si=7BvYL93M-j8OBw7X"
             },
-
+            {
+                title: "Marikana massacre | Conditions still the same on the ground",
+                url: "https://www.youtube.com/embed/_U3Vp2yxjJ0?si=4TQZmcVt2ypv2fYd"
+            },
+            {
+                title: "02 Loneliness, defence, confusion - affective dynamics in the digital public sphere",
+                url: "https://www.youtube.com/embed/YQZhALPgu6Y?si=zFvhCdPtyVFhC5UA"
+            },
+            {
+                title: "02 Soledad, defensa, confusión: dinámicas afectivas en la esfera pública digital",
+                url: "https://www.youtube.com/embed/5_dcicUdVy8?si=CRMXUAEz3C_oqB-o"
+            },
+            {
+                title: "Building a just and people-powered movement – Koketso Moeti",
+                url: "https://www.youtube.com/embed/IoRTeeY5OTo?si=KKHCHm_MR5_gzbW5"
+            },
+            {//5+
+                title: "South Africa's Youth Voice: Prof Mamokgethi Phakeng, Shaeera Kalla & Koketso Moeti (Panel)",
+                url: "https://www.youtube.com/embed/5iGO0xtteBA?si=9EQHNxqyrYDabVVU"
+            },
+            {
+                title: "Marikana Massacre | Pandelani: Offer of an extra R500,000 for each family rejected",
+                url: "https://www.youtube.com/embed/46PbPBKR76w?si=WH60spmkrmL0oZhm"
+            },
+            {
+                title: "Social Justice Initiative: Women in Social Justice",
+                url: "https://www.youtube.com/embed/FI35KR5S1gc?si=1qXz4LfhKhoesiKj"
+            },
             {
                 title: "Koketso Moeti: Women in Social Justice Ep. 07",
                 url: "https://www.youtube.com/embed/csDkiM-qtqs?si=JLr5GsehZ7XNKKTQ"
@@ -601,23 +761,59 @@ videos: [
                 url: "https://www.youtube.com/embed/xLdsQnIYCCk?si=HuNSEQcj8iu1voP7" 
             },
             {
+                title: "DISCUSSION: Marikana Massacre remembered",
+                url: "https://www.youtube.com/embed/AN_GCN2D0mI?si=jBoocdqBnlSslOS0"
+            },
+            {//6+
+                title: "Koketso Moeti of Amandla.Mobi joins Black Women Disrupt Summer Series Live",
+                url: "https://www.youtube.com/embed/ewBJt1KU7Ys?si=WOwK19uDce5Y2xCL"
+            },
+            {
+                title: "Coronavignette: Koketso Moeti",
+                url: "https://www.youtube.com/embed/JRP6ex-hB00?si=k-hCnb2TRU9GMh9F"
+            },
+            {
+                title: "MAINTAINING A SAFE HUMAN CONNECTION | Afternoon Express | 13 August 2020",
+                url: "https://www.youtube.com/embed/aFjpLDV7QW8?si=4Xe4dKyX215n9F3B"
+            },
+            {
+                title: "Mobile operators instructed to reduce data prices: Koketso Moeti",
+                url: "https://www.youtube.com/embed/8ToAQ7EFOmQ?si=z0KbEDosvGOebcJ2"
+            },
+            {
+                title: "Amandla.mobi recognised",
+                url: "https://www.youtube.com/embed/h36Zo205Bz0?si=mlz_Ewqgy6yHb1qu"
+            },
+            {//7+
                 title: "#HowTo Build Campaigns that Change Lives with Koketso Moeti",
                 url: "https://www.youtube.com/embed/yY0oyJs1zSg?si=EgxWJJEq_1YPwJU3"
             },
             {
-                title: "Building a just and people-powered movement – Koketso Moeti",
-                url: "https://www.youtube.com/embed/IoRTeeY5OTo?si=KKHCHm_MR5_gzbW5"
+                title: "Accepting the Waislitz Global Citizen award",
+                url: "https://www.youtube.com/embed/iuO1tXsdD-M?si=J6n7vb1Dwn5Dggyx"
+            },
+            {//8+
+                title: "UNFILTERED: Lets Have it Out - Part One",
+                url: "https://www.youtube.com/embed/d8bZrr4996w?si=TFluG6o7Ag4TZ6Zg"
             },
             {
-                title: "Koketso Moeti of Amandla.Mobi joins Black Women Disrupt Summer Series Live",
-                url: "https://www.youtube.com/embed/ewBJt1KU7Ys?si=WOwK19uDce5Y2xCL"
+                title: "ACCESSIBLE: Lets Have it Out - Part Three",
+                url: "https://www.youtube.com/embed/D0HfTMGhfqA?si=4tdrddM2R2c9z7kW"
             },
             //9 years
+            {
+                title: "amandla.mobi Founder Koketso Moeti interviewed on Maggs on Media",
+                url: "https://www.youtube.com/embed/MHee7G8Vufo?si=KfG4F6C8rh3Y9EQr" 
+            },
             {
                 title: "South Africa: What Role for the Civil Society?",
                 url: "https://www.youtube.com/embed/VkdjR0RvFmA?si=Wmob_6AbENP3yYf5"
             },
             {
+                title: "Interview: amandla.mobi founder, Koketso Moeti speaks to Tim Modise",
+                url: "https://www.youtube.com/embed/na3STALTyyU?si=Ud3eli1RVlOaA-T7"
+            },
+            {//10+
                 title: "Tonight with Tim Modise | Koketso Moeti, Founder & Director of Amandla.mob",
                 url:  "https://www.youtube.com/embed/WB0D6KG6IJQ?si=pZMdDA_QJdyKPHE1" 
             },
@@ -630,14 +826,23 @@ videos: [
 
 
         ],
-        email:"sipho.khumalo@gmail.com",
+        email:"koketsomoeti@gmail.com",
         phone:"084 555 6666"   
     },
+
+
+
+
+
+
+
+
+
     {
      id:5,
         name:"Nomfundo Mogapi",
         role:"Clinical Psychologist and Mental Wellness Advocate",
-        image:profilePic,
+        image:NomfundoMogapi,
         bio:`
 
         Nomfundo Mogapi is a South African clinical psychologist, mental wellness leader, and human rights advocate dedicated to promoting healing, resilience, and psychosocial well-being. She is the Founder and Chief Executive Officer of the Centre for Mental Wellness and Leadership (CMWL), where she works to integrate mental wellness into leadership, governance, peacebuilding, and community development across Africa.
@@ -658,42 +863,97 @@ videos: [
         title: "Holiday season brings heightened feelings of isolation and anxiety",
         url: "https://www.youtube.com/embed/czDhoF49KAE?si=MOGfZmwRHDRCHQ3t" 
     },
-    {
+    {//1+
         title: "SA's healing journey",
         url: "https://www.youtube.com/embed/mJ_Kwd6YcYU?si=kvMNtFS-RVt-xVq6" 
     },
-
+    {
+        title: "Lusikisiki massacre - trauma counselling needed",
+        url: "https://www.youtube.com/embed/AS1fosJGfAg?si=MPT4GJHa9v9zotAU"
+    },
+    { 
+        title: "🎥 Let Your Light Shine: Renewing the Mind, Healing the Heart by Pst. Nomfundo Mogapi || 17 Aug 2025",
+        url: "https://www.youtube.com/embed/mndlMjhM_K0?si=Ug0l2QPzrfkBfuAy"
+    },
     {
         title: "Dealing with SA's collective societal trauma",
         url: "https://www.youtube.com/embed/CjXvEKjHHic?si=BYi5tFCjDKl_Ox9w" 
+    },
+    {
+        title: "The Anatomy of Violence in South Africa featuring Ms Nomfundo Mogapi and Ms Isobel Frye - 2019",
+        url: "https://www.youtube.com/embed/CfqIAnu1kOk?si=8EkbEYqqpm_fgy_1" 
+    },
+    { //3years
+        title: "Discussion | Is South Africa suffering from collective trauma?",
+        url: "https://www.youtube.com/embed/ZpzdEaK0kxU?si=mUtrnTv7tNa0N8I8"
+    },
+    {
+        title: "INTERVIEW WITH NOMFUNDO MOGAPI - An Expert in Trauma Healing Approaches- GBV healing",
+        url: "https://www.youtube.com/embed/GT5b8aGGzoU?si=K_toclOs4-H--GU1"
+    },
+    {//4+
+        title: "Heritage Day I South Africa needs to heal from post colonial trauma",
+        url: "https://www.youtube.com/embed/WHfYt1JBlzQ?si=70EI2mznKnAZLK7z"
     },
     {
         title: "The psychology of mass mobilisation",
         url: "https://www.youtube.com/embed/8Mtu4vXSQXA?si=ytPsU4qzWvAQHMPi" 
     },
     {
-        title: "The Anatomy of Violence in South Africa featuring Ms Nomfundo Mogapi and Ms Isobel Frye - 2019",
-        url: "https://www.youtube.com/embed/CfqIAnu1kOk?si=8EkbEYqqpm_fgy_1" 
+        title: "Webinar with Ms Nomfundo Mogapi: Healthcare in Wounded Contexts: Strategies for Practitioners",
+        url: "https://www.youtube.com/embed/enq8Rz0GjEM?si=tIxjmcKigy7nVJqA" 
+    },
+    {
+        title: "Health Hub | Tips to convince a friend to get vaccinated & unpacking the trauma of GBV | Ep3, P1",
+        url: "https://www.youtube.com/embed/QoHwjWUaPw8?si=GCKV5_-YQ-9MLeKe"
+    },
+    {
+        title: "THE WOMXN SHOW: DEPRESSION",
+        url: "https://www.youtube.com/embed/AN4IPkQM3Oc?si=oSvnaTqS6EsoxIFZ"
+    },
+    {
+        title: "Questions asked about the root cause of the violence seen in parts of KZN and Gauteng last week",
+        url: "https://www.youtube.com/embed/i3U5SxOGQBs?si=vxF7lSqYloCNbu9Q"
+    },
+    {
+        title: "The Greenlight Movement: Dealing with Grief during Covid-19 (2021)",
+        url: "https://www.youtube.com/embed/PZ-U5MGvb3o?si=oQjig-XwXwASBx18"
+    },
+    {
+        title: "Violence in SA | Understanding why communities loot",
+        url: "https://www.youtube.com/embed/46sKtM5W-Ag?si=0uUlUELAVgW8bPtH"
+    },
+    {
+        title: "Mob Justice | What should be done to prevent acts of vigilantism? - Nomfundo Mogapi",
+        url: "https://www.youtube.com/embed/9xnb0Qv3FfM?si=D2-T2AJR8ksP4ZK0"
+    },
+    {
+        title: "Panel 3",
+        url: "https://www.youtube.com/embed/7Y8GujaW1nE?si=9z94G01AdAwrrPkd"
     },
 
+    {
+        title: "Tackling the scourge of gender-based violence: Nomfundo Mogapi",
+        url: "https://www.youtube.com/embed/60tdBkbJ_E8?si=Ip6rr9vj_RPuqj2e"
+    },
+    {
+        title: "CSVR calls on President Ramaphosa to lead from the front in the fight against gender-based violence",
+        url: "https://www.youtube.com/embed/lRJPXGAGKKE?si=TwCD-7RUHAVC9OY8"
+    },
+    {
+        title: "Gender Based Violence in SA - an ongoing battle",
+        url: "https://www.youtube.com/embed/Mffc0w9DnBw?si=_jMOlk0ucZobcgea"
+    },
+    //7+
     {
         title: "Nomfundo Mogapi CSVR Director at the #NeverAgainZW Conference" ,
         url: "https://www.youtube.com/embed/cZnvjIFuaF0?si=NUPWJwJIiqGVmMT2" 
     },
     {
-        title: "INTERVIEW WITH NOMFUNDO MOGAPI - An Expert in Trauma Healing Approaches- GBV healing",
-        url: "https://www.youtube.com/embed/GT5b8aGGzoU?si=K_toclOs4-H--GU1"
-    },
-    {
-        title: "Webinar with Ms Nomfundo Mogapi: Healthcare in Wounded Contexts: Strategies for Practitioners",
-        url: "https://www.youtube.com/embed/enq8Rz0GjEM?si=tIxjmcKigy7nVJqA" 
-    },
-    
-    {
         title: "Crime Stats | We are a country in crisis - Nomfundo Mogapi",
         url: "https://www.youtube.com/embed/9AcZP8bp8LI?si=CKAC4jjM-ZXvWRQZ" 
     },
-    {
+    {//8+
         title: "Easy access to guns, abuse of alcohol and drugs: Nomfundo Mogapi",
         url: "https://www.youtube.com/embed/BSW-QOjUFLo?si=BQKz5mIUcvS_F00d"
     },
@@ -702,22 +962,40 @@ videos: [
         url: "https://www.youtube.com/embed/46sKtM5W-Ag?si=_UYsOehiNPptSZ4E"
     },
     {
-        title: "Debate Part 4 - Is South Africa a violent country?",
-        url: "https://www.youtube.com/embed/WL6aKMuXrvA?si=wbVwdjD4dDb-xbSO"
+        title: "Debate Part 1 - Is South Africa a violent country?",
+        url: "https://www.youtube.com/embed/hG-J2VQRCIc?si=q1V2xIUn7fCDlObJ"
     },
     {
-        title: "CSVR calls on President Ramaphosa to lead from the front in the fight against gender-based violence",
-        url: "https://www.youtube.com/embed/lRJPXGAGKKE?si=TwCD-7RUHAVC9OY8"
+        title: "Debate Part 2 - Is South Africa a violent country?",
+        url: "https://www.youtube.com/embed/wF2CYRrHOtc?si=XQpvwrgt2sowhtDd"
+    },
+    {
+        title: "Debate Part 3 - Is South Africa a violent country?",
+        url: "https://www.youtube.com/embed/QIUG88kYyoY?si=HAFuFVaiV0E5Gv5u"
+    },
+    {
+        title: "Debate Part 4 - Is South Africa a violent country?",
+        url: "https://www.youtube.com/embed/WL6aKMuXrvA?si=wbVwdjD4dDb-xbSO"
     },
     {
         title: "Methodologies used by MHPSS and peacebuilding practitioners - South Africa",
         url: "https://www.youtube.com/embed/xArhOSkslnU?si=3SPbPHh5z1d64Tj4" 
     },
+    {
+        title: "Up in Flames: Understanding Violence in Community Protests",
+        url: "https://www.youtube.com/embed/4JDt_FZ32BE?si=58foiJTzcPu51nll"
+    },
+    //11+
+    {
+        title: "MWF SA Regional Conference - Migration Panel Discussion",
+        url: "https://www.youtube.com/embed/E0oRWOMDpVg?si=Q2vTteKBnpRFd7Jj"
+    },
+    
 
 
 
 ],
-        email:"ayanda.zulu@gmail.com",
+        email:"nomfundomogapi@gmail.com",
         phone:"081 777 8888"   
     },
     {
@@ -725,7 +1003,7 @@ videos: [
     id:6,
         name:"Seadimo Tlale",
         role:"Human Rights Lawyer and Constitutional Law Expert",
-        image:profilePic,
+        image:SeadimoTlale,
         bio:`
 
         Seadimo Tlale is a South African human rights lawyer and constitutional law expert dedicated to advancing equality, social justice, and the protection of constitutional rights. She serves as the Executive Director of SECTION27, where she leads strategic litigation, legal research, and advocacy to promote access to quality education, healthcare, and justice for marginalized communities.
@@ -736,14 +1014,16 @@ videos: [
 
         Recognized for her expertise in constitutional and public interest law, Seadimo Tlale continues to champion equality, dignity, and justice through strategic litigation, policy advocacy, and legal leadership. Her work reflects a deep commitment to ensuring that the Constitution remains a powerful instrument for transformative social change and the protection of human rights in South Africa.`,
         
-        email:"ayanda.zulu@gmail.com",
+        email:"seadimotlale@gmail.com",
         phone:"081 777 8888"
     },
+
+
     { //cant find interview
     id:7,
         name:"Naabelah Mia",
         role:"Human Rights Lawyer and Gender Justice Advocate",
-        image:profilePic,
+        image:NabeelahMia,
         bio:`
 
         Naabelah Mia is a South African human rights lawyer and gender justice advocate dedicated to advancing equality, dignity, and access to justice. She currently serves as the Executive Director of the Women's Legal Centre, where she leads strategic litigation, advocacy, and legal reform initiatives to promote and protect the rights of women and marginalized communities across South Africa.
@@ -755,14 +1035,14 @@ videos: [
         Recognized for her expertise in public interest and constitutional law, Naabelah Mia continues to champion human rights through strategic litigation, policy advocacy, and legal leadership. Her work reflects a deep commitment to ensuring that the law serves as a tool for dignity, equality, and meaningful social transformation for all South Africans.`,
         
         
-        email:"naledi.molefe@gmail.com",
+        email:"nabeelahmia@gmail.com",
         phone:"082 999 0000"
     },
     {
     id:8,
         name:"Kwezilomso Mbandazayo",
         role:"Constitutional Lawyer and Education Rights Advocate",
-        image:profilePic,
+        image:KwezilomsoMbandazayo,
         bio:`
 
         Kwezilomso Mbandazayo is a South African constitutional lawyer, public interest advocate, and legal scholar dedicated to advancing equality, socio-economic rights, and access to quality education. She serves as the Executive Director of the Equal Education Law Centre (EELC), where she leads strategic litigation, legal research, and advocacy to promote and protect the constitutional right to basic education and other fundamental rights in South Africa.
@@ -772,15 +1052,57 @@ videos: [
         Among her most notable contributions is her leadership in strategic litigation and advocacy aimed at improving access to quality education for all learners, particularly those in under-resourced communities. Through the Equal Education Law Centre, she has championed legal reforms addressing school infrastructure, learner safety, education funding, and accountability, while contributing to broader constitutional discourse on equality and socio-economic rights. Her work continues to strengthen the realization of education rights through evidence-based advocacy and public interest litigation.
 
         Recognized for her expertise in constitutional law and education rights, Kwezilomso Mbandazayo continues to champion justice, equality, and transformative constitutionalism through legal leadership, policy advocacy, and strategic litigation. Her commitment to protecting fundamental rights has made her an influential voice in advancing equitable access to education and social justice in South Africa.`,
-        email:"naledi.molefe@gmail.com",
-        phone:"082 999 0000",
+        
 
         videos: [
+            {//3wk
+                title: "Movements, Lineages and Activisms – 1956 to 2026 (27 August 2026)",
+                url: "https://www.youtube.com/embed/zhEBR7s8OVM?si=3SOXiizKvbvk59jU"
+            },
+            {//1+
+                title: "Organising To Win!: Distinguishing between reform and revolution",
+                url: "https://www.youtube.com/embed/LynHcetlYus?si=ExXjaKcPCXu5PToN"
+            },
+            {//4+
+                title: "Feminist Legal Gains and Setbacks: From the Zuma Rape Trial to the Coko Judgement",
+                url: "https://www.youtube.com/embed/FFl3Xic9gyM?si=gcO9fq-FxqXWEgcn"
+            },
+            {//5+
+                title: "The Womxn Show: The National Strategic Plan",
+                url: "https://www.youtube.com/embed/1GqRAf8ERHs?si=G_KQZ5fMVpcu2Poo"
+            },
+            {
+                title: "Week 4 The Six Pillars of the NSP",
+                url: "https://www.youtube.com/embed/OLFwbjGM2BM?si=ApZidbj2hc3iLZgt"
+            },
+            {
+                title: "Stream: Week 12 How do we make the NSP GBVF work?",
+                url: "https://www.youtube.com/embed/qkKSpfUsMs4?si=JjU0-qZ1a-6Y8qZi"
+            },
+            {//7+
+                title: "Vavasati Festival 2019 Talk: Kwezilomso Mbandazayo (gender equality activist)",
+                url: "https://www.youtube.com/embed/cfEQrUU7exU?si=6kBEFwVJqbRuESC5"
+            },
+            {
+                title: "Violence against women reaches crisis point in South Africa",
+                url: "https://www.youtube.com/embed/6O9spLJU0nk?si=oC9Ynfv_VAywtbvg"
+            },
+            {
+                title: "One in Nine campaign explains silent protest",
+                url: "https://www.youtube.com/embed/KEzFwtTYiJ8?si=fDMiWM3E5o52Kxw1"
+            },
+            //11+
             {
                 title: "16 Days of Activism for No Violence against Women and Children",
                 url: "https://www.youtube.com/embed/_A8Ql1MhoMw?si=CW1lWI6eOwc6hi8H"
+            },
+            {
+                title: "Women on Wealth - Episode 18",
+                url: "https://www.youtube.com/embed/0eOTIKNSLFw?si=kI0MTybKhlZn10Zl"
             }
         ],
+        email:"kwezilomsombandazayo@gmail.com",
+        phone:"082 999 0000"
     }
 
     

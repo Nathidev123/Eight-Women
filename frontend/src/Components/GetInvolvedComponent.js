@@ -14,7 +14,8 @@ const GetInvolvedComponent = () => {
                  and inclusive South Africa. Join us in building communities 
                  where dignity, equality, and opportunity are realities for all.</p>
 
-            <button onClick={handleClick}>Get Involved</button>
+            <button onClick={handleClick}
+            className='contact-btn'>Get Involved</button>
             </div>
             </section>
             </>)

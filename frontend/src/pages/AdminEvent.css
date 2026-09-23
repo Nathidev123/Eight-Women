@@ -1,0 +1,895 @@
+
+/* =========================================================
+   EIGHT WOMEN — ADMIN EVENT PAGE
+   Editorial / Community / Peace aesthetic
+========================================================= */
+
+:root {
+    --burgundy: #7B1E2B;
+    --burgundy-dark: #5A1320;
+    --cream: #F8F4EE;
+    --beige: #E8CFA8;
+    --white: #FFFFFF;
+    --text: #292323;
+    --muted: #6B6260;
+    --border: rgba(90, 19, 32, 0.18);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.event-page {
+    min-height: 100vh;
+    background: var(--cream);
+    color: var(--text);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.event-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 620px;
+
+    background: var(--burgundy);
+    color: var(--white);
+}
+
+.event-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 90px 8vw;
+}
+
+.event-page .section-tag {
+    display: inline-block;
+    width: fit-content;
+
+    margin-bottom: 22px;
+
+    color: var(--beige);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+
+/* EVENT TITLE */
+
+.event-hero h1 {
+    margin: 0 0 28px;
+
+    max-width: 700px;
+
+    font-size: clamp(3rem, 5vw, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+
+/* EVENT DESCRIPTION */
+
+.event-hero p {
+    max-width: 620px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.86);
+
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO EDITING
+========================================================= */
+
+.event-hero-content input,
+.event-hero-content textarea {
+    width: 100%;
+    max-width: 700px;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    color: var(--white);
+
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+
+    border-radius: 0;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+.event-hero-content input {
+    margin-bottom: 28px;
+
+    padding: 8px 0;
+
+    font-size: clamp(2.5rem, 5vw, 5.2rem);
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+}
+
+.event-hero-content textarea {
+    min-height: 150px;
+
+    padding: 12px 0;
+
+    resize: vertical;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.event-hero-content input:focus,
+.event-hero-content textarea:focus {
+    border-bottom-color: var(--beige);
+}
+
+
+/* =========================================================
+   IMAGE / IMAGE EDITOR
+========================================================= */
+
+.event-hero-image {
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background: var(--burgundy-dark);
+}
+
+.event-hero-image::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.55),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+.event-hero-image p {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 0 10px;
+
+    color: var(--beige);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.event-hero-image input[type="file"] {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 330px;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+
+    background: rgba(248, 244, 238, 0.95);
+
+    color: var(--text);
+
+    border: none;
+    border-radius: 0;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   EDIT / SAVE BUTTON
+========================================================= */
+
+.edit-btn {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin: 0;
+    padding: 17px 30px;
+
+    border: none;
+    border-radius: 0;
+
+    font-family: inherit;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.edit-btn.edit {
+    width: 100%;
+
+    background: var(--beige);
+    color: var(--burgundy-dark);
+}
+
+.edit-btn.edit:hover {
+    background: var(--burgundy-dark);
+    color: var(--beige);
+}
+
+.edit-btn.save {
+    width: 100%;
+
+    background: var(--burgundy-dark);
+    color: var(--beige);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.edit-btn.save:hover {
+    background: var(--burgundy);
+    color: var(--white);
+}
+
+.edit-btn svg {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.event-page > section:nth-of-type(2) {
+    padding: 100px 8vw;
+}
+
+.map-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+
+    border-top: 2px solid var(--burgundy);
+}
+
+.map-container > p,
+.map-container > input {
+    margin: 0;
+
+    padding: 25px 0 10px;
+
+    color: var(--burgundy-dark);
+
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.map-container > input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+.map-container > input:focus {
+    border-bottom-color: var(--burgundy);
+}
+
+.displayMap {
+    width: 100%;
+    height: 430px;
+
+    display: block;
+
+    border: none;
+}
+
+
+/* =========================================================
+   QUICK INFORMATION
+========================================================= */
+
+.event-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    margin: 0 8vw;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    min-height: 175px;
+
+    padding: 42px 28px;
+
+    box-sizing: border-box;
+
+    border-right: 1px solid var(--border);
+}
+
+.info-card:first-child {
+    border-left: 1px solid var(--border);
+}
+
+.info-card svg {
+    flex-shrink: 0;
+
+    margin-top: 4px;
+
+    color: var(--burgundy);
+
+    font-size: 1.05rem;
+}
+
+.info-card h4 {
+    margin: 0 0 10px;
+
+    color: var(--burgundy-dark);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.info-card p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   QUICK INFO INPUTS
+========================================================= */
+
+.info-card input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 9px 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.info-card input:focus {
+    border-bottom-color: var(--burgundy);
+}
+
+
+/* Remove browser date/time weirdness */
+
+.info-card input[type="date"],
+.info-card input[type="time"] {
+    min-height: 34px;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.event-section {
+    padding: 110px 8vw;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.event-section h2 {
+    margin: 0;
+
+    color: var(--burgundy-dark);
+
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   EVENT DETAILS
+========================================================= */
+
+.event-grid {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 110px 8vw;
+}
+
+.detail-card {
+    display: grid;
+    grid-template-columns: 55px 180px 1fr;
+    align-items: center;
+
+    min-height: 105px;
+
+    border-top: 1px solid var(--border);
+}
+
+.detail-card:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-card > svg {
+    color: var(--burgundy);
+
+    font-size: 1rem;
+}
+
+.detail-card h3 {
+    margin: 0;
+
+    color: var(--burgundy-dark);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.detail-card p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DETAIL INPUTS
+========================================================= */
+
+.detail-card input,
+.detail-card textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 0.98rem;
+}
+
+.detail-card textarea {
+    min-height: 90px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+.detail-card input:focus,
+.detail-card textarea:focus {
+    border-bottom-color: var(--burgundy);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.event-contact {
+    padding: 105px 8vw 120px;
+
+    background: var(--burgundy);
+
+    color: var(--white);
+}
+
+.event-contact h2 {
+    margin: 0 0 50px;
+
+    color: var(--white);
+
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    max-width: 950px;
+
+    padding: 23px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-card:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-card svg {
+    flex-shrink: 0;
+
+    color: var(--beige);
+
+    font-size: 1rem;
+}
+
+.contact-card span {
+    color: var(--white);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   CONTACT INPUTS
+========================================================= */
+
+.contact-card input {
+    width: 100%;
+
+    padding: 10px 0;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    color: var(--white);
+
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 0;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-card input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-card input:focus {
+    border-bottom-color: var(--beige);
+}
+
+.contact-card strong {
+    min-width: 160px;
+
+    color: var(--beige);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.contact-card a {
+    color: var(--beige);
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.contact-card a:hover {
+    color: var(--white);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-page {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cream);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .event-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .event-hero-content {
+        min-height: 480px;
+        padding: 80px 7vw;
+    }
+
+    .event-hero-image {
+        min-height: 500px;
+    }
+
+
+    .event-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 7vw;
+    }
+
+    .info-card:nth-child(2) {
+        border-right: none;
+    }
+
+    .info-card:nth-child(3) {
+        border-left: 1px solid var(--border);
+    }
+
+
+    .event-page > section:nth-of-type(2) {
+        padding: 80px 7vw;
+    }
+
+
+    .event-grid {
+        padding: 90px 7vw;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* HERO */
+
+    .event-hero-content {
+        min-height: auto;
+
+        padding: 65px 24px;
+    }
+
+    .event-hero h1 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
+    }
+
+    .event-hero-content input {
+        font-size: clamp(2.4rem, 11vw, 3.8rem);
+    }
+
+    .event-hero p {
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+
+    .event-hero-image {
+        min-height: 350px;
+
+        padding: 25px;
+    }
+
+
+    /* MAP */
+
+    .event-page > section:nth-of-type(2) {
+        padding: 70px 24px;
+    }
+
+    .map-container {
+        gap: 18px;
+    }
+
+    .displayMap {
+        height: 330px;
+    }
+
+
+    /* QUICK INFO */
+
+    .event-info-grid {
+        grid-template-columns: 1fr;
+
+        margin: 0 24px;
+    }
+
+    .info-card {
+        min-height: auto;
+
+        padding: 28px 8px;
+
+        border-right: none !important;
+        border-left: none !important;
+    }
+
+
+    /* ABOUT */
+
+    .event-section {
+        padding: 75px 24px;
+    }
+
+    .event-section h2 {
+        font-size: 2.5rem;
+    }
+
+
+    /* DETAILS */
+
+    .event-grid {
+        padding: 75px 24px;
+    }
+
+    .detail-card {
+        grid-template-columns: 42px 1fr;
+
+        align-items: start;
+
+        padding: 25px 0;
+    }
+
+    .detail-card > svg {
+        grid-row: span 2;
+
+        margin-top: 4px;
+    }
+
+    .detail-card h3 {
+        margin-bottom: 10px;
+    }
+
+    .detail-card p,
+    .detail-card input,
+    .detail-card textarea {
+        grid-column: 2;
+    }
+
+
+    /* CONTACT */
+
+    .event-contact {
+        padding: 75px 24px 90px;
+    }
+
+    .event-contact h2 {
+        margin-bottom: 40px;
+
+        font-size: 2.5rem;
+    }
+
+    .contact-card {
+        align-items: flex-start;
+
+        padding: 22px 0;
+    }
+
+    .contact-card strong {
+        min-width: auto;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .event-hero-content {
+        padding: 55px 20px;
+    }
+
+    .event-hero-image {
+        min-height: 300px;
+    }
+
+    .event-page > section:nth-of-type(2),
+    .event-section,
+    .event-grid,
+    .event-contact {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .event-info-grid {
+        margin: 0 20px;
+    }
+
+    .edit-btn {
+        padding: 15px 20px;
+    }
+}
+

@@ -42,6 +42,31 @@ const Navbar = () => {
 
                     <Link to="/get-involved">Get Involved</Link>
 
+
+                {!user && (
+                        <Link to="/login">
+                            Admin
+                        </Link>
+                    )}
+
+
+                {user && (
+                        <div className="nav-user1">
+
+                            <span className="user-email1">
+                                {user.email}
+                            </span>
+
+                            <button
+                                className="logout-btn1"
+                                onClick={handleLogout}
+                            >
+                                Log Out
+                            </button>
+
+                        </div>
+                    )}
+
                 </nav>
 
                 
@@ -102,14 +127,14 @@ const Navbar = () => {
 
                     <>
 
-                        <span className="user-email">
+                        <span className="user-email1">
 
                             {user.email}
 
                         </span>
 
                         <button
-                            className="logout-btn"
+                            className="logout-btn1"
                             onClick={handleLogout}
                         >
 

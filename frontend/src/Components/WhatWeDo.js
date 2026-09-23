@@ -17,7 +17,8 @@ const navigate = useNavigate()
                 and create spaces for dialogue and collaboration to drive meaningful social 
                 change across South Africa.</p>
 
-                <button onClick={handleClick}>Discover More</button>
+                <button onClick={handleClick}
+                className='discover-btn'>Discover More</button>
             </div>
 
             
