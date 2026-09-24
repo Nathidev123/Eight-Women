@@ -23,6 +23,9 @@ const FormFour = () => {
 */  
     const [error, setError] = useState(null)
     const [emptyFields, setEmptyFields] = useState([])
+    const [loading, setLoading] = useState(false) 
+    const [loadingAction, setLoadingAction] = useState(null)
+    const [successMessage, setSuccessMessage] = useState(null)
 
     const handleChange = (e) => {
 
@@ -40,6 +43,11 @@ const FormFour = () => {
             setError('You must be logged in')
             return
         }
+        setLoading(true)
+        setLoadingAction(status)
+        setError(null)
+        setEmptyFields([])
+
         const data = new FormData()
 
         Object.entries(formData).forEach(([key, value]) => {
@@ -47,12 +55,11 @@ const FormFour = () => {
         })
 
         data.append('status', status)
-
         for (const [key, value] of data.entries()) {
             console.log(key, value)
         }       
 
-        
+        try {
         //const response = await fetch(`${API_URL}/api/mainroutes/`
         const response = await fetch('/api/mainroutes/', {
             method: 'POST',
@@ -64,19 +71,45 @@ const FormFour = () => {
 
 
         const json = await response.json()
+
         if(!response.ok){
             console.log(json.error)
             console.log(json)
+
             setError(json.error)
             setEmptyFields(json.emptyFields || [])
+            return
         }
         if(response.ok){
             dispatch2({type: 'RESET_FORM', payload: json})
+
             console.log('Successful', json)
-            setError(null)
-            setEmptyFields([])
-            navigate('/dashboard')
+            /*setError(null)
+            setEmptyFields([])*/
         }
+            //success alert
+            if (status === 'draft') {
+            setSuccessMessage({
+                title: 'Draft Saved',
+                message: 'Your event has been saved as a draft successfully.'
+            })
+        } else {
+            setSuccessMessage({
+                title: 'Event Published',
+                message: 'Your event has been published successfully.'
+            })
+        }
+
+            //navigate('/dashboard')
+
+            } catch(error) {
+            console.error(error) 
+            setError('Something went wrong. Please try again.')
+            
+            } finally {
+                setLoading(false)
+                setLoadingAction(null)
+            }
     }
     const handleBackBtn = () => {
         navigate('/formThree')
@@ -173,27 +206,68 @@ const FormFour = () => {
             <br />
 
         </form>
+        {successMessage && (
+    <div className="success-overlay">
 
-        <button
-            className="form-btn"
-            onClick={() => handleSubmit('draft')}
-        >
-            Save Draft 
-        </button>
+        <div className="success-alert">
 
-        <button
-            className="form-btn"
-            onClick={() => handleSubmit('published')}
-        >
-            Publish ✓
-        </button>
+            <button
+                className="success-close"
+                onClick={() => {
+                    setSuccessMessage(null)
+                    navigate('/dashboard')
+                }}
+            >
+                ×
+            </button>
 
-        {error && <div className="error-message">{error}</div>}
+            <div className="success-icon">
+                ✓
+            </div>
+
+            <div className="success-content">
+                <h2>{successMessage.title}</h2>
+
+                <p>
+                    {successMessage.message}
+                </p>
+            </div>
+
+            <button
+                className="success-dashboard-btn"
+                onClick={() => {
+                    setSuccessMessage(null)
+                    navigate('/dashboard')
+                }}
+            >
+                Go to Dashboard
+            </button>
+
+        </div>
 
     </div>
+)}
+        <button
+        className={`form-btn ${loadingAction === 'draft' ? 'loading' : ''}`}
+        onClick={() => handleSubmit('draft')}
+        disabled={loading}
+    >
+        {loadingAction === 'draft' ? 'Saving Draft...' : 'Save Draft'}
+    </button>
 
-</div>
-    )
-}
+    <button
+        className={`form-btn ${loadingAction === 'published' ? 'loading' : ''}`}
+        onClick={() => handleSubmit('published')}
+        disabled={loading}
+    >
+        {loadingAction === 'published' ? 'Publishing...' : 'Publish ✓'}
+    </button> 
+        
+        {error && ( 
+            <div className="error-message"> 
+            {error} 
+            </div> )} 
+        </div> 
+    </div> ) }
 
 export default FormFour

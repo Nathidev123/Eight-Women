@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import placeholder from "../assets/placeholder.jpeg";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useEventDetailsContext } from "../hooks/useEventDetailsContext";
+import online from '../assets/online.png'
 import {
     FaCalendarAlt,
     FaClock,
@@ -189,7 +190,8 @@ const navigate = useNavigate()
     isEditing
     ? (
         <input
-            value={event.location}
+            value={event.location || ""}
+            placeholder="Enter location or leave blank for an online event"
             onChange={(e) =>
                 setEvent({
                     ...event,
@@ -197,21 +199,44 @@ const navigate = useNavigate()
                 })
             }
         />
-    )
-    : (
+        )
+        : (
+            
+    event.location?.trim() && (
         <p>{event.location}</p>
-    )
-}
-                        <iframe className="displayMap"
-                        title="Event Location"
-                        width="65%"
-                        height="200"
-                        style={{ border: 0}}
-                        loading="lazy"
-                        allowFullScreen
-                        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(event.location)}`}>
-                        
-                        </iframe>
+    
+)
+        )
+    } {/* if user enters only white spaces or no location at all */}
+        {event.location?.trim() ? (
+    <iframe
+        className="displayMap"
+        title="Event Location"
+        width="65%"
+        height="200"
+        style={{ border: 0 }}
+        loading="lazy"
+        allowFullScreen
+        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(event.location)}`}
+    >
+    </iframe>
+) : (
+    <div className="online-event-location">
+
+        <div className="online-event-image">
+        {/*Image will sit here*/}
+        <img 
+        src={online}
+        alt="online event"
+        />
+        </div>
+
+        <div className="online-event-content">
+        <h3>Online Event</h3>
+        <p>This event will be held online.</p>
+        </div>
+    </div>
+)}
                         </div>
                     </section>
                     
@@ -427,7 +452,7 @@ const navigate = useNavigate()
     isEditing ? (
         <input
             type="text"
-            value={event.location}
+            value={event.locatio || ""}
             onChange={(e) =>
                 setEvent({
                     ...event,
@@ -436,15 +461,19 @@ const navigate = useNavigate()
             }
         />
     ) : (
-        <p>{event.location}</p>
-    )
-}
+        <p>
+            {event.location?.trim()
+                ? event.location
+                : "Online Event"}
+        </p>
+            )
+        }
         
-                        </div>
+    </div>
         
-                        <div className="detail-card">
-                        <FaBullseye />
-                            <h3>Purpose</h3>
+             <div className="detail-card">
+                 <FaBullseye />
+                    <h3>Purpose</h3>
 
 {
     isEditing ? (

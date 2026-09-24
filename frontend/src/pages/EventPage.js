@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import placeholder from "../assets/placeholder.jpeg";
 import { Link } from "react-router-dom";
+import online from "../assets/online.png";
 import './EventPage.css'
 import {
     FaCalendarAlt,
@@ -95,22 +95,44 @@ const EventPage = () => {
 
             <h2>Where we'll meet</h2>
 
-            <p>{event.location}</p>
+           <p>
+            {event.location?.trim()
+                ? event.location
+                : "Online Event"}
+        </p>
         </div>
 
     </div>
 
     <div className="map-container">
-
+    {/* trimming white sppaces also checking if no location*/}
+    {event.location?.trim() ? (
         <iframe
             className="displayMap"
             title="Event Location"
+            width="65%"
+            height="200"
+            style={{ border: 0 }}
             loading="lazy"
             allowFullScreen
             src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(event.location)}`}
-        />
+        >
+        </iframe>
+    ) : (
+        <div className="online-event-location">
 
-    </div>
+            <div className="online-event-image">
+                <img
+                    src={online}
+                    alt="Online event"
+                />
+            </div>
+ 
+
+        </div>
+    )}
+
+</div>
 
 </section>
         {/*Attend Button */}
@@ -135,7 +157,7 @@ const EventPage = () => {
         <Link
             className="event-attend-button"
             
-            to={'/get-involved#emailForm'}
+            to={'/get-involved'}
         >
             Register to Attend
         </Link>
@@ -263,7 +285,11 @@ const EventPage = () => {
 
             <div className="detail-content">
                 <span>Location</span>
-                <p>{event.location}</p>
+                <p>
+            {event.location?.trim()
+                ? event.location
+                : "This event will be held online."}
+        </p>
             </div>
 
         </div>

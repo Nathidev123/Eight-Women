@@ -25,7 +25,8 @@ const eventDetailsSchema = new Schema({
     },    
     location: {
         type: String,
-        required: true
+        //required: true
+        //in case the meeting is Online
     },
 
 

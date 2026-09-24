@@ -22,7 +22,16 @@ const Archives = () => {
     useEffect(() => {
 
         const fetchEvents = async () => {
-            const response = await fetch('/api/mainroutes/admin')
+            //also need check for user, this is what was
+            //causing 401 error
+            if(!user) {
+                return
+            }
+            const response = await fetch('/api/mainroutes/admin', {
+                headers: {
+                    'Authorization' : `Bearer ${user.token}`
+                }
+            })
             const json = await response.json()
 
             if(response.ok){
@@ -30,12 +39,14 @@ const Archives = () => {
                     type: 'SET_EventDetails',
                     payload: json
                 })
+            } else {
+                console.log("Archives fetching error:", response.status,json)
             }
         }
 
         fetchEvents()
 
-    }, [dispatch])
+    }, [dispatch, user])
 
     const handleDelete = async (id) => {
         //stop delete from opening new page
@@ -50,9 +61,7 @@ const Archives = () => {
                 'Authorization' : `Bearer ${user.token}`
             }
         })
-        if(!user){
-            return
-        }
+        
         
         const json = await response.json();
 
@@ -68,7 +77,11 @@ const Archives = () => {
     const handleRestore = async (event, id, status) => {
     event.stopPropagation()
 
+    if(!user) {
+        return
+    }
     const response = await fetch('/api/mainroutes/' + id, {
+
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',

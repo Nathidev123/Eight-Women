@@ -518,7 +518,19 @@
     line-height: 1.6;
 }
 
+/*Online Image*/
+.online-event-image {
+    width: 100%;
+    background: var(--cream);
+    border-radius: 20px;
+    overflow: hidden;
+}
 
+.online-event-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 /* =========================================================
    DETAIL INPUTS
 ========================================================= */

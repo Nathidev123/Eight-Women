@@ -1,4 +1,5 @@
 import eight from '../assets/8women.png'
+import together from '../assets/together.jpg'
 import GetInvolvedComponent from '../Components/GetInvolvedComponent'
 import { useEffect } from 'react'
 import './OurWork.css'
@@ -69,7 +70,18 @@ const OurWork = () => {
 
             </section>
 
-            {/* Pillars */}
+            {/* Together image */}
+
+            <section className="our-work-image reveal-scale">
+
+                <img
+                    src={together}
+                    alt="Community members standing together"
+                />
+
+            </section>
+
+            {/* Pillars section */}
 
             <section className="pillars-section">
 

@@ -309,7 +309,7 @@ border-right:1px solid rgba(232,207,168,.2);
 
     padding-left:24px;
 }
-/*
+
 .close-btn{
 
     align-self:flex-end;
@@ -333,7 +333,7 @@ border-right:1px solid rgba(232,207,168,.2);
     color:var(--primary);
 
 }
-
+/* 
 .user-email{
     padding:18px;
 

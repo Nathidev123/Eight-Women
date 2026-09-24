@@ -83,9 +83,9 @@ if(!event_name){
 if(!event_description){
     emptyFields.push('event_description')
 }
-if(!location){
+/*if(!location){
     emptyFields.push('location')
-}
+}*/
 
 if(!event_format){
     emptyFields.push('event_format')

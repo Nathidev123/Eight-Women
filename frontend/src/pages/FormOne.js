@@ -116,8 +116,7 @@ const navigate = useNavigate()
                 placeholder="Location"
                 name="location"
                 value={formData.location}
-                onChange={handleChange}
-                className={emptyFields.includes('location') ? 'error' : ''}
+                onChange={handleChange} 
             />
             </div>
 

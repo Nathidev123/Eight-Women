@@ -11,7 +11,7 @@ const MemberCards = () => {
     return (
         <>
             <h1 className="meet-members">
-                Meet the Eight Women
+                Eight Women
             </h1>
 
             <p className="members-subtitle">

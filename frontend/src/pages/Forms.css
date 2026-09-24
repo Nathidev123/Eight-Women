@@ -1,5 +1,6 @@
+
 /*==================================================
-  EVENT FORM
+  EVENT FORMS
 ==================================================*/
 
 .event-form-page{
@@ -31,6 +32,7 @@
         rgba(123,30,43,.08),
         transparent 45%);
 }
+
 .event-form-card{
 
     position:relative;
@@ -50,6 +52,7 @@
 
     border:1px solid rgba(123,30,43,.08);
 }
+
 
 /*==================================================
   Header
@@ -95,9 +98,11 @@
     max-width:600px;
 }
 
+
 /*==================================================
   Inputs
 ==================================================*/
+
 form{
 
     display:flex;
@@ -115,6 +120,7 @@ form{
 
     gap:10px;
 }
+
 input,
 textarea{
 
@@ -132,9 +138,12 @@ textarea{
 
     background:white;
 }
-/* ===========================
-   RESPONSIVE FORM INPUTS
-=========================== */
+
+
+/*==================================================
+  Form Buttons
+==================================================*/
+
 .form-btn{
 
     background:var(--burgundy);
@@ -162,6 +171,79 @@ textarea{
 
     box-shadow:0 12px 28px rgba(123,30,43,.25);
 }
+
+
+/*==================================================
+  Loading Button State
+==================================================*/
+
+.form-btn:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+.form-btn:disabled:hover{
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+
+/* Only the button currently being used gets spinner */
+
+.form-btn.loading{
+
+    cursor:wait;
+
+}
+
+
+/* Loading spinner */
+
+.form-btn.loading::after{
+
+    content:"";
+
+    display:inline-block;
+
+    width:12px;
+
+    height:12px;
+
+    margin-left:9px;
+
+    border:2px solid currentColor;
+
+    border-right-color:transparent;
+
+    border-radius:50%;
+
+    vertical-align:-2px;
+
+    animation:buttonSpinner .7s linear infinite;
+}
+
+@keyframes buttonSpinner{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/*==================================================
+  Back Button
+==================================================*/
+
 .back-btn{
 
     background:transparent;
@@ -177,22 +259,21 @@ textarea{
     margin-bottom:35px;
 
     transition:.3s;
+
+    cursor:pointer;
 }
 
 .back-btn:hover{
 
     background:rgba(123,30,43,.06);
+
 }
 
 
+/*==================================================
+  Form Progress
+==================================================*/
 
-
-
-
-
-
-
-/* Form Progress*/
 .form-progress{
 
     width:100%;
@@ -220,6 +301,8 @@ textarea{
         var(--cream-accent)
     );
 }
+
+
 /*==================================================
   Validation
 ==================================================*/
@@ -263,6 +346,7 @@ textarea.error{
 
 }
 
+
 /*==================================================
   Upload
 ==================================================*/
@@ -293,8 +377,293 @@ input[type=file]{
 
 }
 
+
 /*==================================================
-  Responsive
+  SUCCESS ALERT
+==================================================*/
+
+/*
+   Full-screen overlay behind the success message.
+*/
+
+.success-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(35,20,22,.42);
+
+    backdrop-filter:blur(4px);
+
+    -webkit-backdrop-filter:blur(4px);
+
+    animation:successOverlayIn .25s ease forwards;
+}
+
+
+/*==================================================
+  SUCCESS ALERT CARD
+==================================================*/
+
+.success-alert{
+
+    position:relative;
+
+    width:min(440px, 100%);
+
+    background:var(--cream);
+
+    border-radius:24px;
+
+    padding:40px 36px 32px;
+
+    text-align:center;
+
+    border:1px solid rgba(123,30,43,.08);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.18);
+
+    animation:successAlertIn .35s ease forwards;
+}
+
+
+/*==================================================
+  SUCCESS CLOSE BUTTON
+==================================================*/
+
+.success-close{
+
+    position:absolute;
+
+    top:16px;
+
+    right:18px;
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:transparent;
+
+    color:var(--burgundy);
+
+    font-size:25px;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.success-close:hover{
+
+    background:var(--cream-accent);
+
+    transform:rotate(90deg);
+}
+
+
+/*==================================================
+  SUCCESS ICON
+==================================================*/
+
+.success-icon{
+
+    width:68px;
+
+    height:68px;
+
+    margin:0 auto 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--burgundy);
+
+    color:white;
+
+    font-size:32px;
+
+    font-weight:600;
+
+    box-shadow:
+        0 10px 25px rgba(123,30,43,.20);
+
+    animation:successIconIn .45s ease .1s both;
+}
+
+
+/*==================================================
+  SUCCESS CONTENT
+==================================================*/
+
+.success-content h2{
+
+    margin:0 0 10px;
+
+    color:var(--burgundy-dark);
+
+    font-size:26px;
+
+    font-weight:600;
+
+}
+
+.success-content p{
+
+    margin:0 auto;
+
+    max-width:330px;
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+
+/*==================================================
+  SUCCESS DASHBOARD BUTTON
+==================================================*/
+
+.success-dashboard-btn{
+
+    width:100%;
+
+    margin-top:28px;
+
+    padding:14px 20px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:var(--burgundy);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.success-dashboard-btn:hover{
+
+    background:var(--burgundy-dark);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(90,19,32,.20);
+}
+
+
+/*==================================================
+  SUCCESS ALERT ANIMATIONS
+==================================================*/
+
+@keyframes successOverlayIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes successAlertIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(15px)
+            scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+@keyframes successIconIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.6);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/*==================================================
+  RESPONSIVE
 ==================================================*/
 
 @media(max-width:768px){
@@ -314,6 +683,61 @@ input[type=file]{
     .form-header h1{
 
         font-size:1.6rem;
+
+    }
+
+}
+
+
+/*==================================================
+  SUCCESS ALERT MOBILE
+==================================================*/
+
+@media(max-width:600px){
+
+    .success-overlay{
+
+        padding:16px;
+
+    }
+
+    .success-alert{
+
+        padding:34px 24px 26px;
+
+        border-radius:20px;
+
+    }
+
+    .success-icon{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:28px;
+
+        margin-bottom:18px;
+
+    }
+
+    .success-content h2{
+
+        font-size:23px;
+
+    }
+
+    .success-content p{
+
+        font-size:14px;
+
+    }
+
+    .success-dashboard-btn{
+
+        margin-top:24px;
+
+        padding:13px 18px;
 
     }
 
