@@ -3,301 +3,288 @@
    ========================================================= */
 
 .opinion-piece {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    padding: 150px 7vw 160px;
+  padding: 150px 7vw 160px;
 
-    background: #5A1320;
-    color: #F8F4EE;
+  background: #5a1320;
+  color: #f8f4ee;
 }
-
 
 /* =========================================================
    BACKGROUND DETAIL
    ========================================================= */
 
 .opinion-piece::before {
-    content: "PEACE";
+  content: "PEACE";
 
-    position: absolute;
+  position: absolute;
 
-    top: 50%;
-    right: -80px;
+  top: 50%;
+  right: -80px;
 
-    font-size: clamp(9rem, 20vw, 20rem);
-    font-weight: 900;
-    line-height: 0.8;
-    letter-spacing: -0.08em;
+  font-size: clamp(9rem, 20vw, 20rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
 
-    color: rgba(248, 244, 238, 0.025);
+  color: rgba(248, 244, 238, 0.025);
 
-    transform: translateY(-50%) rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
 
-    pointer-events: none;
+  pointer-events: none;
 }
-
 
 /* subtle editorial circle */
 
 .opinion-piece::after {
-    content: "";
+  content: "";
 
-    position: absolute;
+  position: absolute;
 
-    width: 420px;
-    height: 420px;
+  width: 420px;
+  height: 420px;
 
-    left: -220px;
-    bottom: -230px;
+  left: -220px;
+  bottom: -230px;
 
-    border: 1px solid rgba(232, 207, 168, 0.22);
+  border: 1px solid rgba(232, 207, 168, 0.22);
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    pointer-events: none;
+  pointer-events: none;
 }
-
 
 /* =========================================================
    WRAPPER
    ========================================================= */
 
 .opinion-wrapper {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 
-    width: min(1050px, 100%);
+  width: min(1050px, 100%);
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    text-align: center;
+  text-align: center;
 }
-
 
 /* =========================================================
    BADGE
    ========================================================= */
 
 .opinion-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 
-    color: #E8CFA8;
+  color: #e8cfa8;
 
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .opinion-badge::before,
 .opinion-badge::after {
-    content: "";
+  content: "";
 
-    width: 28px;
-    height: 1px;
+  width: 28px;
+  height: 1px;
 
-    background: #E8CFA8;
+  background: #e8cfa8;
 }
-
 
 /* =========================================================
    HEADING
    ========================================================= */
 
 .opinion-wrapper h2 {
-    max-width: 900px;
+  max-width: 900px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    font-size: clamp(4rem, 8vw, 8rem);
-    line-height: 0.86;
+  font-size: clamp(4rem, 8vw, 8rem);
+  line-height: 0.86;
 
-    letter-spacing: -0.06em;
+  letter-spacing: -0.06em;
 
-    font-weight: 800;
+  font-weight: 800;
 
-    color: #F8F4EE;
+  color: #f8f4ee;
 }
-
 
 /* =========================================================
    LEAD
    ========================================================= */
 
 .opinion-lead {
-    max-width: 680px;
+  max-width: 680px;
 
-    margin: 45px auto 0;
+  margin: 45px auto 0;
 
-    font-size: 1.05rem;
-    line-height: 1.85;
+  font-size: 1.05rem;
+  line-height: 1.85;
 
-    color: rgba(248, 244, 238, 0.75);
+  color: rgba(248, 244, 238, 0.75);
 }
-
 
 /* =========================================================
    QUOTE
    ========================================================= */
 
 .opinion-quote {
-    position: relative;
+  position: relative;
 
-    max-width: 850px;
+  max-width: 850px;
 
-    margin: 85px auto 65px;
+  margin: 85px auto 65px;
 
-    padding: 45px 70px;
+  padding: 45px 70px;
 
-    border-top: 1px solid rgba(232, 207, 168, 0.45);
-    border-bottom: 1px solid rgba(232, 207, 168, 0.45);
+  border-top: 1px solid rgba(232, 207, 168, 0.45);
+  border-bottom: 1px solid rgba(232, 207, 168, 0.45);
 
-    font-size: clamp(1.5rem, 2.7vw, 2.5rem);
-    line-height: 1.35;
+  font-size: clamp(1.5rem, 2.7vw, 2.5rem);
+  line-height: 1.35;
 
-    letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    color: #E8CFA8;
+  color: #e8cfa8;
 }
-
 
 /* giant quotation mark */
 
 .opinion-quote::before {
-    content: "“";
+  content: "“";
 
-    position: absolute;
+  position: absolute;
 
-    left: 0;
-    top: 15px;
+  left: 0;
+  top: 15px;
 
-    font-family: Georgia, serif;
+  font-family: Georgia, serif;
 
-    font-size: 7rem;
-    line-height: 1;
+  font-size: 7rem;
+  line-height: 1;
 
-    color: rgba(232, 207, 168, 0.25);
+  color: rgba(232, 207, 168, 0.25);
 }
-
 
 /* =========================================================
    BUTTON
    ========================================================= */
 
 .opinion-btn {
-    position: relative;
+  position: relative;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    padding: 17px 30px;
+  padding: 17px 30px;
 
-    border: 1px solid #E8CFA8;
-    border-radius: 3px;
-    background: transparent;
+  border: 1px solid #e8cfa8;
+  border-radius: 3px;
+  background: transparent;
 
-    color: #E8CFA8;
+  color: #e8cfa8;
 
-    font-family: inherit;
+  font-family: inherit;
 
-    font-size: 0.75rem;
-    font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 800;
 
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .opinion-btn:hover {
-    background: #E8CFA8;
-    color: #5A1320;
+  background: #e8cfa8;
+  color: #5a1320;
 
-    transform: translateY(-4px);
+  transform: translateY(-4px);
 }
-
 
 /* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
+  .opinion-piece {
+    padding: 120px 6vw 130px;
+  }
 
-    .opinion-piece {
-        padding: 120px 6vw 130px;
-    }
+  .opinion-wrapper h2 {
+    font-size: clamp(3.5rem, 10vw, 6rem);
+  }
 
-    .opinion-wrapper h2 {
-        font-size: clamp(3.5rem, 10vw, 6rem);
-    }
-
-    .opinion-quote {
-        padding: 40px 55px;
-        margin-top: 70px;
-    }
+  .opinion-quote {
+    padding: 40px 55px;
+    margin-top: 70px;
+  }
 }
-
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
+  .opinion-piece {
+    padding: 90px 22px 100px;
+  }
 
-    .opinion-piece {
-        padding: 90px 22px 100px;
-    }
+  .opinion-piece::before {
+    display: none;
+  }
 
-    .opinion-piece::before {
-        display: none;
-    }
+  .opinion-wrapper h2 {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+    line-height: 0.9;
+  }
 
-    .opinion-wrapper h2 {
-        font-size: clamp(3.2rem, 15vw, 5rem);
-        line-height: 0.9;
-    }
+  .opinion-lead {
+    margin-top: 30px;
 
-    .opinion-lead {
-        margin-top: 30px;
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
 
-        font-size: 0.92rem;
-        line-height: 1.75;
-    }
+  .opinion-quote {
+    margin: 60px auto 50px;
 
-    .opinion-quote {
-        margin: 60px auto 50px;
+    padding: 35px 25px;
 
-        padding: 35px 25px;
+    font-size: 1.35rem;
+    line-height: 1.45;
+  }
 
-        font-size: 1.35rem;
-        line-height: 1.45;
-    }
+  .opinion-quote::before {
+    left: -5px;
+    top: 8px;
 
-    .opinion-quote::before {
-        left: -5px;
-        top: 8px;
+    font-size: 5rem;
+  }
 
-        font-size: 5rem;
-    }
+  .opinion-btn {
+    width: 100%;
 
-    .opinion-btn {
-        width: 100%;
+    padding: 17px 20px;
 
-        padding: 17px 20px;
-
-        font-size: 0.68rem;
-    }
+    font-size: 0.68rem;
+  }
 }

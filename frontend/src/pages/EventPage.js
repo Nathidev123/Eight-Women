@@ -2,405 +2,302 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import placeholder from "../assets/placeholder.jpeg";
 import { Link } from "react-router-dom";
-import online from "../assets/online.png";
-import './EventPage.css'
+import online from "../assets/online2.png";
+import "./EventPage.css";
 import {
-    FaCalendarAlt,
-    FaClock,
-    FaMapMarkerAlt,
-    FaUsers,
-    FaEnvelope,
-    FaPhone,
-    FaUserTie,
-    FaTshirt,
-    FaBullseye,
-    FaBullhorn
+  FaCalendarAlt,
+  FaClock,
+  FaMapMarkerAlt,
+  FaUsers,
+  FaEnvelope,
+  FaPhone,
+  FaUserTie,
+  FaTshirt,
+  FaBullseye,
+  FaBullhorn,
 } from "react-icons/fa";
 
 const EventPage = () => {
-    //const API_URL = process.env.REACT_APP_API_URL;
-    const { id } = useParams();
+  //const API_URL = process.env.REACT_APP_API_URL;
+  const { id } = useParams();
 
-    const [event, setEvent] = useState(null);
+  const [event, setEvent] = useState(null);
 
-    useEffect(() => {
+  useEffect(() => {
+    const fetchEventDetails = async () => {
+      //const response = await fetch(`${API_URL}/api/mainroutes/${id}`)
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/mainroutes/${id}`,
+      );
+      const json = await response.json();
 
-        const fetchEventDetails = async () => {
-            //const response = await fetch(`${API_URL}/api/mainroutes/${id}`)
-            const response = await fetch(`/api/mainroutes/${id}`);
-            const json = await response.json();
+      if (response.ok) {
+        setEvent(json);
+        console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+      }
+    };
 
-            if (response.ok) {
-                setEvent(json);
-                console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-            }
+    fetchEventDetails();
+  }, [id]);
+  //API_URL this was in the dependency array
+  if (!event) {
+    return <div className="loading-page"></div>;
+  }
 
-        };
+  return (
+    <main className="event-page">
+      {/* HERO */}
 
-        fetchEventDetails();
+      <section className="event-hero">
+        <div className="event-hero-content">
+          <span className="section-tag">Community Event</span>
 
-    }, [id]);
-    //API_URL this was in the dependency array
-    if (!event) {
-        return (
-            <div className="loading-page">
-               
-            </div>
-        );
-    }
+          <h1>{event.event_name}</h1>
 
-    return (
-        
-        <main className="event-page">
+          <p>{event.event_description}</p>
+        </div>
 
-            {/* HERO */}
-            
-            <section className="event-hero">
-
-                <div className="event-hero-content">
-
-                    <span className="section-tag">
-                        Community Event
-                    </span>
-
-                    <h1>
-                        {event.event_name}
-                    </h1>
-
-                    <p>
-                        {event.event_description}
-                    </p>
-
-                </div>
-
-                <div className="event-hero-image">
-
-            <img
-                src={event.image || placeholder}
-                alt={event.event_name}
-                className="event-page-image"
-            />
-
-                </div>
-
-            </section>
-             <section className="map-section">
-
-    <div className="map-header">
-
-        <div>
-            <span className="section-tag">
-                Event Location
-            </span>
+        <div className="event-hero-image">
+          <img
+            src={event.image || placeholder}
+            alt={event.event_name}
+            className="event-page-image"
+          />
+        </div>
+      </section>
+      <section className="map-section">
+        <div className="map-header">
+          <div>
+            <span className="section-tag">Event Location</span>
 
             <h2>Where we'll meet</h2>
 
-           <p>
-            {event.location?.trim()
-                ? event.location
-                : "Online Event"}
-        </p>
+            <p>{event.location?.trim() ? event.location : "Online Event"}</p>
+          </div>
         </div>
 
-    </div>
-
-    <div className="map-container">
-    {/* trimming white sppaces also checking if no location*/}
-    {event.location?.trim() ? (
-        <iframe
-            className="displayMap"
-            title="Event Location"
-            width="65%"
-            height="200"
-            style={{ border: 0 }}
-            loading="lazy"
-            allowFullScreen
-            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(event.location)}`}
-        >
-        </iframe>
-    ) : (
-        <div className="online-event-location">
-
-            <div className="online-event-image">
-                <img
-                    src={online}
-                    alt="Online event"
-                />
+        <div className="map-container">
+          {/* trimming white sppaces also checking if no location*/}
+          {event.location?.trim() ? (
+            <iframe
+              className="displayMap"
+              title="Event Location"
+              width="65%"
+              height="200"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(event.location)}`}
+            ></iframe>
+          ) : (
+            <div className="online-event-location">
+              <div className="online-event-image">
+                <img src={online} alt="Online event" />
+              </div>
             </div>
- 
-
+          )}
         </div>
-    )}
+      </section>
+      {/*Attend Button */}
+      <section className="event-cta">
+        <div className="event-cta-content">
+          <div>
+            <span className="section-tag">Want to join us?</span>
 
-</div>
+            <h2>Be part of this event.</h2>
 
-</section>
-        {/*Attend Button */}
-            <section className="event-cta">
+            <p>Register your interest and connect with Eight Women.</p>
+          </div>
 
-    <div className="event-cta-content">
+          <Link
+            className="event-attend-button"
 
-        <div>
-            <span className="section-tag">
-                Want to join us?
-            </span>
+            to={"/get-involved"}
+          >
+            Register to Attend
+          </Link>
+        </div>
+      </section>
+      {/* QUICK INFO */}
 
-            <h2>
-                Be part of this event.
-            </h2>
+      <section className="event-info-grid">
+        <div className="info-card">
+          <FaCalendarAlt />
+
+          <div>
+            <h4>Date</h4>
 
             <p>
-                Register your interest and connect with Eight Women.
+              {new Date(event.event_date).toLocaleDateString("en-ZA", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
             </p>
+          </div>
         </div>
 
-        <Link
-            className="event-attend-button"
-            
-            to={'/get-involved'}
-        >
-            Register to Attend
-        </Link>
+        <div className="info-card">
+          <FaClock />
 
-    </div>
+          <div>
+            <h4>Starts</h4>
 
-</section>
-            {/* QUICK INFO */}
+            <p>
+              {new Date(`1970-01-01T${event.start_time}`).toLocaleTimeString(
+                "en-ZA",
+                {
+                  hour: "numeric",
+                  minute: "2-digit",
+                  hour12: true,
+                },
+              )}
+            </p>
+          </div>
+        </div>
 
-            <section className="event-info-grid">
+        <div className="info-card">
+          <FaClock />
 
-                <div className="info-card">
+          <div>
+            <h4>Ends</h4>
 
-                    <FaCalendarAlt />
+            <p>
+              {new Date(`1970-01-01T${event.end_time}`).toLocaleTimeString(
+                "en-ZA",
+                {
+                  hour: "numeric",
+                  minute: "2-digit",
+                  hour12: true,
+                },
+              )}
+            </p>
+          </div>
+        </div>
 
-                    <div>
+        <div className="info-card">
+          <FaUsers />
 
-                        <h4>Date</h4>
+          <div>
+            <h4>Capacity</h4>
 
-                        <p>
-                            {new Date(event.event_date).toLocaleDateString(
-                                "en-ZA",
-                                {
-                                    day: "numeric",
-                                    month: "long",
-                                    year: "numeric"
-                                }
-                            )}
-                        </p>
+            <p>{event.capacity} attendees</p>
+          </div>
+        </div>
+      </section>
 
-                    </div>
+      {/* EVENT DETAILS */}
 
-                </div>
+      <section className="event-details-section">
+        <h2>Event Details</h2>
 
-                <div className="info-card">
-
-                    <FaClock />
-
-                    <div>
-
-                        <h4>Starts</h4>
-
-                        <p>
-                            {new Date(`1970-01-01T${event.start_time}`)
-                                .toLocaleTimeString("en-ZA", {
-                                    hour: "numeric",
-                                    minute: "2-digit",
-                                    hour12: true
-                                })}
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div className="info-card">
-
-                    <FaClock />
-
-                    <div>
-
-                        <h4>Ends</h4>
-
-                        <p>
-                            {new Date(`1970-01-01T${event.end_time}`)
-                                .toLocaleTimeString("en-ZA", {
-                                    hour: "numeric",
-                                    minute: "2-digit",
-                                    hour12: true
-                                })}
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div className="info-card">
-
-                    <FaUsers />
-
-                    <div>
-
-                        <h4>Capacity</h4>
-
-                        <p>{event.capacity} attendees</p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            
-           
-            
-
-            {/* EVENT DETAILS */}
-
-<section className="event-details-section">
-
-    <h2>Event Details</h2>
-
-    <div className="event-details-card">
-
-        <div className="detail-row">
-
+        <div className="event-details-card">
+          <div className="detail-row">
             <div className="detail-icon">
-                <FaUserTie />
+              <FaUserTie />
             </div>
 
             <div className="detail-content">
-                <span>Organizer</span>
-                <p>{event.organizer}</p>
+              <span>Organizer</span>
+              <p>{event.organizer}</p>
             </div>
+          </div>
 
-        </div>
+          <div className="divider"></div>
 
-        <div className="divider"></div>
-
-        <div className="detail-row">
-
+          <div className="detail-row">
             <div className="detail-icon">
-                <FaMapMarkerAlt />
+              <FaMapMarkerAlt />
             </div>
 
             <div className="detail-content">
-                <span>Location</span>
-                <p>
-            {event.location?.trim()
-                ? event.location
-                : "This event will be held online."}
-        </p>
+              <span>Location</span>
+              <p>
+                {event.location?.trim()
+                  ? event.location
+                  : "This event will be held online."}
+              </p>
             </div>
+          </div>
 
-        </div>
+          <div className="divider"></div>
 
-        <div className="divider"></div>
-
-        <div className="detail-row">
-
+          <div className="detail-row">
             <div className="detail-icon">
-                <FaBullseye />
+              <FaBullseye />
             </div>
 
             <div className="detail-content">
-                <span>Purpose</span>
-                <p>{event.purpose}</p>
+              <span>Purpose</span>
+              <p>{event.purpose}</p>
             </div>
+          </div>
 
-        </div>
+          <div className="divider"></div>
 
-        <div className="divider"></div>
-
-        <div className="detail-row">
-
+          <div className="detail-row">
             <div className="detail-icon">
-                <FaBullhorn />
+              <FaBullhorn />
             </div>
 
             <div className="detail-content">
-                <span>Audience</span>
-                <p>
-                    {Array.isArray(event.audience)
-                        ? event.audience.join(", ")
-                        : event.audience}
-                </p>
+              <span>Audience</span>
+              <p>
+                {Array.isArray(event.audience)
+                  ? event.audience.join(", ")
+                  : event.audience}
+              </p>
             </div>
+          </div>
 
-        </div>
+          <div className="divider"></div>
 
-        <div className="divider"></div>
-
-        <div className="detail-row">
-
+          <div className="detail-row">
             <div className="detail-icon">
-                <FaTshirt />
+              <FaTshirt />
             </div>
 
             <div className="detail-content">
-                <span>Dress Code</span>
-                <p>{event.dress_code}</p>
+              <span>Dress Code</span>
+              <p>{event.dress_code}</p>
             </div>
+          </div>
+        </div>
+      </section>
 
+      {/* CONTACT */}
+
+      <section className="event-contact">
+        <h2>Contact Information</h2>
+
+        <div className="contact-card">
+          <FaEnvelope />
+
+          <span>{event.contact_email}</span>
         </div>
 
-    </div>
+        <div className="contact-card">
+          <FaPhone />
 
-</section>
+          <span>{event.contact_phone}</span>
+        </div>
 
-            {/* CONTACT */}
+        {event.meeting_link && (
+          <div className="contact-card">
+            <strong>Online Meeting</strong>
 
-            <section className="event-contact">
-
-                <h2>
-                    Contact Information
-                </h2>
-
-                <div className="contact-card">
-
-                    <FaEnvelope />
-
-                    <span>
-                        {event.contact_email}
-                    </span>
-
-                </div>
-
-                <div className="contact-card">
-
-                    <FaPhone />
-
-                    <span>
-                        {event.contact_phone}
-                    </span>
-
-                </div>
-
-                {event.meeting_link && (
-
-                    <div className="contact-card">
-
-                        <strong>
-                            Online Meeting
-                        </strong>
-
-                        <a
-                            href={event.meeting_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Join Event
-                        </a>
-
-                    </div>
-
-                )}
-
-            </section>
-
-        </main>
-
-    );
-
+            <a
+              href={event.meeting_link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join Event
+            </a>
+          </div>
+        )}
+      </section>
+    </main>
+  );
 };
 
 export default EventPage;

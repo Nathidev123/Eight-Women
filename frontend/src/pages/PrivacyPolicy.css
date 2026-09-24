@@ -3,8 +3,8 @@
 ================================================== */
 
 .privacy-page {
-    background: var(--cream);
-    color: var(--text);
+  background: var(--cream);
+  color: var(--text);
 }
 
 /* ==================================================
@@ -12,54 +12,50 @@
 ================================================== */
 
 .privacy-hero {
-    padding: 120px 8% 100px;
+  padding: 120px 8% 100px;
 
-    background: linear-gradient(
-        135deg,
-        var(--burgundy),
-        var(--burgundy-dark)
-    );
+  background: linear-gradient(135deg, var(--burgundy), var(--burgundy-dark));
 
-    color: white;
+  color: white;
 }
 
 .privacy-hero-content {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
 }
 
 .privacy-hero-content span {
-    display: inline-block;
+  display: inline-block;
 
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 
-    color: var(--cream-accent);
+  color: var(--cream-accent);
 
-    font-size: .85rem;
-    font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 700;
 
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .privacy-hero-content h1 {
-    margin: 0 0 22px;
+  margin: 0 0 22px;
 
-    font-size: 3.5rem;
-    line-height: 1.1;
+  font-size: 3.5rem;
+  line-height: 1.1;
 
-    letter-spacing: -1px;
+  letter-spacing: -1px;
 }
 
 .privacy-hero-content p {
-    max-width: 700px;
-    margin: auto;
+  max-width: 700px;
+  margin: auto;
 
-    color: #f1eeee;
+  color: #f1eeee;
 
-    font-size: 1.05rem;
-    line-height: 1.9;
+  font-size: 1.05rem;
+  line-height: 1.9;
 }
 
 /* ==================================================
@@ -67,19 +63,19 @@
 ================================================== */
 
 .privacy-content {
-    max-width: 900px;
+  max-width: 900px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    padding: 80px 8% 110px;
+  padding: 80px 8% 110px;
 }
 
 .privacy-updated {
-    margin-bottom: 55px;
+  margin-bottom: 55px;
 
-    color: var(--text-light);
+  color: var(--text-light);
 
-    font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 /* ==================================================
@@ -87,58 +83,58 @@
 ================================================== */
 
 .privacy-section {
-    margin-bottom: 55px;
+  margin-bottom: 55px;
 }
 
 .privacy-section h2 {
-    position: relative;
+  position: relative;
 
-    margin-bottom: 20px;
-    padding-bottom: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: 1.65rem;
-    line-height: 1.3;
+  font-size: 1.65rem;
+  line-height: 1.3;
 }
 
 .privacy-section h2::after {
-    content: "";
+  content: "";
 
-    position: absolute;
+  position: absolute;
 
-    left: 0;
-    bottom: 0;
+  left: 0;
+  bottom: 0;
 
-    width: 55px;
-    height: 3px;
+  width: 55px;
+  height: 3px;
 
-    background: var(--cream-accent);
+  background: var(--cream-accent);
 
-    border-radius: 999px;
+  border-radius: 999px;
 }
 
 .privacy-section p {
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 
-    color: var(--text-light);
+  color: var(--text-light);
 
-    font-size: 1rem;
-    line-height: 1.9;
+  font-size: 1rem;
+  line-height: 1.9;
 }
 
 .privacy-section ul {
-    margin: 20px 0 22px;
+  margin: 20px 0 22px;
 
-    padding-left: 25px;
+  padding-left: 25px;
 }
 
 .privacy-section li {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 
-    color: var(--text-light);
+  color: var(--text-light);
 
-    line-height: 1.8;
+  line-height: 1.8;
 }
 
 /* ==================================================
@@ -146,39 +142,39 @@
 ================================================== */
 
 .privacy-contact {
-    margin-bottom: 0;
+  margin-bottom: 0;
 
-    padding: 35px;
+  padding: 35px;
 
-    background: white;
+  background: white;
 
-    border-radius: 20px;
+  border-radius: 20px;
 
-    box-shadow: var(--shadow);
+  box-shadow: var(--shadow);
 }
 
 .privacy-contact h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .privacy-contact-details {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .privacy-contact-details p {
-    margin-bottom: 14px;
+  margin-bottom: 14px;
 }
 
 .privacy-contact-details a {
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    text-decoration: none;
+  text-decoration: none;
 
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .privacy-contact-details a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ==================================================
@@ -186,57 +182,53 @@
 ================================================== */
 
 @media (max-width: 900px) {
+  .privacy-hero {
+    padding: 100px 7% 80px;
+  }
 
-    .privacy-hero {
-        padding: 100px 7% 80px;
-    }
+  .privacy-hero-content h1 {
+    font-size: 2.8rem;
+  }
 
-    .privacy-hero-content h1 {
-        font-size: 2.8rem;
-    }
-
-    .privacy-content {
-        padding: 65px 7% 90px;
-    }
-
+  .privacy-content {
+    padding: 65px 7% 90px;
+  }
 }
 
 @media (max-width: 600px) {
+  .privacy-hero {
+    padding: 80px 6% 65px;
+  }
 
-    .privacy-hero {
-        padding: 80px 6% 65px;
-    }
+  .privacy-hero-content h1 {
+    font-size: 2.3rem;
+  }
 
-    .privacy-hero-content h1 {
-        font-size: 2.3rem;
-    }
+  .privacy-hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
 
-    .privacy-hero-content p {
-        font-size: .95rem;
-        line-height: 1.8;
-    }
+  .privacy-content {
+    padding: 55px 6% 75px;
+  }
 
-    .privacy-content {
-        padding: 55px 6% 75px;
-    }
+  .privacy-section {
+    margin-bottom: 45px;
+  }
 
-    .privacy-section {
-        margin-bottom: 45px;
-    }
+  .privacy-section h2 {
+    font-size: 1.4rem;
+  }
 
-    .privacy-section h2 {
-        font-size: 1.4rem;
-    }
+  .privacy-section p,
+  .privacy-section li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
 
-    .privacy-section p,
-    .privacy-section li {
-        font-size: .95rem;
-        line-height: 1.8;
-    }
-
-    .privacy-contact {
-        padding: 25px;
-        border-radius: 16px;
-    }
-
+  .privacy-contact {
+    padding: 25px;
+    border-radius: 16px;
+  }
 }

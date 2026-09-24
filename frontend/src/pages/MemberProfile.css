@@ -1,1117 +1,1042 @@
-
 /* =========================================================
    MEMBER PROFILE SECTON
    
 ========================================================= */
 
 :root {
-    --burgundy: #7B1E2B;
-    --burgundy-dark: #5A1320;
-    --cream: #F8F4EE;
-    --cream-accent: #E8CFA8;
+  --burgundy: #7b1e2b;
+  --burgundy-dark: #5a1320;
+  --cream: #f8f4ee;
+  --cream-accent: #e8cfa8;
 
-    --text: #242020;
-    --text-light: #6D6663;
-    --white: #FFFFFF;
+  --text: #242020;
+  --text-light: #6d6663;
+  --white: #ffffff;
 
-    --border: rgba(123, 30, 43, 0.14);
+  --border: rgba(123, 30, 43, 0.14);
 
-    --shadow-soft: 0 20px 50px rgba(90, 19, 32, 0.08);
+  --shadow-soft: 0 20px 50px rgba(90, 19, 32, 0.08);
 }
-
 
 /* =========================================================
    PAGE
 ========================================================= */
 
 .member-page {
-    min-height: 100vh;
-    background: var(--cream);
-    color: var(--text);
-    padding: 125px 8% 0;
-    overflow: hidden;
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--text);
+  padding: 125px 8% 0;
+  overflow: hidden;
 }
-
 
 /* =========================================================
    BACK BUTTON
 ========================================================= */
 
 .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 
-    margin-bottom: 65px;
+  margin-bottom: 65px;
 
-    padding: 0;
+  padding: 0;
 
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: 0.95rem;
-    font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 700;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .back-btn svg {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .back-btn:hover {
-    color: var(--burgundy-dark);
-    transform: translateX(-6px);
+  color: var(--burgundy-dark);
+  transform: translateX(-6px);
 }
-
 
 /* =========================================================
    MEMBER INTRO
 ========================================================= */
 
 .member-intro {
-    position: relative;
+  position: relative;
 
-    display: grid;
-    grid-template-columns: 420px 1fr;
+  display: grid;
+  grid-template-columns: 420px 1fr;
 
-    align-items: center;
+  align-items: center;
 
-    gap: 90px;
+  gap: 90px;
 
-    max-width: 1250px;
+  max-width: 1250px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    padding-bottom: 130px;
+  padding-bottom: 130px;
 }
-
 
 /* =========================================================
    INTRO IMAGE
 ========================================================= */
 
 .member-intro-image {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    max-width: 390px;
+  width: 100%;
+  max-width: 390px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .member-profile-image {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 
-    width: 350px;
-    height: 350px;
+  width: 350px;
+  height: 350px;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    border: 12px solid var(--white);
+  border: 12px solid var(--white);
 
-    box-shadow:
-        0 0 0 1px rgba(123, 30, 43, 0.08),
-        0 25px 55px rgba(90, 19, 32, 0.16);
+  box-shadow:
+    0 0 0 1px rgba(123, 30, 43, 0.08),
+    0 25px 55px rgba(90, 19, 32, 0.16);
 
-    transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
 }
 
 .member-profile-image:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 
-    box-shadow:
-        0 0 0 1px rgba(123, 30, 43, 0.08),
-        0 35px 65px rgba(90, 19, 32, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(123, 30, 43, 0.08),
+    0 35px 65px rgba(90, 19, 32, 0.2);
 }
-
 
 /* Decorative circle */
 
 .image-accent {
-    position: absolute;
+  position: absolute;
 
-    width: 350px;
-    height: 350px;
+  width: 350px;
+  height: 350px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    border: 2px solid var(--cream-accent);
+  border: 2px solid var(--cream-accent);
 
-    top: 22px;
-    left: 32px;
+  top: 22px;
+  left: 32px;
 
-    z-index: 1;
+  z-index: 1;
 }
-
 
 /* =========================================================
    INTRO CONTENT
 ========================================================= */
 
 .member-intro-content {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 .profile-eyebrow {
-    position: relative;
+  position: relative;
 
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
 
-    gap: 14px;
+  gap: 14px;
 
-    margin: 0 0 25px;
+  margin: 0 0 25px;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: 0.78rem;
-    font-weight: 800;
+  font-size: 0.78rem;
+  font-weight: 800;
 
-    text-transform: uppercase;
-    letter-spacing: 3px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .profile-eyebrow::before {
-    content: "";
+  content: "";
 
-    width: 38px;
-    height: 2px;
+  width: 38px;
+  height: 2px;
 
-    background: var(--cream-accent);
+  background: var(--cream-accent);
 }
 
 .member-intro-content h1 {
-    max-width: 850px;
+  max-width: 850px;
 
-    margin: 0 0 28px;
+  margin: 0 0 28px;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
 
-    line-height: 0.95;
+  line-height: 0.95;
 
-    font-weight: 800;
+  font-weight: 800;
 
-    letter-spacing: -3px;
+  letter-spacing: -3px;
 }
-
 
 /* =========================================================
    ROLE
 ========================================================= */
 
 .role-line {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 16px;
+  gap: 16px;
 }
 
 .role-line span {
-    width: 55px;
-    height: 3px;
+  width: 55px;
+  height: 3px;
 
-    background: var(--cream-accent);
+  background: var(--cream-accent);
 }
 
 .role-line p {
-    margin: 0;
+  margin: 0;
 
-    color: var(--text-light);
+  color: var(--text-light);
 
-    font-size: 1.05rem;
-    font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 600;
 
-    letter-spacing: 0.4px;
+  letter-spacing: 0.4px;
 }
-
 
 /* =========================================================
    SHARED SECTION LABEL
 ========================================================= */
 
 .section-label {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 15px;
+  gap: 15px;
 
-    margin-bottom: 45px;
+  margin-bottom: 45px;
 }
 
 .section-label span {
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: 0.8rem;
-    font-weight: 800;
+  font-size: 0.8rem;
+  font-weight: 800;
 
-    letter-spacing: 2px;
+  letter-spacing: 2px;
 }
 
 .section-label p {
-    margin: 0;
+  margin: 0;
 
-    color: var(--text-light);
+  color: var(--text-light);
 
-    font-size: 0.75rem;
-    font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 800;
 
-    text-transform: uppercase;
-    letter-spacing: 3px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .section-label::after {
-    content: "";
+  content: "";
 
-    width: 55px;
-    height: 1px;
+  width: 55px;
+  height: 1px;
 
-    background: var(--cream-accent);
+  background: var(--cream-accent);
 }
-
 
 /* =========================================================
    ABOUT
 ========================================================= */
 
 .member-about {
-    position: relative;
+  position: relative;
 
-    display: grid;
-    grid-template-columns: 220px 1fr;
+  display: grid;
+  grid-template-columns: 220px 1fr;
 
-    gap: 70px;
+  gap: 70px;
 
-    max-width: 1100px;
+  max-width: 1100px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    padding: 105px 0;
+  padding: 105px 0;
 
-    border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border);
 }
 
 .about-content {
-    max-width: 850px;
+  max-width: 850px;
 }
 
 .about-content h2 {
-    margin: 0 0 40px;
+  margin: 0 0 40px;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
 
-    line-height: 1.05;
+  line-height: 1.05;
 
-    letter-spacing: -2px;
+  letter-spacing: -2px;
 }
 
 .about-content h2 span {
-    color: var(--text);
-    font-family: Georgia, "Times New Roman", serif;
-    font-style: italic;
-    font-weight: 400;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .member-bio {
-    max-width: 800px;
+  max-width: 800px;
 
-    margin: 0;
+  margin: 0;
 
-    color: var(--text-light);
+  color: var(--text-light);
 
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 
-    line-height: 2;
+  line-height: 2;
 
-    white-space: pre-line;
+  white-space: pre-line;
 }
-
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
 .member-contact {
-    position: relative;
+  position: relative;
 
-    background: var(--burgundy);
+  background: var(--burgundy);
 
-    margin-left: calc(-8vw);
-    margin-right: calc(-8vw);
+  margin-left: calc(-8vw);
+  margin-right: calc(-8vw);
 
-    padding: 110px 8%;
+  padding: 110px 8%;
 
-    color: var(--white);
+  color: var(--white);
 }
 
 .member-contact .section-label span,
 .member-contact .section-label p {
-    color: var(--cream-accent);
+  color: var(--cream-accent);
 }
 
 .member-contact .section-label::after {
-    background: rgba(248, 244, 238, 0.35);
+  background: rgba(248, 244, 238, 0.35);
 }
-
 
 .contact-content {
-    max-width: 1100px;
+  max-width: 1100px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    gap: 100px;
+  gap: 100px;
 
-    align-items: center;
+  align-items: center;
 }
-
 
 /* =========================================================
    CONTACT HEADING
 ========================================================= */
 
 .contact-heading h2 {
-    margin: 0 0 25px;
+  margin: 0 0 25px;
 
-    color: var(--white);
+  color: var(--white);
 
-    font-size: clamp(2.5rem, 5vw, 4.3rem);
+  font-size: clamp(2.5rem, 5vw, 4.3rem);
 
-    line-height: 1.05;
+  line-height: 1.05;
 
-    letter-spacing: -2px;
+  letter-spacing: -2px;
 }
 
 .contact-heading h2 span {
-    color: var(--cream-accent);
+  color: var(--cream-accent);
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
 
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .contact-heading p {
-    max-width: 480px;
+  max-width: 480px;
 
-    margin: 0;
+  margin: 0;
 
-    color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.72);
 
-    font-size: 1rem;
+  font-size: 1rem;
 
-    line-height: 1.8;
+  line-height: 1.8;
 }
-
 
 /* =========================================================
    CONTACT DETAILS
 ========================================================= */
 
 .contact-details {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    gap: 0;
+  gap: 0;
 }
 
 .contact-link {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 22px;
+  gap: 22px;
 
-    padding: 28px 0;
+  padding: 28px 0;
 
-    color: var(--white);
+  color: var(--white);
 
-    text-decoration: none;
+  text-decoration: none;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
-    transition:
-        padding-left 0.3s ease,
-        border-color 0.3s ease;
+  transition:
+    padding-left 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .contact-link:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .contact-link:hover {
-    padding-left: 10px;
+  padding-left: 10px;
 
-    border-color: var(--cream-accent);
+  border-color: var(--cream-accent);
 }
 
 .contact-icon {
-    width: 48px;
-    height: 48px;
+  width: 48px;
+  height: 48px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    flex-shrink: 0;
+  flex-shrink: 0;
 
-    border: 1px solid rgba(232, 207, 168, 0.5);
+  border: 1px solid rgba(232, 207, 168, 0.5);
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    color: var(--cream-accent);
+  color: var(--cream-accent);
 
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .contact-link span {
-    display: block;
+  display: block;
 
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 
-    color: var(--cream-accent);
+  color: var(--cream-accent);
 
-    font-size: 0.7rem;
-    font-weight: 800;
+  font-size: 0.7rem;
+  font-weight: 800;
 
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .contact-link p {
-    margin: 0;
+  margin: 0;
 
-    color: var(--white);
+  color: var(--white);
 
-    font-size: 1rem;
+  font-size: 1rem;
 
-    word-break: break-word;
+  word-break: break-word;
 }
-
 
 /* =========================================================
    FEATURED VIDEOS
 ========================================================= */
 
 .member-videos {
-    max-width: 1200px;
+  max-width: 1200px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    padding: 120px 0 130px;
+  padding: 120px 0 130px;
 }
-
 
 /* =========================================================
    VIDEO HEADING
 ========================================================= */
 
 .videos-heading {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 
-    gap: 60px;
+  gap: 60px;
 
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .videos-heading h2 {
-    margin: 0;
+  margin: 0;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: clamp(2.7rem, 5vw, 4.5rem);
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
 
-    line-height: 1;
+  line-height: 1;
 
-    letter-spacing: -2px;
+  letter-spacing: -2px;
 }
 
 .videos-heading h2 span {
-    color: var(--text);
+  color: var(--text);
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
 
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .videos-heading p {
-    max-width: 400px;
+  max-width: 400px;
 
-    margin: 0;
+  margin: 0;
 
-    color: var(--text-light);
+  color: var(--text-light);
 
-    font-size: 0.95rem;
+  font-size: 0.95rem;
 
-    line-height: 1.8;
+  line-height: 1.8;
 }
-
 
 /* =========================================================
    VIDEO LIST
 ========================================================= */
 
 .video-list {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
-    gap: 55px 40px;
+  gap: 55px 40px;
 }
 
 .video-item {
-    position: relative;
+  position: relative;
 }
-
 
 /* =========================================================
    VIDEO FRAME
 ========================================================= */
 
 .video-frame {
-    position: relative;
+  position: relative;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    background: var(--burgundy);
+  background: var(--burgundy);
 
-    aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9;
 
-    box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-soft);
 }
 
 .video-frame iframe {
-    display: block;
+  display: block;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    border: none;
+  border: none;
 }
-
 
 /* =========================================================
    VIDEO INFO
 ========================================================= */
 
 .video-info {
-    padding: 22px 5px 0;
+  padding: 22px 5px 0;
 }
 
 .video-info span {
-    display: block;
+  display: block;
 
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: 0.7rem;
-    font-weight: 800;
+  font-size: 0.7rem;
+  font-weight: 800;
 
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .video-info h3 {
-    margin: 0;
+  margin: 0;
 
-    color: var(--text);
+  color: var(--text);
 
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 
-    line-height: 1.4;
+  line-height: 1.4;
 
-    font-weight: 700;
+  font-weight: 700;
 }
-
 
 /* =========================================================
    CLOSING SECTION
 ========================================================= */
 
 .member-closing {
-    position: relative;
+  position: relative;
 
-    margin-left: calc(-8vw);
-    margin-right: calc(-8vw);
+  margin-left: calc(-8vw);
+  margin-right: calc(-8vw);
 
-    padding: 120px 8% 140px;
+  padding: 120px 8% 140px;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--burgundy-dark),
-            var(--burgundy)
-        );
+  background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy));
 
-    text-align: center;
+  text-align: center;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .member-closing::before {
-    content: "08";
+  content: "08";
 
-    position: absolute;
+  position: absolute;
 
-    right: 5%;
-    bottom: -80px;
+  right: 5%;
+  bottom: -80px;
 
-    color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.04);
 
-    font-size: 18rem;
-    font-weight: 900;
+  font-size: 18rem;
+  font-weight: 900;
 
-    line-height: 1;
+  line-height: 1;
 }
 
 .member-closing p {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 
-    margin: 0 0 18px;
+  margin: 0 0 18px;
 
-    color: var(--cream-accent);
+  color: var(--cream-accent);
 
-    font-size: 0.75rem;
-    font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 800;
 
-    text-transform: uppercase;
-    letter-spacing: 4px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 .member-closing h2 {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 
-    margin: 0;
+  margin: 0;
 
-    color: var(--white);
+  color: var(--white);
 
-    font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
 
-    font-weight: 400;
+  font-weight: 400;
 
-    font-style: italic;
+  font-style: italic;
 }
-
 
 /* =========================================================
    NOT FOUND
 ========================================================= */
 
 .member-not-found {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    padding: 40px;
+  padding: 40px;
 
-    background: var(--cream);
+  background: var(--cream);
 
-    text-align: center;
+  text-align: center;
 }
 
 .member-not-found span {
-    display: block;
+  display: block;
 
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: 0.75rem;
-    font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 800;
 
-    text-transform: uppercase;
-    letter-spacing: 3px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .member-not-found h2 {
-    margin: 0 0 30px;
+  margin: 0 0 30px;
 
-    color: var(--burgundy);
+  color: var(--burgundy);
 
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .member-not-found button {
-    padding: 13px 25px;
+  padding: 13px 25px;
 
-    background: var(--burgundy);
+  background: var(--burgundy);
 
-    color: var(--white);
+  color: var(--white);
 
-    border: none;
-    border-radius: 999px;
+  border: none;
+  border-radius: 999px;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .member-not-found button:hover {
-    background: var(--burgundy-dark);
-    transform: translateY(-2px);
+  background: var(--burgundy-dark);
+  transform: translateY(-2px);
 }
-
 
 /* =========================================================
    RESPONSIVE — TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
+  .member-page {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 
-    .member-page {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
+  .member-intro {
+    grid-template-columns: 330px 1fr;
 
+    gap: 55px;
 
-    .member-intro {
-        grid-template-columns: 330px 1fr;
+    padding-bottom: 100px;
+  }
 
-        gap: 55px;
+  .member-profile-image {
+    width: 290px;
+    height: 290px;
+  }
 
-        padding-bottom: 100px;
-    }
+  .image-accent {
+    width: 290px;
+    height: 290px;
 
+    left: 25px;
+  }
 
-    .member-profile-image {
-        width: 290px;
-        height: 290px;
-    }
+  .member-intro-content h1 {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
 
+  .member-about {
+    grid-template-columns: 160px 1fr;
 
-    .image-accent {
-        width: 290px;
-        height: 290px;
+    gap: 45px;
+  }
 
-        left: 25px;
-    }
+  .member-contact {
+    margin-left: -6vw;
+    margin-right: -6vw;
 
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 
-    .member-intro-content h1 {
-        font-size: clamp(3rem, 7vw, 5rem);
-    }
+  .contact-content {
+    gap: 60px;
+  }
 
+  .member-closing {
+    margin-left: -6vw;
+    margin-right: -6vw;
 
-    .member-about {
-        grid-template-columns: 160px 1fr;
-
-        gap: 45px;
-    }
-
-
-    .member-contact {
-        margin-left: -6vw;
-        margin-right: -6vw;
-
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-
-    .contact-content {
-        gap: 60px;
-    }
-
-
-    .member-closing {
-        margin-left: -6vw;
-        margin-right: -6vw;
-
-        padding-left: 6%;
-        padding-right: 6%;
-    }
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 }
-
 
 /* =========================================================
    RESPONSIVE — MOBILE
 ========================================================= */
 
 @media (max-width: 750px) {
+  .member-page {
+    padding: 105px 6% 0;
+  }
 
-    .member-page {
-        padding: 105px 6% 0;
-    }
+  /* Back button */
 
+  .back-btn {
+    margin-bottom: 50px;
+  }
 
-    /* Back button */
+  /* Intro */
 
-    .back-btn {
-        margin-bottom: 50px;
-    }
+  .member-intro {
+    display: flex;
+    flex-direction: column;
 
+    gap: 55px;
 
-    /* Intro */
+    padding-bottom: 85px;
 
-    .member-intro {
-        display: flex;
-        flex-direction: column;
+    text-align: center;
+  }
 
-        gap: 55px;
+  .member-intro-image {
+    max-width: 300px;
 
-        padding-bottom: 85px;
+    margin: 0 auto;
+  }
 
-        text-align: center;
-    }
+  .member-profile-image {
+    width: 260px;
+    height: 260px;
 
+    border-width: 9px;
+  }
 
-    .member-intro-image {
-        max-width: 300px;
+  .image-accent {
+    width: 260px;
+    height: 260px;
 
-        margin: 0 auto;
-    }
+    top: 18px;
+    left: 22px;
+  }
 
+  .member-intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .member-profile-image {
-        width: 260px;
-        height: 260px;
+  .profile-eyebrow {
+    justify-content: center;
 
-        border-width: 9px;
-    }
+    margin-bottom: 20px;
+  }
 
+  .profile-eyebrow::before {
+    display: none;
+  }
 
-    .image-accent {
-        width: 260px;
-        height: 260px;
+  .member-intro-content h1 {
+    margin-bottom: 22px;
 
-        top: 18px;
-        left: 22px;
-    }
+    font-size: clamp(2.8rem, 14vw, 4rem);
 
+    letter-spacing: -2px;
+  }
 
-    .member-intro-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .role-line {
+    justify-content: center;
+  }
 
+  /* Section labels */
 
-    .profile-eyebrow {
-        justify-content: center;
+  .section-label {
+    margin-bottom: 30px;
+  }
 
-        margin-bottom: 20px;
-    }
+  /* About */
 
+  .member-about {
+    display: block;
 
-    .profile-eyebrow::before {
-        display: none;
-    }
+    padding: 75px 0;
+  }
 
+  .about-content h2 {
+    margin-bottom: 30px;
 
-    .member-intro-content h1 {
-        margin-bottom: 22px;
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
+  }
 
-        font-size: clamp(2.8rem, 14vw, 4rem);
+  .member-bio {
+    font-size: 1rem;
 
-        letter-spacing: -2px;
-    }
+    line-height: 1.9;
+  }
 
+  /* Contact */
 
-    .role-line {
-        justify-content: center;
-    }
+  .member-contact {
+    margin-left: -6vw;
+    margin-right: -6vw;
 
+    padding: 75px 6%;
+  }
 
-    /* Section labels */
+  .contact-content {
+    display: block;
+  }
 
-    .section-label {
-        margin-bottom: 30px;
-    }
+  .contact-heading {
+    margin-bottom: 50px;
+  }
 
+  .contact-heading h2 {
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
+  }
 
-    /* About */
+  .contact-heading p {
+    font-size: 0.95rem;
+  }
 
-    .member-about {
-        display: block;
+  /* Videos */
 
-        padding: 75px 0;
-    }
+  .member-videos {
+    padding: 80px 0 90px;
+  }
 
+  .videos-heading {
+    display: block;
 
-    .about-content h2 {
-        margin-bottom: 30px;
+    margin-bottom: 40px;
+  }
 
-        font-size: clamp(2.5rem, 11vw, 3.5rem);
-    }
+  .videos-heading h2 {
+    margin-bottom: 25px;
 
+    font-size: clamp(2.7rem, 11vw, 3.6rem);
+  }
 
-    .member-bio {
-        font-size: 1rem;
+  .videos-heading p {
+    max-width: 100%;
+  }
 
-        line-height: 1.9;
-    }
+  .video-list {
+    grid-template-columns: 1fr;
 
+    gap: 45px;
+  }
 
-    /* Contact */
+  .video-info {
+    padding-top: 18px;
+  }
 
-    .member-contact {
-        margin-left: -6vw;
-        margin-right: -6vw;
+  /* Closing */
 
-        padding: 75px 6%;
-    }
+  .member-closing {
+    margin-left: -6vw;
+    margin-right: -6vw;
 
+    padding: 85px 6% 100px;
+  }
 
-    .contact-content {
-        display: block;
-    }
+  .member-closing::before {
+    font-size: 10rem;
 
+    bottom: -35px;
+  }
 
-    .contact-heading {
-        margin-bottom: 50px;
-    }
-
-
-    .contact-heading h2 {
-        font-size: clamp(2.5rem, 11vw, 3.5rem);
-    }
-
-
-    .contact-heading p {
-        font-size: 0.95rem;
-    }
-
-
-    /* Videos */
-
-    .member-videos {
-        padding: 80px 0 90px;
-    }
-
-
-    .videos-heading {
-        display: block;
-
-        margin-bottom: 40px;
-    }
-
-
-    .videos-heading h2 {
-        margin-bottom: 25px;
-
-        font-size: clamp(2.7rem, 11vw, 3.6rem);
-    }
-
-
-    .videos-heading p {
-        max-width: 100%;
-    }
-
-
-    .video-list {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-    }
-
-
-    .video-info {
-        padding-top: 18px;
-    }
-
-
-    /* Closing */
-
-    .member-closing {
-        margin-left: -6vw;
-        margin-right: -6vw;
-
-        padding: 85px 6% 100px;
-    }
-
-
-    .member-closing::before {
-        font-size: 10rem;
-
-        bottom: -35px;
-    }
-
-
-    .member-closing h2 {
-        font-size: clamp(2.3rem, 10vw, 3.5rem);
-    }
+  .member-closing h2 {
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
+  }
 }
-
 
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 450px) {
+  .member-page {
+    padding-top: 95px;
+  }
 
-    .member-page {
-        padding-top: 95px;
-    }
+  .member-profile-image {
+    width: 220px;
+    height: 220px;
+  }
 
+  .image-accent {
+    width: 220px;
+    height: 220px;
 
-    .member-profile-image {
-        width: 220px;
-        height: 220px;
-    }
+    top: 15px;
+    left: 20px;
+  }
 
+  .member-intro {
+    padding-bottom: 70px;
+  }
 
-    .image-accent {
-        width: 220px;
-        height: 220px;
+  .contact-link {
+    gap: 15px;
+  }
 
-        top: 15px;
-        left: 20px;
-    }
+  .contact-icon {
+    width: 42px;
+    height: 42px;
+  }
 
+  .contact-link p {
+    font-size: 0.9rem;
+  }
 
-    .member-intro {
-        padding-bottom: 70px;
-    }
-
-
-    .contact-link {
-        gap: 15px;
-    }
-
-
-    .contact-icon {
-        width: 42px;
-        height: 42px;
-    }
-
-
-    .contact-link p {
-        font-size: 0.9rem;
-    }
-
-
-    .video-info h3 {
-        font-size: 1.1rem;
-    }
+  .video-info h3 {
+    font-size: 1.1rem;
+  }
 }

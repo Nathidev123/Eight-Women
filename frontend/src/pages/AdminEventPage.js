@@ -1,398 +1,333 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { useNavigate } from "react-router-dom";
-import placeholder from "../assets/placeholder.jpeg";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useEventDetailsContext } from "../hooks/useEventDetailsContext";
-import online from '../assets/online.png'
+import online from "../assets/online2.png";
 import {
-    FaCalendarAlt,
-    FaClock,
-    FaMapMarkerAlt,
-    FaUsers,
-    FaEnvelope,
-    FaPhone,
-    FaUserTie,
-    FaTshirt,
-    FaBullseye,
-    FaBullhorn,
-    FaEdit,
-    FaSave
+  FaCalendarAlt,
+  FaClock,
+  FaMapMarkerAlt,
+  FaUsers,
+  FaEnvelope,
+  FaPhone,
+  FaUserTie,
+  FaTshirt,
+  FaBullseye,
+  FaBullhorn,
+  FaEdit,
+  FaSave,
 } from "react-icons/fa";
-import './AdminEvent.css'
+import "./AdminEvent.css";
 const AdminEventPage = () => {
-const { id } = useParams()
-const navigate = useNavigate()
+  const { id } = useParams();
 
-    const { user } = useAuthContext()
-    const { dispatch } = useEventDetailsContext()
-    const [event, setEvent] = useState(null)
-    const [isEditing, setIsEditing] = useState(false)
+  const { user } = useAuthContext();
+  const { dispatch } = useEventDetailsContext();
+  const [event, setEvent] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
 
-     useEffect(() => {
-        const getEventDetails = async () => {
-        const response = await fetch(`/api/mainroutes/${id}`)
-        const json = await response.json()
+  useEffect(() => {
+    const getEventDetails = async () => {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/mainroutes/${id}`,
+      );
+      const json = await response.json();
 
-        if(response.ok){
-            setEvent(json)
-            console.log(json)
-        }
-    }
-    getEventDetails()
-     }, [id])
+      if (response.ok) {
+        setEvent(json);
+        console.log(json);
+      }
+    };
+    getEventDetails();
+  }, [id]);
 
+  const handleUpdate = async (event, id) => {
+    if (!user) return;
 
+    const data = new FormData();
 
+    Object.keys(event).forEach((key) => {
+      if (key !== "imageFile") {
+        data.append(key, event[key]);
+      }
+    });
 
-     const handleUpdate = async (event, id) => {
-    if(!user) return
-
-    const data = new FormData()
-        
-    Object.keys(event).forEach(key => {
-        if(key !== "imageFile"){
-            data.append(key, event[key])
-        }
-    })
-
-    if(event.imageFile){
-        data.append("image", event.imageFile)
+    if (event.imageFile) {
+      data.append("image", event.imageFile);
     }
 
-    const response = await fetch('/api/mainroutes/' + id,{
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/api/mainroutes/${id}`,
+      {
         method: "PATCH",
-        headers:{
-            Authorization: `Bearer ${user.token}`
+        headers: {
+          Authorization: `Bearer ${user.token}`,
         },
-        body: data
-    })
+        body: data,
+      },
+    );
 
-    const json = await response.json()
+    const json = await response.json();
 
-    if(response.ok){
-        setEvent(json)
-        setIsEditing(false)
-        dispatch({
-            type:"PATCH_EventDetails",
-            payload:json
-        })
+    if (response.ok) {
+      setEvent(json);
+      setIsEditing(false);
+      dispatch({
+        type: "PATCH_EventDetails",
+        payload: json,
+      });
     }
-}
+  };
 
-    if(!event){
-        return(
-            <div className="loading-page">
+  if (!event) {
+    return <div className="loading-page"></div>;
+  }
 
-            </div>
-        )
-    }
+  return (
+    <>
+      <main className="event-page">
+        {/* HERO */}
 
-    return(
-        <>
-        
-        <main className="event-page">
-            
-                    {/* HERO */}
-                    
-                    <section className="event-hero">
-        
-                        <div className="event-hero-content">
-        
-                            <span className="section-tag">
-                                Community Event
-                            </span>
-        
-            {
-                isEditing ? (
-                    <input
-                        type="text"
-                        value={event.event_name}
-                        onChange={(e) =>
-                            setEvent({
-                                ...event,
-                                event_name: e.target.value
-                            })
-                        }
-                    />
-                ) : (
-                    <h1>{event.event_name}</h1>
-                )
-            }
-                                        
-        
-                            {
-    isEditing
-    ? (
-        <textarea
-            value={event.event_description}
-            onChange={(e) =>
-                setEvent({
+        <section className="event-hero">
+          <div className="event-hero-content">
+            <span className="section-tag">Community Event</span>
+
+            {isEditing ? (
+              <input
+                type="text"
+                value={event.event_name}
+                onChange={(e) =>
+                  setEvent({
                     ...event,
-                    event_description: e.target.value
-                })
-            }
-        />
-    )
-    : (
-        <p>{event.event_description}</p>
-    )
-}
-        
-                        </div>
-        
-                        <div className="event-hero-image">
-                            <p>Change Image</p>
-                    {isEditing && (
-                <input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) =>
-                        setEvent({
-                            ...event,
-                            imageFile: e.target.files[0]
-                            //not replacing image
-                            //now -> imageFile
-                        })
-                    }
-                />
+                    event_name: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <h1>{event.event_name}</h1>
             )}
-        
-                        </div>
-        
-                    </section>
-                    <button
-    className={`edit-btn ${isEditing ? "save" : "edit"}`}
-    onClick={async () => {
-        if (isEditing) {
-            await handleUpdate(event, event._id)
-        } else {
-            setIsEditing(true)
-        }
-    }}
->
-    {isEditing ? (
-        <>
-            <FaSave />
-            Save Changes
-        </>
-    ) : (
-        <>
-            <FaEdit />
-            Edit Event
-        </>
-    )}
-</button>
-                     <section>
-                        {/*To display map*/}
-                        <div className="map-container">
-                {
-    isEditing
-    ? (
-        <input
-            value={event.location || ""}
-            placeholder="Enter location or leave blank for an online event"
-            onChange={(e) =>
-                setEvent({
+
+            {isEditing ? (
+              <textarea
+                value={event.event_description}
+                onChange={(e) =>
+                  setEvent({
                     ...event,
-                    location: e.target.value
-                })
+                    event_description: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>{event.event_description}</p>
+            )}
+          </div>
+
+          <div className="event-hero-image">
+            <p>Change Image</p>
+            {isEditing && (
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) =>
+                  setEvent({
+                    ...event,
+                    imageFile: e.target.files[0],
+                    //not replacing image
+                    //now -> imageFile
+                  })
+                }
+              />
+            )}
+          </div>
+        </section>
+        <button
+          className={`edit-btn ${isEditing ? "save" : "edit"}`}
+          onClick={async () => {
+            if (isEditing) {
+              await handleUpdate(event, event._id);
+            } else {
+              setIsEditing(true);
             }
-        />
-        )
-        : (
-            
-    event.location?.trim() && (
-        <p>{event.location}</p>
-    
-)
-        )
-    } {/* if user enters only white spaces or no location at all */}
-        {event.location?.trim() ? (
-    <iframe
-        className="displayMap"
-        title="Event Location"
-        width="65%"
-        height="200"
-        style={{ border: 0 }}
-        loading="lazy"
-        allowFullScreen
-        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(event.location)}`}
-    >
-    </iframe>
-) : (
-    <div className="online-event-location">
+          }}
+        >
+          {isEditing ? (
+            <>
+              <FaSave />
+              Save Changes
+            </>
+          ) : (
+            <>
+              <FaEdit />
+              Edit Event
+            </>
+          )}
+        </button>
+        <section>
+          {/*To display map*/}
+          <div className="map-container">
+            {isEditing ? (
+              <input
+                value={event.location || ""}
+                placeholder="Enter location or leave blank for an online event"
+                onChange={(e) =>
+                  setEvent({
+                    ...event,
+                    location: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              event.location?.trim() && <p>{event.location}</p>
+            )}{" "}
+            {/* if user enters only white spaces or no location at all */}
+            {event.location?.trim() ? (
+              <iframe
+                className="displayMap"
+                title="Event Location"
+                width="65%"
+                height="200"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(event.location)}`}
+              ></iframe>
+            ) : (
+              <div className="online-event-location">
+                <div className="online-event-image">
+                  {/*Image will sit here*/}
+                  <img src={online} alt="online event" />
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
 
-        <div className="online-event-image">
-        {/*Image will sit here*/}
-        <img 
-        src={online}
-        alt="online event"
-        />
-        </div>
+        {/* QUICK INFO */}
 
-        <div className="online-event-content">
-        <h3>Online Event</h3>
-        <p>This event will be held online.</p>
-        </div>
-    </div>
-)}
-                        </div>
-                    </section>
-                    
-                    {/* QUICK INFO */}
-        
-                    <section className="event-info-grid">
-        
-                        <div className="info-card">
-        
-                            <FaCalendarAlt />
-        
-                            <div>
+        <section className="event-info-grid">
+          <div className="info-card">
+            <FaCalendarAlt />
 
-    <h4>Date</h4>
+            <div>
+              <h4>Date</h4>
 
-    {
-        isEditing ? (
-            <input
-    type="date"
-    value={event.event_date?.split("T")[0]}
-    onChange={(e) =>
-        setEvent({
-            ...event,
-            event_date: e.target.value
-        })
-    }
-/>
-        ) : (
-            <p>
-                {new Date(event.event_date).toLocaleDateString(
+              {isEditing ? (
+                <input
+                  type="date"
+                  value={event.event_date?.split("T")[0]}
+                  onChange={(e) =>
+                    setEvent({
+                      ...event,
+                      event_date: e.target.value,
+                    })
+                  }
+                />
+              ) : (
+                <p>
+                  {new Date(event.event_date).toLocaleDateString("en-ZA", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="info-card">
+            <FaClock />
+
+            <div>
+              <h4>Starts</h4>
+
+              {isEditing ? (
+                <input
+                  type="time"
+                  value={event.start_time}
+                  onChange={(e) =>
+                    setEvent({
+                      ...event,
+                      start_time: e.target.value,
+                    })
+                  }
+                />
+              ) : (
+                <p>
+                  {new Date(
+                    `1970-01-01T${event.start_time}`,
+                  ).toLocaleTimeString("en-ZA", {
+                    hour: "numeric",
+                    minute: "2-digit",
+                    hour12: true,
+                  })}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="info-card">
+            <FaClock />
+
+            <div>
+              <h4>Ends</h4>
+
+              {isEditing ? (
+                <input
+                  type="time"
+                  value={event.end_time}
+                  onChange={(e) =>
+                    setEvent({
+                      ...event,
+                      end_time: e.target.value,
+                    })
+                  }
+                />
+              ) : (
+                <p>
+                  {new Date(`1970-01-01T${event.end_time}`).toLocaleTimeString(
                     "en-ZA",
                     {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric"
-                    }
-                )}
-            </p>
-        )
-    }
+                      hour: "numeric",
+                      minute: "2-digit",
+                      hour12: true,
+                    },
+                  )}
+                </p>
+              )}
+            </div>
+          </div>
 
-</div>
-        
-                        </div>
-        
-                        <div className="info-card">
-        
-                            <FaClock />
-        
-                           <div>
+          <div className="info-card">
+            <FaUsers />
 
-    <h4>Starts</h4>
+            <div>
+              <h4>Capacity</h4>
 
-    {
-        isEditing ? (
-            <input
-                type="time"
-                value={event.start_time}
-                onChange={(e) =>
+              {isEditing ? (
+                <input
+                  type="number"
+                  min="1"
+                  value={event.capacity}
+                  onChange={(e) =>
                     setEvent({
-                        ...event,
-                        start_time: e.target.value
+                      ...event,
+                      capacity: e.target.value,
                     })
-                }
-            />
-        ) : (
-            <p>
-                {new Date(`1970-01-01T${event.start_time}`)
-                    .toLocaleTimeString("en-ZA", {
-                        hour: "numeric",
-                        minute: "2-digit",
-                        hour12: true
-                    })}
-            </p>
-        )
-    }
+                  }
+                />
+              ) : (
+                <p>{event.capacity} attendees</p>
+              )}
+            </div>
+          </div>
+        </section>
 
-</div>
-        
-                        </div>
-        
-                        <div className="info-card">
-        
-                            <FaClock />
-        
-                            <div>
+        {/* ABOUT */}
 
-    <h4>Ends</h4>
+        <section className="event-section">
+          <h2>About This Event</h2>
 
-    {
-        isEditing ? (
-            <input
-                type="time"
-                value={event.end_time}
-                onChange={(e) =>
-                    setEvent({
-                        ...event,
-                        end_time: e.target.value
-                    })
-                }
-            />
-        ) : (
-            <p>
-                {new Date(`1970-01-01T${event.end_time}`)
-                    .toLocaleTimeString("en-ZA", {
-                        hour: "numeric",
-                        minute: "2-digit",
-                        hour12: true
-                    })}
-            </p>
-        )
-    }
-
-</div>
-        
-                        </div>
-        
-                        <div className="info-card">
-        
-                            <FaUsers />
-        
-                            <div>
-
-    <h4>Capacity</h4>
-
-    {
-        isEditing ? (
-            <input
-                type="number"
-                min="1"
-                value={event.capacity}
-                onChange={(e) =>
-                    setEvent({
-                        ...event,
-                        capacity: e.target.value
-                    })
-                }
-            />
-        ) : (
-            <p>{event.capacity} attendees</p>
-        )
-    }
-
-</div>
-        
-                        </div>
-        
-                    </section>
-        
-                    {/* ABOUT */}
-        
-                    <section className="event-section">
-        
-                       <h2>About This Event</h2>
-
-{/*
+          {/*
     isEditing ? (
         <textarea
             value={event.event_description}
@@ -408,243 +343,197 @@ const navigate = useNavigate()
         <p>{event.event_description}</p>
     )
  */}
-        
-                    </section>
-                   
-                    
-        
-                    {/* EVENT DETAILS */}
-        
-                    <section className="event-grid">
-        
-                        <div className="detail-card">
-        
-                            <FaUserTie />
-        
-                           <h3>Organizer</h3>
+        </section>
 
-{
-    isEditing ? (
-        <input
-            type="text"
-            value={event.organizer}
-            onChange={(e) =>
-                setEvent({
+        {/* EVENT DETAILS */}
+
+        <section className="event-grid">
+          <div className="detail-card">
+            <FaUserTie />
+
+            <h3>Organizer</h3>
+
+            {isEditing ? (
+              <input
+                type="text"
+                value={event.organizer}
+                onChange={(e) =>
+                  setEvent({
                     ...event,
-                    organizer: e.target.value
-                })
-            }
-        />
-    ) : (
-        <p>{event.organizer}</p>
-    )
-}
-        
-                        </div>
-        
-                        <div className="detail-card">
-        
-                            <FaMapMarkerAlt />
-        
-                            <h3>Location</h3>
+                    organizer: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>{event.organizer}</p>
+            )}
+          </div>
 
-{
-    isEditing ? (
-        <input
-            type="text"
-            value={event.locatio || ""}
-            onChange={(e) =>
-                setEvent({
+          <div className="detail-card">
+            <FaMapMarkerAlt />
+
+            <h3>Location</h3>
+
+            {isEditing ? (
+              <input
+                type="text"
+                value={event.locatio || ""}
+                onChange={(e) =>
+                  setEvent({
                     ...event,
-                    location: e.target.value
-                })
-            }
-        />
-    ) : (
-        <p>
-            {event.location?.trim()
-                ? event.location
-                : "Online Event"}
-        </p>
-            )
-        }
-        
-    </div>
-        
-             <div className="detail-card">
-                 <FaBullseye />
-                    <h3>Purpose</h3>
+                    location: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>{event.location?.trim() ? event.location : "Online Event"}</p>
+            )}
+          </div>
 
-{
-    isEditing ? (
-        <textarea
-            value={event.purpose}
-            onChange={(e) =>
-                setEvent({
+          <div className="detail-card">
+            <FaBullseye />
+            <h3>Purpose</h3>
+
+            {isEditing ? (
+              <textarea
+                value={event.purpose}
+                onChange={(e) =>
+                  setEvent({
                     ...event,
-                    purpose: e.target.value
-                })
-            }
-            rows={4}
-        />
-    ) : (
-        <p>{event.purpose}</p>
-    )
-}
-        
-                        </div>
-        
-                        <div className="detail-card">
-                            <FaBullhorn />
-                            <h3>Audience</h3>
+                    purpose: e.target.value,
+                  })
+                }
+                rows={4}
+              />
+            ) : (
+              <p>{event.purpose}</p>
+            )}
+          </div>
 
-{
-    isEditing ? (
-        <input
-            type="text"
-            value={
-                Array.isArray(event.audience)
+          <div className="detail-card">
+            <FaBullhorn />
+            <h3>Audience</h3>
+
+            {isEditing ? (
+              <input
+                type="text"
+                value={
+                  Array.isArray(event.audience)
                     ? event.audience.join(", ")
                     : event.audience
-            }
-            onChange={(e) =>
-                setEvent({
+                }
+                onChange={(e) =>
+                  setEvent({
                     ...event,
                     audience: e.target.value
-                        .split(",")
-                        .map(item => item.trim())
-                })
-            }
-        />
-    ) : (
-        <p>
-            {Array.isArray(event.audience)
-                ? event.audience.join(", ")
-                : event.audience}
-        </p>
-    )
-}
-        
-                        </div>
-        
-                        <div className="detail-card">
-                            <FaTshirt />
-                            <h3>Dress Code</h3>
+                      .split(",")
+                      .map((item) => item.trim()),
+                  })
+                }
+              />
+            ) : (
+              <p>
+                {Array.isArray(event.audience)
+                  ? event.audience.join(", ")
+                  : event.audience}
+              </p>
+            )}
+          </div>
 
-{
-    isEditing ? (
-        <input
-            type="text"
-            value={event.dress_code}
-            onChange={(e) =>
-                setEvent({
+          <div className="detail-card">
+            <FaTshirt />
+            <h3>Dress Code</h3>
+
+            {isEditing ? (
+              <input
+                type="text"
+                value={event.dress_code}
+                onChange={(e) =>
+                  setEvent({
                     ...event,
-                    dress_code: e.target.value
-                })
-            }
-        />
-    ) : (
-        <p>{event.dress_code}</p>
-    )
-}
-        
-                        </div>
-        
-                    </section>
-        
-                    {/* CONTACT */}
-        
-                    <section className="event-contact">
-        
-                        <h2>
-                            Contact Information
-                        </h2>
-        
-                        <div className="contact-card">
+                    dress_code: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>{event.dress_code}</p>
+            )}
+          </div>
+        </section>
 
-    <FaEnvelope />
+        {/* CONTACT */}
 
-    {
-        isEditing ? (
-            <input
+        <section className="event-contact">
+          <h2>Contact Information</h2>
+
+          <div className="contact-card">
+            <FaEnvelope />
+
+            {isEditing ? (
+              <input
                 type="email"
                 value={event.contact_email}
                 onChange={(e) =>
-                    setEvent({
-                        ...event,
-                        contact_email: e.target.value
-                    })
+                  setEvent({
+                    ...event,
+                    contact_email: e.target.value,
+                  })
                 }
-            />
-        ) : (
-            <span>{event.contact_email}</span>
-        )
-    }
+              />
+            ) : (
+              <span>{event.contact_email}</span>
+            )}
+          </div>
 
-</div>
-        
-                        <div className="contact-card">
+          <div className="contact-card">
+            <FaPhone />
 
-    <FaPhone />
-
-    {
-        isEditing ? (
-            <input
+            {isEditing ? (
+              <input
                 type="tel"
                 value={event.contact_phone}
                 onChange={(e) =>
-                    setEvent({
-                        ...event,
-                        contact_phone: e.target.value
-                    })
+                  setEvent({
+                    ...event,
+                    contact_phone: e.target.value,
+                  })
                 }
-            />
-        ) : (
-            <span>{event.contact_phone}</span>
-        )
-    }
+              />
+            ) : (
+              <span>{event.contact_phone}</span>
+            )}
+          </div>
 
-</div>
-        
-                        {
-    event.meeting_link && (
-        <div className="contact-card">
+          {event.meeting_link && (
+            <div className="contact-card">
+              <strong>Online Meeting</strong>
 
-            <strong>Online Meeting</strong>
+              {isEditing ? (
+                <input
+                  type="url"
+                  value={event.meeting_link}
+                  onChange={(e) =>
+                    setEvent({
+                      ...event,
+                      meeting_link: e.target.value,
+                    })
+                  }
+                />
+              ) : (
+                <a
+                  href={event.meeting_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join Event
+                </a>
+              )}
+            </div>
+          )}
+        </section>
+      </main>
+    </>
+  );
+};
 
-            {
-                isEditing ? (
-                    <input
-                        type="url"
-                        value={event.meeting_link}
-                        onChange={(e) =>
-                            setEvent({
-                                ...event,
-                                meeting_link: e.target.value
-                            })
-                        }
-                    />
-                ) : (
-                    <a
-                        href={event.meeting_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Join Event
-                    </a>
-                )
-            }
-
-        </div>
-    )
-}
-        
-                    </section>
-        
-                </main>
-        </>
-    )
-}
-
-
-export default AdminEventPage
+export default AdminEventPage;

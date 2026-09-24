@@ -1,159 +1,111 @@
 import { Link } from "react-router-dom";
-import {  FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const Navbar = () => {
-    const navigate = useNavigate()
-    const { logout } = useLogout();
-    const { user } = useAuthContext();
+  const navigate = useNavigate();
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
 
-    const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const handleLogout = () => {
-        logout();
-        setMenuOpen(false);
-        navigate('/')  
-    };
+  const handleLogout = () => {
+    logout();
+    setMenuOpen(false);
+    navigate("/");
+  };
 
-    return (
+  return (
+    <header className="navbar">
+      <div className="nav-container">
+        <Link to="/" className="logo">
+          <h2>Eight Women</h2>
 
-        <header className="navbar">
+          <span>Building Peace Together</span>
+        </Link>
 
-            <div className="nav-container">
+        <nav className="desktop-nav">
+          <Link to="/">Home</Link>
 
-                <Link to="/" className="logo">
+          <Link to="/#events">Events</Link>
 
-                    <h2>Eight Women</h2>
+          <Link to="/our-work">Our Work</Link>
 
-                    <span>Building Peace Together</span>
+          <Link to="/get-involved">Get Involved</Link>
 
-                </Link>
+          {!user && <Link to="/login">Admin</Link>}
 
-                <nav className="desktop-nav">
+          {user && (
+            <div className="nav-user1">
+              <span className="user-email1">{user.email}</span>
 
-                    <Link to="/">Home</Link>
-
-                    <Link to="/#events">Events</Link>
-
-                    <Link to="/our-work">Our Work</Link>
-
-                    <Link to="/get-involved">Get Involved</Link>
-
-
-                {!user && (
-                        <Link to="/login">
-                            Admin
-                        </Link>
-                    )}
-
-
-                {user && (
-                        <div className="nav-user1">
-
-                            <span className="user-email1">
-                                {user.email}
-                            </span>
-
-                            <button
-                                className="logout-btn1"
-                                onClick={handleLogout}
-                            >
-                                Log Out
-                            </button>
-
-                        </div>
-                    )}
-
-                </nav>
-
-                
-
-                <button
-                    className="hamburger"
-                    onClick={() => setMenuOpen(true)}
-                >
-
-                    <FaBars />
-
-                </button>
-
+              <button className="logout-btn1" onClick={handleLogout}>
+                Log Out
+              </button>
             </div>
-            {menuOpen && (
-                <div
-                    className="overlay"
-                    onClick={() => setMenuOpen(false)}
-                />
-            )}
+          )}
+        </nav>
 
-            <div className={`sidebar ${menuOpen ? "active" : ""}`}>
+        <button className="hamburger" onClick={() => setMenuOpen(true)}>
+          <FaBars />
+        </button>
+      </div>
+      {menuOpen && (
+        <div className="overlay" onClick={() => setMenuOpen(false)} />
+      )}
 
-                <button
-                    className="close-btn"
-                    onClick={() => setMenuOpen(false)}
-                >
+      <div className={`sidebar ${menuOpen ? "active" : ""}`}>
+        <button className="close-btn" onClick={() => setMenuOpen(false)}>
+          <FaTimes />
+        </button>
+        <div className="sidebar-brand">
+          <h2>Eight Women</h2>
+          <p>Building Peace Together</p>
+        </div>
 
-                    <FaTimes />
+        <Link onClick={() => setMenuOpen(false)} to="/#members">
+          Home
+        </Link>
 
-                </button>
-                <div className="sidebar-brand">
-                <h2>Eight Women</h2>
-                <p>Building Peace Together</p>
-            </div>
+        <Link onClick={() => setMenuOpen(false)} to="/#events">
+          Events
+        </Link>
 
-                <Link onClick={() => setMenuOpen(false)} to="/#members">Home</Link>
+        <Link onClick={() => setMenuOpen(false)} to="/get-involved">
+          Get Involved
+        </Link>
 
-                <Link onClick={() => setMenuOpen(false)} to="/#events">Events</Link>
+        <Link onClick={() => setMenuOpen(false)} to="/our-work">
+          Our Work
+        </Link>
 
-                <Link onClick={() => setMenuOpen(false)} to="/get-involved">Get Involved</Link>
+        {!user && (
+          <>
+            <Link onClick={() => setMenuOpen(false)} to="/login">
+              Admin
+            </Link>
 
-                <Link onClick={() => setMenuOpen(false)} to="/our-work">Our Work</Link>
-
-                {!user && (
-                    <>
-                        <Link onClick={() => setMenuOpen(false)} to="/login">
-                            Admin
-                        </Link>
-
-                        {/*<Link onClick={() => setMenuOpen(false)} to="/signup">
+            {/*<Link onClick={() => setMenuOpen(false)} to="/signup">
                             Sign Up
                         </Link>*/}
-                    </>
-                )}
+          </>
+        )}
 
-                {user && (
+        {user && (
+          <>
+            <span className="user-email1">{user.email}</span>
 
-                    <>
-
-                        <span className="user-email1">
-
-                            {user.email}
-
-                        </span>
-
-                        <button
-                            className="logout-btn1"
-                            onClick={handleLogout}
-                        >
-
-                            Log Out
-
-                        </button>
-
-                    </>
-
-                )}
-
-            </div>
-
-            
-
-        </header>
-
-    );
-
-}
+            <button className="logout-btn1" onClick={handleLogout}>
+              Log Out
+            </button>
+          </>
+        )}
+      </div>
+    </header>
+  );
+};
 
 export default Navbar;

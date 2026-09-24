@@ -8,90 +8,74 @@ import interactionPlugin from "@fullcalendar/interaction";
 import "./EventsCalendar.css";
 
 const EventsCalendar = () => {
-    //const API_URL = process.env.REACT_APP_API_URL;
-    const [events, setEvents] = useState([]);
+  //const API_URL = process.env.REACT_APP_API_URL;
+  const [events, setEvents] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
+    const fetchEvents = async () => {
+      //const response = await fetch(`${API_URL}/api/mainroutes/`
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/mainroutes/`,
+      );
+      const json = await response.json();
 
-        const fetchEvents = async () => {
-            //const response = await fetch(`${API_URL}/api/mainroutes/`
-            const response = await fetch('/api/mainroutes/');
-            const json = await response.json();
+      if (response.ok) {
+        setEvents(json);
+      }
+    };
 
-            if(response.ok){
-                setEvents(json);
-            }
+    fetchEvents();
+  }, []);
+  //API_URL this was in the dependency array
+  const calendarEvents = events.map((event) => ({
+    title: event.event_name,
 
-        }
+    start: `${event.event_date.split("T")[0]}T${event.start_time}`,
 
-        fetchEvents();
+    end: `${event.event_date.split("T")[0]}T${event.end_time}`,
 
-    }, []);
-    //API_URL this was in the dependency array 
-    const calendarEvents = events.map(event => ({
+    extendedProps: {
+      organizer: event.organizer,
+      email: event.contact_email,
+      event: event.event_name,
+      location: event.location,
+      description: event.event_description,
+      dress_code: event.dress_code,
+    },
+  }));
 
-        title: event.event_name,
+  return (
+    <div className="calendar-wrapper">
+      <FullCalendar
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
 
-        start: `${event.event_date.split("T")[0]}T${event.start_time}`,
+        initialView="dayGridMonth"
 
-        end: `${event.event_date.split("T")[0]}T${event.end_time}`,
+        headerToolbar={{
+          left: "prev,next today",
+          center: "title",
+          right: "dayGridMonth,timeGridWeek,timeGridDay",
+        }}
 
-        extendedProps: {
-            organizer: event.organizer,
-            email: event.contact_email,
-            event: event.event_name,
-            location: event.location,
-            description: event.event_description,
-            dress_code: event.dress_code
-        }
+        events={calendarEvents}
 
-    }));
+        height="500px"
 
-    return (
+        selectable
 
-        <div className="calendar-wrapper">
-
-            <FullCalendar
-
-                plugins={[
-                    dayGridPlugin,
-                    timeGridPlugin,
-                    interactionPlugin
-                ]}
-
-                initialView="dayGridMonth"
-
-                headerToolbar={{
-                    left: "prev,next today",
-                    center: "title",
-                    right: "dayGridMonth,timeGridWeek,timeGridDay"
-                }}
-
-                events={calendarEvents}
-
-                height="500px"
-
-                selectable
-
-                eventClick={(info) => {
-
-                alert(
-                `${info.event.title}
+        eventClick={(info) => {
+          alert(
+            `${info.event.title}
                 Organizer: ${info.event.extendedProps.organizer}
                 Email: ${info.event.extendedProps.email}
                 Event: ${info.event.extendedProps.event}
                 Dress Code: ${info.event.extendedProps.dress_code}
-                📍${info.event.extendedProps.location}`
-                    );
-
-                }}
-
-            />
-
-        </div>
-
-    );
-
-}
+                📍${info.event.extendedProps.location}`,
+          );
+        }}
+      />
+    </div>
+  );
+};
 
 export default EventsCalendar;

@@ -2,118 +2,105 @@
    CALL TO ACTION
 ================================================== */
 
-.contact-us{
-     width:100vw;
+.contact-us {
+  width: 100vw;
 
-    margin-left:calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
 
-    margin-right:calc(50% - 50vw);
-    
-    position:relative;
+  margin-right: calc(50% - 50vw);
 
-    overflow:hidden;
+  position: relative;
 
-    padding:110px 8%;
+  overflow: hidden;
 
-    background:linear-gradient(
-        135deg,
-        var(--burgundy),
-        var(--burgundy-dark)
-    );
+  padding: 110px 8%;
 
-    color:white;
+  background: linear-gradient(135deg, var(--burgundy), var(--burgundy-dark));
 
+  color: white;
 }
 
 /*background glow*/
 
-.contact-us::before{
+.contact-us::before {
+  content: "";
 
-    content:"";
+  position: absolute;
 
-    position:absolute;
+  inset: 0;
 
-    inset:0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1.2px,
+    transparent 1.2px
+  );
 
-    background-image:
-        radial-gradient(rgba(255,255,255,.06) 1.2px, transparent 1.2px);
+  background-size: 38px 38px;
 
-    background-size:38px 38px;
+  opacity: 0.45;
 
-    opacity:.45;
-
-    pointer-events:none;
-
+  pointer-events: none;
 }
 
-.contact-us::after{
+.contact-us::after {
+  content: "";
 
-    content:"";
+  position: absolute;
 
-    position:absolute;
+  width: 420px;
 
-    width:420px;
+  height: 420px;
 
-    height:420px;
+  border-radius: 50%;
 
-    border-radius:50%;
+  background: rgba(232, 207, 168, 0.1);
 
-    background:rgba(232,207,168,.10);
+  right: -120px;
 
-    right:-120px;
+  bottom: -180px;
 
-    bottom:-180px;
-
-    filter:blur(35px);
-
+  filter: blur(35px);
 }
 
-.contact{
+.contact {
+  position: relative;
 
-    position:relative;
+  z-index: 2;
 
-    z-index:2;
+  max-width: 850px;
 
-    max-width:850px;
+  margin: auto;
 
-    margin:auto;
-
-    text-align:center;
-
+  text-align: center;
 }
 
-.contact h1{
+.contact h1 {
+  font-size: 3rem;
 
-    font-size:3rem;
+  margin-bottom: 25px;
 
-    margin-bottom:25px;
+  line-height: 1.2;
 
-    line-height:1.2;
+  opacity: 0;
 
-    opacity:0;
-
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
-
+  animation: heroReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.contact p{
+.contact p {
+  max-width: 700px;
 
-    max-width:700px;
+  margin: 0 auto 45px;
 
-    margin:0 auto 45px;
+  line-height: 2;
 
-    line-height:2;
+  font-size: 1.08rem;
 
-    font-size:1.08rem;
+  color: rgba(255, 255, 255, 0.92);
 
-    color:rgba(255,255,255,.92);
+  opacity: 0;
 
-    opacity:0;
+  animation: heroReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 
-    animation:heroReveal .9s cubic-bezier(.22,1,.36,1) forwards;
-
-    animation-delay:.2s;
-
+  animation-delay: 0.2s;
 }
 
 /* ==================================================
@@ -121,93 +108,79 @@
 ================================================== */
 
 .contact-btn {
-    position: relative;
+  position: relative;
 
-    padding: 16px 32px;
+  padding: 16px 32px;
 
-    border: 1px solid var(--gold);
-    border-radius: 0;
+  border: 1px solid var(--gold);
+  border-radius: 0;
 
-    background: var(--burgundy-dark);
-    color: var(--gold);
+  background: var(--burgundy-dark);
+  color: var(--gold);
 
-    font-size: .85rem;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    transition:
-        color .4s var(--ease),
-        background .4s var(--ease),
-        transform .4s var(--ease);
+  transition:
+    color 0.4s var(--ease),
+    background 0.4s var(--ease),
+    transform 0.4s var(--ease);
 }
 
 .contact-btn::after {
-    content: "↓";
+  content: "↓";
 
-    margin-left: 18px;
+  margin-left: 18px;
 
-    color: var(--gold);
+  color: var(--gold);
 
-    transition: transform .4s var(--ease);
+  transition: transform 0.4s var(--ease);
 }
 
 .contact-btn:hover {
-    background: var(--gold);
-    color: var(--burgundy-dark);
-    transform: translateY(-3px);
+  background: var(--gold);
+  color: var(--burgundy-dark);
+  transform: translateY(-3px);
 }
 
 .contact-btn:hover::after {
-    transform: translateY(4px);
+  transform: translateY(4px);
 }
 
 /* ==================================================
    RESPONSIVE
 ================================================== */
 
-@media(max-width:900px){
-
-    .contact h1{
-
-        font-size:2.4rem;
-
-    }
-
+@media (max-width: 900px) {
+  .contact h1 {
+    font-size: 2.4rem;
+  }
 }
 
-@media(max-width:600px){
+@media (max-width: 600px) {
+  .contact-us {
+    padding: 75px 6%;
+  }
 
-    .contact-us{
+  .contact h1 {
+    font-size: 2rem;
+  }
 
-        padding:75px 6%;
+  .contact p {
+    font-size: 1rem;
 
-    }
+    line-height: 1.9;
+  }
 
-    .contact h1{
+  .contact button {
+    width: 100%;
 
-        font-size:2rem;
-
-    }
-
-    .contact p{
-
-        font-size:1rem;
-
-        line-height:1.9;
-
-    }
-
-    .contact button{
-
-        width:100%;
-
-        max-width:320px;
-
-    }
-
+    max-width: 320px;
+  }
 }

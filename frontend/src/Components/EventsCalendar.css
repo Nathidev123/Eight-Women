@@ -2,336 +2,272 @@
   CALENDAR
 ==================================================*/
 
-.calendar-wrapper{
+.calendar-wrapper {
+  width: 100%;
+  min-width: 0;
 
-    width:100%;
-    min-width:0;
+  background: #fff;
 
-    background:#fff;
+  padding: 32px;
 
-    padding:32px;
+  border-radius: 28px;
 
-    border-radius:28px;
+  border: 1px solid rgba(123, 30, 43, 0.08);
 
-    border:1px solid rgba(123,30,43,.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
 
-    box-shadow:0 20px 45px rgba(0,0,0,.08);
-
-    transition:.35s;
-
+  transition: 0.35s;
 }
 
 /*==================================================
   TOOLBAR
 ==================================================*/
 
-.fc-header-toolbar{
+.fc-header-toolbar {
+  margin-bottom: 30px !important;
 
-    margin-bottom:30px !important;
+  display: flex !important;
 
-    display:flex !important;
+  justify-content: space-between;
 
-    justify-content:space-between;
+  align-items: center;
 
-    align-items:center;
+  flex-wrap: wrap;
 
-    flex-wrap:wrap;
-
-    gap:20px;
-
+  gap: 20px;
 }
 
-.fc-toolbar-title{
+.fc-toolbar-title {
+  color: var(--burgundy);
 
-    color:var(--burgundy);
+  font-size: 2rem !important;
 
-    font-size:2rem !important;
+  font-weight: 700;
 
-    font-weight:700;
-
-    letter-spacing:-.5px;
-
+  letter-spacing: -0.5px;
 }
 
 /*==================================================
   BUTTONS
 ==================================================*/
 
-.fc-button{
+.fc-button {
+  background: var(--burgundy) !important;
 
-    background:var(--burgundy) !important;
+  border: none !important;
 
-    border:none !important;
+  border-radius: 999px !important;
 
-    border-radius:999px !important;
+  color: white !important;
 
-    color:white !important;
+  padding: 11px 20px !important;
 
-    padding:11px 20px !important;
+  font-weight: 600 !important;
 
-    font-weight:600 !important;
+  transition: 0.3s !important;
 
-    transition:.3s !important;
-
-    box-shadow:none !important;
-
+  box-shadow: none !important;
 }
 
-.fc-button:hover{
+.fc-button:hover {
+  background: var(--burgundy-dark) !important;
 
-    background:var(--burgundy-dark) !important;
-
-    transform:translateY(-2px);
-
+  transform: translateY(-2px);
 }
 
-.fc-button-active{
-
-    background:var(--burgundy-dark) !important;
-
+.fc-button-active {
+  background: var(--burgundy-dark) !important;
 }
 
-.fc-button:focus{
-
-    box-shadow:none !important;
-
+.fc-button:focus {
+  box-shadow: none !important;
 }
 
 /*==================================================
   GRID
 ==================================================*/
 
-.fc-theme-standard .fc-scrollgrid{
+.fc-theme-standard .fc-scrollgrid {
+  border-radius: 22px;
 
-    border-radius:22px;
+  overflow: hidden;
 
-    overflow:hidden;
-
-    border:1px solid rgba(123,30,43,.08);
-
+  border: 1px solid rgba(123, 30, 43, 0.08);
 }
 
 .fc-theme-standard td,
-.fc-theme-standard th{
-
-    border-color:rgba(123,30,43,.08);
-
+.fc-theme-standard th {
+  border-color: rgba(123, 30, 43, 0.08);
 }
 
 /*==================================================
   WEEK DAYS
 ==================================================*/
 
-.fc-col-header-cell{
+.fc-col-header-cell {
+  background: var(--cream);
 
-    background:var(--cream);
-
-    padding:18px 0;
-
+  padding: 18px 0;
 }
 
-.fc-col-header-cell-cushion{
+.fc-col-header-cell-cushion {
+  color: var(--burgundy);
 
-    color:var(--burgundy);
+  text-decoration: none !important;
 
-    text-decoration:none !important;
-
-    font-weight:700;
-
+  font-weight: 700;
 }
 
 /*==================================================
   DAYS
 ==================================================*/
 
-.fc-daygrid-day{
+.fc-daygrid-day {
+  background: white;
 
-    background:white;
+  transition: 0.25s;
 
-    transition:.25s;
-
-    min-height:120px;
-
+  min-height: 120px;
 }
 
-.fc-daygrid-day:hover{
-
-    background:#fcfaf7;
-
+.fc-daygrid-day:hover {
+  background: #fcfaf7;
 }
 
-.fc-daygrid-day-number{
+.fc-daygrid-day-number {
+  color: var(--text);
 
-    color:var(--text);
+  font-weight: 600;
 
-    font-weight:600;
+  padding: 12px;
 
-    padding:12px;
-
-    text-decoration:none !important;
-
+  text-decoration: none !important;
 }
 
 /*==================================================
   TODAY
 ==================================================*/
 
-.fc-day-today{
-
-    background:rgba(232,207,168,.25) !important;
-
+.fc-day-today {
+  background: rgba(232, 207, 168, 0.25) !important;
 }
 
-.fc-day-today .fc-daygrid-day-number{
+.fc-day-today .fc-daygrid-day-number {
+  color: var(--burgundy);
 
-    color:var(--burgundy);
-
-    font-weight:700;
-
+  font-weight: 700;
 }
 
 /*==================================================
   EVENTS
 ==================================================*/
 
-.fc-event{
+.fc-event {
+  background: var(--burgundy) !important;
 
-    background:var(--burgundy) !important;
+  border: none !important;
 
-    border:none !important;
+  border-left: 4px solid var(--cream-accent) !important;
 
-    border-left:4px solid var(--cream-accent) !important;
+  border-radius: 10px !important;
 
-    border-radius:10px !important;
+  color: white !important;
 
-    color:white !important;
+  padding: 6px 10px !important;
 
-    padding:6px 10px !important;
+  font-size: 0.85rem;
 
-    font-size:.85rem;
+  font-weight: 600;
 
-    font-weight:600;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
-.fc-event:hover{
+.fc-event:hover {
+  background: var(--burgundy-dark) !important;
 
-    background:var(--burgundy-dark) !important;
+  transform: translateX(3px);
 
-    transform:translateX(3px);
-
-    box-shadow:0 10px 20px rgba(123,30,43,.2);
-
+  box-shadow: 0 10px 20px rgba(123, 30, 43, 0.2);
 }
 
 /*==================================================
   TIME GRID
 ==================================================*/
 
-.fc-timegrid-slot{
-
-    height:52px;
-
+.fc-timegrid-slot {
+  height: 52px;
 }
 
-.fc-timegrid-axis{
+.fc-timegrid-axis {
+  color: var(--text-light);
 
-    color:var(--text-light);
-
-    font-weight:600;
-
+  font-weight: 600;
 }
 
 /*==================================================
   MORE LINK
 ==================================================*/
 
-.fc-daygrid-more-link{
+.fc-daygrid-more-link {
+  color: var(--burgundy);
 
-    color:var(--burgundy);
-
-    font-weight:600;
-
+  font-weight: 600;
 }
 
 /*==================================================
   SCROLLBAR
 ==================================================*/
 
-.fc-scroller::-webkit-scrollbar{
+.fc-scroller::-webkit-scrollbar {
+  width: 8px;
 
-    width:8px;
-
-    height:8px;
-
+  height: 8px;
 }
 
-.fc-scroller::-webkit-scrollbar-thumb{
+.fc-scroller::-webkit-scrollbar-thumb {
+  background: rgba(123, 30, 43, 0.2);
 
-    background:rgba(123,30,43,.2);
-
-    border-radius:999px;
-
+  border-radius: 999px;
 }
 
-.fc-scroller::-webkit-scrollbar-thumb:hover{
-
-    background:rgba(123,30,43,.4);
-
+.fc-scroller::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 30, 43, 0.4);
 }
 
 /*==================================================
   RESPONSIVE
 ==================================================*/
 
-@media(max-width:900px){
+@media (max-width: 900px) {
+  .calendar-wrapper {
+    padding: 22px;
 
-    .calendar-wrapper{
+    border-radius: 22px;
+  }
 
-        padding:22px;
+  .fc-header-toolbar {
+    flex-direction: column;
 
-        border-radius:22px;
+    align-items: flex-start;
+  }
 
-    }
-
-    .fc-header-toolbar{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-    }
-
-    .fc-toolbar-title{
-
-        font-size:1.55rem !important;
-
-    }
-
+  .fc-toolbar-title {
+    font-size: 1.55rem !important;
+  }
 }
 
-@media(max-width:600px){
+@media (max-width: 600px) {
+  .calendar-wrapper {
+    padding: 16px;
+  }
 
-    .calendar-wrapper{
+  .fc-toolbar-chunk {
+    width: 100%;
+  }
 
-        padding:16px;
+  .fc-button {
+    width: 100%;
 
-    }
-
-    .fc-toolbar-chunk{
-
-        width:100%;
-
-    }
-
-    .fc-button{
-
-        width:100%;
-
-        margin-bottom:8px !important;
-
-    }
-
+    margin-bottom: 8px !important;
+  }
 }

@@ -1,130 +1,76 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home';
-import Navbar from './Components/Navbar';
-import FormOne from './pages/FormOne';
-import FormTwo from './pages/FormTwo';
-import FormThree from './pages/FormThree';
-import FormFour from './pages/FormFour';
-import EventPage from './pages/EventPage'
-import SignUp from './pages/SignUp';
-import Login from './pages/Login';
-import PeaceInitiative from './pages/PeaceInitiative'
-import Footer from './Components/Footer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./Components/Navbar";
+import FormOne from "./pages/FormOne";
+import FormTwo from "./pages/FormTwo";
+import FormThree from "./pages/FormThree";
+import FormFour from "./pages/FormFour";
+import EventPage from "./pages/EventPage";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import PeaceInitiative from "./pages/PeaceInitiative";
+import Footer from "./Components/Footer";
 import ScrollToHash from "./Components/ScrollToHash";
-import ScrollToTop from './Components/ScrollToTop';
-import MemberProfile from './pages/MemberProfile';
-import Dashboard from './pages/Dashboard';
-import AdminEventPage from './pages/AdminEventPage';
-import Archives from './pages/Archives';
-import GetInvolved from './pages/GetInvolved';
-import OurWork from './pages/OurWork';
-import GetInvolvedComponent from './Components/GetInvolvedComponent';
-import PrivacyPolicy from './pages/PrivacyPolicy';
+import ScrollToTop from "./Components/ScrollToTop";
+import MemberProfile from "./pages/MemberProfile";
+import Dashboard from "./pages/Dashboard";
+import AdminEventPage from "./pages/AdminEventPage";
+import Archives from "./pages/Archives";
+import GetInvolved from "./pages/GetInvolved";
+import OurWork from "./pages/OurWork";
+import GetInvolvedComponent from "./Components/GetInvolvedComponent";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
- 
   return (
-
     <div className="App">
-    <BrowserRouter>
-    <Navbar />    
-    <div className='pages'>
+      <BrowserRouter>
+        <Navbar />
+        <div className="pages">
+          <ScrollToTop />
+          <ScrollToHash />
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-    <ScrollToTop />
-    <ScrollToHash />
-    <Routes>
-    
+            <Route path="/formOne" element={<FormOne />} />
 
-    <Route
-    path='/'
-    element={<Home />}
-    />
+            <Route path="/formTwo" element={<FormTwo />} />
 
-    <Route
-    path='/formOne'
-    element={<FormOne />}
-    />
+            <Route path="/formThree" element={<FormThree />} />
 
-    <Route
-    path='/formTwo'
-    element={<FormTwo />}
-    />
+            <Route path="/formFour" element={<FormFour />} />
 
-    <Route
-    path='/formThree'
-    element={<FormThree />}
-    />
+            <Route path="/eventPage/:id" element={<EventPage />} />
 
-    <Route
-    path='/formFour'
-    element={<FormFour/>}
-    />
+            <Route path="/login" element={<Login />} />
 
-    <Route
-    path='/eventPage/:id'
-    element={<EventPage/>}
-    />
+            <Route path="/signup" element={<SignUp />} />
 
-    <Route
-    path='/login'
-    element={<Login/>}
-    />
+            <Route path="/peace-initiative" element={<PeaceInitiative />} />
 
-    <Route
-    path='/signup'
-    element={<SignUp/>}
-    />
+            <Route path="/member-profile/:id" element={<MemberProfile />} />
 
-    <Route
-    path='/peace-initiative'
-    element={<PeaceInitiative/>}
-    />
+            <Route path="/dashboard" element={<Dashboard />} />
 
-    <Route
-    path='/member-profile/:id'
-    element={<MemberProfile/>}
-    />
+            <Route path="/adminevent/:id" element={<AdminEventPage />} />
 
-    <Route
-    path='/dashboard'
-    element={<Dashboard/> }
-    />
+            <Route path="/archives" element={<Archives />} />
 
-    <Route
-    path='/adminevent/:id'
-    element={<AdminEventPage/>}
-    />
+            <Route path="/get-involved" element={<GetInvolved />} />
 
-    <Route
-    path='/archives'
-    element={<Archives/>}
-    />
+            <Route path="/our-work" element={<OurWork />} />
 
-    <Route
-    path='/get-involved'
-    element={<GetInvolved/>}
-    />
+            <Route
+              path="/involved-component"
+              element={<GetInvolvedComponent />}
+            />
 
-    <Route
-    path='/our-work'
-    element={<OurWork/>}
-    />
-    
-    <Route
-    path='/involved-component'
-    element={<GetInvolvedComponent/>}
-    />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          </Routes>
+        </div>
 
-    <Route
-    path='/privacy-policy'
-    element={<PrivacyPolicy/>}
-    />
-    
-    </Routes>
-    </div>
-    
-    <Footer />
-    </BrowserRouter>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

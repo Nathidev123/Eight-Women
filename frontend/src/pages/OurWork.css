@@ -3,18 +3,17 @@
 ========================================================= */
 
 :root {
-    --burgundy: #7B1E2B;
-    --burgundy-dark: #5A1320;
-    --cream: #F8F4EE;
-    --white: #ffffff;
-    --beige: #E8CFA8;
-    --text: #2D2926;
-    --muted: #6D6762;
+  --burgundy: #7b1e2b;
+  --burgundy-dark: #5a1320;
+  --cream: #f8f4ee;
+  --white: #ffffff;
+  --beige: #e8cfa8;
+  --text: #2d2926;
+  --muted: #6d6762;
 
-    --radius: 24px;
-    --shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  --radius: 24px;
+  --shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
 }
-
 
 /* =========================================================
    GLOBAL
@@ -23,388 +22,371 @@
 .our-work-container,
 .pillars-section,
 .our-work-image {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .our-work-container img,
 .our-work-image img {
-    max-width: 100%;
+  max-width: 100%;
 }
-
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .our-work-container {
-    width: 100%;
-    background: var(--cream);
-    padding: 100px 7% 110px;
-    overflow: hidden;
+  width: 100%;
+  background: var(--cream);
+  padding: 100px 7% 110px;
+  overflow: hidden;
 }
 
 .our-work-section {
-    max-width: 1250px;
-    margin: 0 auto;
+  max-width: 1250px;
+  margin: 0 auto;
 
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 80px;
 }
-
 
 /* ---------------------------------------------------------
    Eight Women Image
 --------------------------------------------------------- */
 
 .eight-div {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .eight-div::before {
-    content: "";
-    position: absolute;
+  content: "";
+  position: absolute;
 
-    width: 82%;
-    height: 82%;
+  width: 82%;
+  height: 82%;
 
-    background: var(--beige);
-    border-radius: 50%;
+  background: var(--beige);
+  border-radius: 50%;
 
-    z-index: 0;
-    opacity: 0.55;
+  z-index: 0;
+  opacity: 0.55;
 }
 
 .eight-div img {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 
-    width: 100%;
-    max-width: 560px;
-    height: auto;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
 
-    display: block;
+  display: block;
 
-    object-fit: contain;
+  object-fit: contain;
 
-    filter: drop-shadow(0 25px 35px rgba(90, 19, 32, 0.12));
+  filter: drop-shadow(0 25px 35px rgba(90, 19, 32, 0.12));
 }
-
 
 /* ---------------------------------------------------------
    Hero Text
 --------------------------------------------------------- */
 
 .our-work-text {
-    max-width: 600px;
+  max-width: 600px;
 }
 
 .our-work-text h1 {
-    margin: 0 0 25px;
+  margin: 0 0 25px;
 
-    color: var(--burgundy-dark);
+  color: var(--burgundy-dark);
 
-    font-size: clamp(2.7rem, 5vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.04em;
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .our-work-text h1::after {
-    content: "";
+  content: "";
 
-    display: block;
+  display: block;
 
-    width: 70px;
-    height: 4px;
+  width: 70px;
+  height: 4px;
 
-    margin-top: 25px;
+  margin-top: 25px;
 
-    background: var(--beige);
-    border-radius: 10px;
+  background: var(--beige);
+  border-radius: 10px;
 }
 
 .our-work-text p {
-    margin: 0;
+  margin: 0;
 
-    color: var(--text);
+  color: var(--text);
 
-    font-size: 1.08rem;
-    line-height: 1.9;
+  font-size: 1.08rem;
+  line-height: 1.9;
 
-    max-width: 570px;
+  max-width: 570px;
 }
-
 
 /* =========================================================
    COMMUNITY IMAGE
 ========================================================= */
 
 .our-work-image {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    max-width: 1400px;
+  width: 100%;
+  max-width: 1400px;
 
-    height: 520px;
+  height: 520px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    background: var(--burgundy-dark);
+  background: var(--burgundy-dark);
 }
-
 
 /* Image */
 
 .our-work-image img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: block;
+  display: block;
 
-    object-fit: cover;
-    object-position: center;
+  object-fit: cover;
+  object-position: center;
 
-    transition: transform 0.8s ease;
+  transition: transform 0.8s ease;
 }
-
 
 /* Subtle zoom on hover */
 
 .our-work-image:hover img {
-    transform: scale(1.025);
+  transform: scale(1.025);
 }
-
 
 /* Burgundy image overlay */
 
 .our-work-image::after {
-    content: "";
+  content: "";
 
-    position: absolute;
-    inset: 0;
+  position: absolute;
+  inset: 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(90, 19, 32, 0.88) 0%,
-            rgba(90, 19, 32, 0.60) 35%,
-            rgba(90, 19, 32, 0.18) 75%,
-            rgba(90, 19, 32, 0.05) 100%
-        );
+  background: linear-gradient(
+    90deg,
+    rgba(90, 19, 32, 0.88) 0%,
+    rgba(90, 19, 32, 0.6) 35%,
+    rgba(90, 19, 32, 0.18) 75%,
+    rgba(90, 19, 32, 0.05) 100%
+  );
 
-    z-index: 1;
+  z-index: 1;
 }
-
 
 /* ---------------------------------------------------------
    Image Text
 --------------------------------------------------------- */
 
 .our-work-image-overlay {
-    position: absolute;
+  position: absolute;
 
-    z-index: 2;
+  z-index: 2;
 
-    left: 8%;
-    top: 50%;
+  left: 8%;
+  top: 50%;
 
-    transform: translateY(-50%);
+  transform: translateY(-50%);
 
-    width: calc(100% - 16%);
-    max-width: 560px;
+  width: calc(100% - 16%);
+  max-width: 560px;
 
-    color: var(--white);
+  color: var(--white);
 }
 
 .our-work-image-overlay h2 {
-    margin: 0 0 18px;
+  margin: 0 0 18px;
 
-    font-size: clamp(2.2rem, 4vw, 4rem);
-    line-height: 1.05;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.05;
 
-    letter-spacing: -0.03em;
+  letter-spacing: -0.03em;
 
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .our-work-image-overlay p {
-    margin: 0;
+  margin: 0;
 
-    max-width: 500px;
+  max-width: 500px;
 
-    color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 
-    font-size: 1.08rem;
-    line-height: 1.75;
+  font-size: 1.08rem;
+  line-height: 1.75;
 }
-
 
 /* =========================================================
    PILLARS SECTION
 ========================================================= */
 
 .pillars-section {
-    width: 100%;
+  width: 100%;
 
-    background: var(--white);
+  background: var(--white);
 
-    padding: 120px 7% 130px;
+  padding: 120px 7% 130px;
 
-    overflow: hidden;
+  overflow: hidden;
 }
-
 
 /* ---------------------------------------------------------
    Heading
 --------------------------------------------------------- */
 
 .pillars-heading {
-    max-width: 850px;
+  max-width: 850px;
 
-    margin: 0 auto 75px;
+  margin: 0 auto 75px;
 
-    text-align: center;
+  text-align: center;
 }
 
 .pillars-heading h1 {
-    margin: 0 0 22px;
+  margin: 0 0 22px;
 
-    color: var(--burgundy-dark);
+  color: var(--burgundy-dark);
 
-    font-size: clamp(2.3rem, 4vw, 3.5rem);
-    line-height: 1.1;
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  line-height: 1.1;
 
-    letter-spacing: -0.035em;
+  letter-spacing: -0.035em;
 }
 
 .pillars-heading h1::after {
-    content: "";
+  content: "";
 
-    display: block;
+  display: block;
 
-    width: 55px;
-    height: 4px;
+  width: 55px;
+  height: 4px;
 
-    margin: 22px auto 0;
+  margin: 22px auto 0;
 
-    background: var(--beige);
+  background: var(--beige);
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .pillars-heading p {
-    margin: 25px auto 0;
+  margin: 25px auto 0;
 
-    max-width: 720px;
+  max-width: 720px;
 
-    color: var(--muted);
+  color: var(--muted);
 
-    font-size: 1.05rem;
-    line-height: 1.85;
+  font-size: 1.05rem;
+  line-height: 1.85;
 }
-
 
 /* =========================================================
    PILLARS GRID
 ========================================================= */
 
 .pillars-grid {
-    max-width: 1150px;
+  max-width: 1150px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    display: grid;
+  display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    column-gap: 90px;
-    row-gap: 0;
+  column-gap: 90px;
+  row-gap: 0;
 }
-
 
 /* ---------------------------------------------------------
    Individual Pillar
 --------------------------------------------------------- */
 
 .pillar-div {
-    position: relative;
+  position: relative;
 
-    padding: 35px 0 38px;
+  padding: 35px 0 38px;
 
-    border-bottom: 1px solid rgba(90, 19, 32, 0.14);
+  border-bottom: 1px solid rgba(90, 19, 32, 0.14);
 
-    transition:
-        padding-left 0.3s ease,
-        transform 0.3s ease;
+  transition:
+    padding-left 0.3s ease,
+    transform 0.3s ease;
 }
-
 
 /* Small burgundy marker */
 
 .pillar-div::before {
-    content: "";
+  content: "";
 
-    position: absolute;
+  position: absolute;
 
-    left: 0;
-    top: 43px;
+  left: 0;
+  top: 43px;
 
-    width: 7px;
-    height: 7px;
+  width: 7px;
+  height: 7px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: var(--burgundy);
+  background: var(--burgundy);
 }
-
 
 /* Text */
 
 .pillar-div h2 {
-    margin: 0 0 12px;
+  margin: 0 0 12px;
 
-    padding-left: 24px;
+  padding-left: 24px;
 
-    color: var(--burgundy-dark);
+  color: var(--burgundy-dark);
 
-    font-size: 1.3rem;
-    line-height: 1.3;
+  font-size: 1.3rem;
+  line-height: 1.3;
 
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .pillar-div p {
-    margin: 0;
+  margin: 0;
 
-    padding-left: 24px;
+  padding-left: 24px;
 
-    max-width: 500px;
+  max-width: 500px;
 
-    color: var(--muted);
+  color: var(--muted);
 
-    font-size: 0.98rem;
-    line-height: 1.75;
+  font-size: 0.98rem;
+  line-height: 1.75;
 }
-
 
 /* Hover */
 
 .pillar-div:hover {
-    padding-left: 8px;
+  padding-left: 8px;
 }
 
 .pillar-div:hover::before {
-    background: var(--beige);
+  background: var(--beige);
 }
-
 
 /* =========================================================
    REVEAL ANIMATIONS
@@ -414,41 +396,36 @@
 .reveal-left,
 .reveal-right,
 .reveal-scale {
-    opacity: 0;
+  opacity: 0;
 
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
-
 
 /* Standard */
 
 .reveal {
-    transform: translateY(35px);
+  transform: translateY(35px);
 }
-
 
 /* Left */
 
 .reveal-left {
-    transform: translateX(-55px);
+  transform: translateX(-55px);
 }
-
 
 /* Right */
 
 .reveal-right {
-    transform: translateX(55px);
+  transform: translateX(55px);
 }
-
 
 /* Scale */
 
 .reveal-scale {
-    transform: scale(0.96);
+  transform: scale(0.96);
 }
-
 
 /* Active */
 
@@ -456,260 +433,245 @@
 .reveal-left.active,
 .reveal-right.active,
 .reveal-scale.active {
-    opacity: 1;
+  opacity: 1;
 
-    transform: translate(0) scale(1);
+  transform: translate(0) scale(1);
 }
-
 
 /* =========================================================
    RESPONSIVE — TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
+  .our-work-container {
+    padding: 80px 6% 90px;
+  }
 
-    .our-work-container {
-        padding: 80px 6% 90px;
-    }
+  .our-work-section {
+    gap: 50px;
+  }
 
-    .our-work-section {
-        gap: 50px;
-    }
+  .our-work-text h1 {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+  }
 
-    .our-work-text h1 {
-        font-size: clamp(2.4rem, 5vw, 3.5rem);
-    }
+  .our-work-image {
+    height: 470px;
+  }
 
-    .our-work-image {
-        height: 470px;
-    }
+  .pillars-section {
+    padding: 95px 6% 110px;
+  }
 
-    .pillars-section {
-        padding: 95px 6% 110px;
-    }
-
-    .pillars-grid {
-        column-gap: 55px;
-    }
-
+  .pillars-grid {
+    column-gap: 55px;
+  }
 }
-
 
 /* =========================================================
    RESPONSIVE — MOBILE
 ========================================================= */
 
 @media (max-width: 768px) {
-
-    /* -----------------------------------------------------
+  /* -----------------------------------------------------
        Hero
     ----------------------------------------------------- */
 
-    .our-work-container {
-        padding: 65px 6% 75px;
-    }
+  .our-work-container {
+    padding: 65px 6% 75px;
+  }
 
-    .our-work-section {
-        grid-template-columns: 1fr;
+  .our-work-section {
+    grid-template-columns: 1fr;
 
-        gap: 50px;
+    gap: 50px;
 
-        text-align: center;
-    }
+    text-align: center;
+  }
 
-    .eight-div {
-        order: 1;
-    }
+  .eight-div {
+    order: 1;
+  }
 
-    .our-work-text {
-        order: 2;
+  .our-work-text {
+    order: 2;
 
-        max-width: 100%;
-    }
+    max-width: 100%;
+  }
 
-    .eight-div::before {
-        width: 75%;
-        height: 75%;
-    }
+  .eight-div::before {
+    width: 75%;
+    height: 75%;
+  }
 
-    .eight-div img {
-        max-width: 420px;
-    }
+  .eight-div img {
+    max-width: 420px;
+  }
 
-    .our-work-text h1 {
-        font-size: clamp(2.3rem, 10vw, 3.2rem);
-    }
+  .our-work-text h1 {
+    font-size: clamp(2.3rem, 10vw, 3.2rem);
+  }
 
-    .our-work-text h1::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .our-work-text h1::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .our-work-text p {
-        font-size: 1rem;
-        line-height: 1.8;
-    }
+  .our-work-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
 
-
-    /* -----------------------------------------------------
+  /* -----------------------------------------------------
        Community Image
     ----------------------------------------------------- */
 
-    .our-work-image {
-        height: 430px;
+  .our-work-image {
+    height: 430px;
 
-        margin: 0;
-    }
+    margin: 0;
+  }
 
-    .our-work-image img {
-        object-position: center;
-    }
+  .our-work-image img {
+    object-position: center;
+  }
 
-    .our-work-image::after {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(90, 19, 32, 0.20) 0%,
-                rgba(90, 19, 32, 0.72) 60%,
-                rgba(90, 19, 32, 0.92) 100%
-            );
-    }
+  .our-work-image::after {
+    background: linear-gradient(
+      180deg,
+      rgba(90, 19, 32, 0.2) 0%,
+      rgba(90, 19, 32, 0.72) 60%,
+      rgba(90, 19, 32, 0.92) 100%
+    );
+  }
 
-    .our-work-image-overlay {
-        left: 7%;
-        bottom: 45px;
-        top: auto;
+  .our-work-image-overlay {
+    left: 7%;
+    bottom: 45px;
+    top: auto;
 
-        transform: none;
+    transform: none;
 
-        width: 86%;
-    }
+    width: 86%;
+  }
 
-    .our-work-image-overlay h2 {
-        font-size: 2.3rem;
-    }
+  .our-work-image-overlay h2 {
+    font-size: 2.3rem;
+  }
 
-    .our-work-image-overlay p {
-        font-size: 0.98rem;
-        line-height: 1.65;
-    }
+  .our-work-image-overlay p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
 
-
-    /* -----------------------------------------------------
+  /* -----------------------------------------------------
        Pillars
     ----------------------------------------------------- */
 
-    .pillars-section {
-        padding: 80px 6% 90px;
-    }
+  .pillars-section {
+    padding: 80px 6% 90px;
+  }
 
-    .pillars-heading {
-        margin-bottom: 45px;
-    }
+  .pillars-heading {
+    margin-bottom: 45px;
+  }
 
-    .pillars-heading h1 {
-        font-size: 2.4rem;
-    }
+  .pillars-heading h1 {
+    font-size: 2.4rem;
+  }
 
-    .pillars-heading p {
-        font-size: 0.98rem;
-        line-height: 1.75;
-    }
+  .pillars-heading p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
 
-    .pillars-grid {
-        grid-template-columns: 1fr;
+  .pillars-grid {
+    grid-template-columns: 1fr;
 
-        column-gap: 0;
-    }
+    column-gap: 0;
+  }
 
-    .pillar-div {
-        padding: 28px 0 30px;
-    }
+  .pillar-div {
+    padding: 28px 0 30px;
+  }
 
-    .pillar-div::before {
-        top: 36px;
-    }
+  .pillar-div::before {
+    top: 36px;
+  }
 
-    .pillar-div h2 {
-        font-size: 1.18rem;
-    }
+  .pillar-div h2 {
+    font-size: 1.18rem;
+  }
 
-    .pillar-div p {
-        font-size: 0.95rem;
-    }
+  .pillar-div p {
+    font-size: 0.95rem;
+  }
 
-
-    /* -----------------------------------------------------
+  /* -----------------------------------------------------
        Animations
     ----------------------------------------------------- */
 
-    .reveal-left {
-        transform: translateY(35px);
-    }
+  .reveal-left {
+    transform: translateY(35px);
+  }
 
-    .reveal-right {
-        transform: translateY(35px);
-    }
-
+  .reveal-right {
+    transform: translateY(35px);
+  }
 }
-
 
 /* =========================================================
    SMALL PHONES
 ========================================================= */
 
 @media (max-width: 480px) {
+  .our-work-container {
+    padding: 50px 5% 65px;
+  }
 
-    .our-work-container {
-        padding: 50px 5% 65px;
-    }
+  .our-work-section {
+    gap: 38px;
+  }
 
-    .our-work-section {
-        gap: 38px;
-    }
+  .our-work-text h1 {
+    font-size: 2.15rem;
+  }
 
-    .our-work-text h1 {
-        font-size: 2.15rem;
-    }
+  .our-work-text p {
+    font-size: 0.95rem;
+  }
 
-    .our-work-text p {
-        font-size: 0.95rem;
-    }
+  .our-work-image {
+    height: 390px;
+  }
 
+  .our-work-image-overlay {
+    left: 6%;
+    bottom: 32px;
+    width: 88%;
+  }
 
-    .our-work-image {
-        height: 390px;
-    }
+  .our-work-image-overlay h2 {
+    font-size: 2rem;
+  }
 
-    .our-work-image-overlay {
-        left: 6%;
-        bottom: 32px;
-        width: 88%;
-    }
+  .our-work-image-overlay p {
+    font-size: 0.92rem;
+  }
 
-    .our-work-image-overlay h2 {
-        font-size: 2rem;
-    }
+  .pillars-section {
+    padding: 70px 5% 75px;
+  }
 
-    .our-work-image-overlay p {
-        font-size: 0.92rem;
-    }
+  .pillars-heading h1 {
+    font-size: 2.1rem;
+  }
 
+  .pillar-div h2 {
+    font-size: 1.1rem;
+  }
 
-    .pillars-section {
-        padding: 70px 5% 75px;
-    }
-
-    .pillars-heading h1 {
-        font-size: 2.1rem;
-    }
-
-    .pillar-div h2 {
-        font-size: 1.1rem;
-    }
-
-    .pillar-div p {
-        font-size: 0.92rem;
-    }
-
+  .pillar-div p {
+    font-size: 0.92rem;
+  }
 }
