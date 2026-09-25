@@ -96,15 +96,42 @@ const FormOne = () => {
               rows={5}
             />
           </div>
+          <label htmlFor="event_format">Event Format</label>
 
+          <select
+            id="event_format"
+            name="event_format"
+            value={formData.event_format}
+            onChange={handleChange}
+            className={emptyFields.includes("event_format") ? "error" : ""}
+          >
+            <option value="">Select Event Format</option>
+            <option value="In Person">In Person</option>
+            <option value="Online">Online</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+
+          
+          {formData.event_format !== "Online" && (
           <div className="form-group">
             <input
-              placeholder="Location"
+              placeholder="Physical Location"
               name="location"
               value={formData.location}
               onChange={handleChange}
             />
           </div>
+        )}
+
+        {formData.event_format === "Online" && (
+        <div className="form-group">
+          <input
+            placeholder="Online — e.g. Zoom"
+            value="Online"
+            disabled
+          />
+        </div>
+      )}
         </form>
 
         <button className="form-btn" onClick={handleSubmit}>
