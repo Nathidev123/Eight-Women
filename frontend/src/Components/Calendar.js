@@ -10,7 +10,7 @@ import "./EventsCalendar.css";
 const EventsCalendar = () => {
   //const API_URL = process.env.REACT_APP_API_URL;
   const [events, setEvents] = useState([]);
-
+  
   useEffect(() => {
     const fetchEvents = async () => {
       //const response = await fetch(`${API_URL}/api/mainroutes/`
@@ -70,7 +70,7 @@ const EventsCalendar = () => {
                 Email: ${info.event.extendedProps.email}
                 Event: ${info.event.extendedProps.event}
                 Dress Code: ${info.event.extendedProps.dress_code}
-                📍${info.event.extendedProps.location}`,
+                ${info.event.extendedProps.location}`,
           );
         }}
       />
