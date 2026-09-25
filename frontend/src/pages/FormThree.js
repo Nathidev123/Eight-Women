@@ -54,6 +54,7 @@ const FormThree = () => {
             </p>
           </div>
 
+          <label>Select Date</label>
           <input
             type="date"
             onChange={handleChange}

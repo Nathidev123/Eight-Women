@@ -302,6 +302,11 @@ const members = [
         url: "https://www.youtube.com/embed/NDksCA0Q0A0?si=E2MIUgTK6d5mpOOC",
       },
       {
+        title:
+          "Marikana Massacre | Pandelani: Offer of an extra R500,000 for each family rejected",
+        url: "https://www.youtube.com/embed/46PbPBKR76w?si=WH60spmkrmL0oZhm",
+      },
+      {
         title: "Marikana massacre | Call for 16 August to be public holiday",
         url: "https://www.youtube.com/embed/fhZhMDr0PGs?si=SYcS7iqxLg-7j8F1",
       },
@@ -802,11 +807,6 @@ const members = [
         title:
           "South Africa's Youth Voice: Prof Mamokgethi Phakeng, Shaeera Kalla & Koketso Moeti (Panel)",
         url: "https://www.youtube.com/embed/5iGO0xtteBA?si=9EQHNxqyrYDabVVU",
-      },
-      {
-        title:
-          "Marikana Massacre | Pandelani: Offer of an extra R500,000 for each family rejected",
-        url: "https://www.youtube.com/embed/46PbPBKR76w?si=WH60spmkrmL0oZhm",
       },
       {
         title: "Social Justice Initiative: Women in Social Justice",
