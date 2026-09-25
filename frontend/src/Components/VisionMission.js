@@ -9,7 +9,7 @@ const VisionMission = () => {
 
         <h1>
           Building Peace
-          <span>Through Conversation</span>
+          <span>Through Dialogue</span>
         </h1>
 
         <p>
